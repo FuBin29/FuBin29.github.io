@@ -3,26 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://stupidrabbit29.github.io/</loc>
+    <loc>http://StupidRabbit29.github.io/hugo_tutorial/</loc>
+    <lastmod>2020-09-08T20:48:11+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://StupidRabbit29.github.io/</loc>
     <lastmod>2020-09-08T15:27:04+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://stupidrabbit29.github.io/post/</loc>
+    <loc>http://StupidRabbit29.github.io/post/</loc>
     <lastmod>2020-09-08T15:27:04+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://stupidrabbit29.github.io/post/firstblogfortest/</loc>
+    <loc>http://StupidRabbit29.github.io/post/firstblogfortest/</loc>
     <lastmod>2020-09-08T15:27:04+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://stupidrabbit29.github.io/categories/</loc>
+    <loc>http://StupidRabbit29.github.io/categories/</loc>
   </url>
   
   <url>
-    <loc>https://stupidrabbit29.github.io/tags/</loc>
+    <loc>http://StupidRabbit29.github.io/tags/</loc>
   </url>
   
 </urlset>
