@@ -20,14 +20,5 @@
       <description>hello</description>
     </item>
     
-    <item>
-      <title>你好，Hugo</title>
-      <link>https://StupidRabbit29.github.io/post/firstblogfortest/</link>
-      <pubDate>Tue, 08 Sep 2020 15:27:04 +0800</pubDate>
-      
-      <guid>https://StupidRabbit29.github.io/post/firstblogfortest/</guid>
-      <description>这是付彬的第一篇博客。</description>
-    </item>
-    
   </channel>
 </rss>
