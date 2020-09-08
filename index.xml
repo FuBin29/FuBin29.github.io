@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fu Bin&#39;s Blog</title>
+    <link>https://stupidrabbit29.github.io/</link>
+    <description>Recent content on Fu Bin&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 08 Sep 2020 15:27:04 +0800</lastBuildDate>
+    
+	<atom:link href="https://stupidrabbit29.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>你好，Hugo</title>
+      <link>https://stupidrabbit29.github.io/post/firstblogfortest/</link>
+      <pubDate>Tue, 08 Sep 2020 15:27:04 +0800</pubDate>
+      
+      <guid>https://stupidrabbit29.github.io/post/firstblogfortest/</guid>
+      <description>这是付彬的第一篇博客。</description>
+    </item>
+    
+  </channel>
+</rss>
