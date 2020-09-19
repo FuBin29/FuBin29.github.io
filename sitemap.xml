@@ -3,7 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://StupidRabbit29.github.io/categories/</loc>
+    <lastmod>2020-09-08T20:48:11+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://StupidRabbit29.github.io/</loc>
+    <lastmod>2020-09-08T20:48:11+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://StupidRabbit29.github.io/tags/hugo/</loc>
     <lastmod>2020-09-08T20:48:11+08:00</lastmod>
   </url>
   
@@ -18,11 +28,13 @@
   </url>
   
   <url>
-    <loc>https://StupidRabbit29.github.io/categories/</loc>
+    <loc>https://StupidRabbit29.github.io/tags/</loc>
+    <lastmod>2020-09-08T20:48:11+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://StupidRabbit29.github.io/tags/</loc>
+    <loc>https://StupidRabbit29.github.io/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2020-09-08T20:48:11+08:00</lastmod>
   </url>
   
 </urlset>
