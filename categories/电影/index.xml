@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fu Bin&#39;s Blog</title>
-    <link>https://StupidRabbit29.github.io/</link>
-    <description>Recent content on Fu Bin&#39;s Blog</description>
+    <title>电影 on Fu Bin&#39;s Blog</title>
+    <link>https://StupidRabbit29.github.io/categories/%E7%94%B5%E5%BD%B1/</link>
+    <description>Recent content in 电影 on Fu Bin&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 19 Sep 2020 21:15:40 +0800</lastBuildDate>
     
-	<atom:link href="https://StupidRabbit29.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://StupidRabbit29.github.io/categories/%E7%94%B5%E5%BD%B1/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -47,27 +47,6 @@
 总的来说，通过影片还是希望我们能够珍惜现在，把现在过好，只有现在是我们真正拥有的，可以努力提升自己、创造价值的。
 观中队长同志信条解析有感：
 我们不知道过去，就像不知道未来一样。如果从对称性的角度思考确实是这样的，我们现在相信我们知道过去发生的事，是因为我们没有时空机器。</description>
-    </item>
-    
-    <item>
-      <title>Hugo配置教程（一）创建网页并发布到github</title>
-      <link>https://StupidRabbit29.github.io/post/hugo_tutorial/</link>
-      <pubDate>Tue, 08 Sep 2020 20:48:11 +0800</pubDate>
-      
-      <guid>https://StupidRabbit29.github.io/post/hugo_tutorial/</guid>
-      <description>安装Hugo 直接在官网下载Hugo最新版本，并设置环境变量 path ，然后在命令行中输入下列命令以检验是否安装成功。
-hugo version 生成静态站点 使用下面的命令创建名为“myblog”的静态站点：
-hugo new site myblog hugo new site 指令建立了网站的后台目录结构，但是是全空的，除了 /config.toml 中的少量配置内容。
-可以使用下面的指令，预览网站
-hugo server 之后通过浏览器访问http://localhost:1313，就可以看到一个空白的网站了。
-选择网站主题 在站点根目录下，新建文件夹 themes ，然后从官网或其他资源平台下载自己喜欢的Hugo主题，我选择了Hyde，然后用 git 命令，下载这些 GitHub 平台上的主题到文件夹 themes 。
-然后在顶层配置文件 /config.toml 中修改选用的主题。
-上传文章 使用 hugo new 命令，可以在 content 目录下创建文件， content 目录下还可以设置多个目录，用作“section”来划分文章。
-注意文章的属性 draft: false 一定要改为 false ，否则会被认为是草稿，而不进行渲染。
-重新使用 hugo server 即可看到刚刚创建的文章已经显示在网页上了。
-部署到GitHub 使用下面的命令进行部署
-hugo --theme=hyde --baseUrl=&amp;quot;https://StupidRabbit29.github.io/&amp;quot; --buildDrafts 编写脚本文件，简化上传
-hugo --theme=hyde --baseUrl=&amp;quot;https://StupidRabbit29.github.io/&amp;quot; --buildDrafts cd public git add . git commit -m &amp;quot;$1 $2&amp;quot; git push -u origin master cd .</description>
     </item>
     
   </channel>
