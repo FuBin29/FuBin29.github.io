@@ -6,10 +6,24 @@
     <description>Recent content in Posts on Fu Bin&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Sep 2020 20:48:11 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2020 10:00:35 +0800</lastBuildDate>
     
 	<atom:link href="https://StupidRabbit29.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo配置教程（二）网页布局及文章分类</title>
+      <link>https://StupidRabbit29.github.io/post/hugo_tutorial2/</link>
+      <pubDate>Tue, 22 Sep 2020 10:00:35 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/post/hugo_tutorial2/</guid>
+      <description>修改首页的文章样式 文章概要 原本的概要会截取显示非常多的原文内容，我希望能够精简的描述文章内容，同时可以自定义概要。使用下面的方法可以使这部分文字变成每篇博客开头自定义的参数 Description 。
+首先找到文件 /themes/Hyde/layouts/index.html ，然后将对应部分替换为下面的代码。
+&amp;lt;article class=&amp;#34;post&amp;#34;&amp;gt; &amp;lt;h1 class=&amp;#34;post-title&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;{{ .Permalink }}&amp;#34;&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt; &amp;lt;/h1&amp;gt; &amp;lt;time datetime=&amp;#34;{{ .Date.Format &amp;#34;2006-01-02T15:04:05Z0700&amp;#34; }}&amp;#34; class=&amp;#34;post-date&amp;#34;&amp;gt;{{ .Date.Format &amp;#34;2006-01-02 15:04:05&amp;#34; }}&amp;lt;/time&amp;gt; {{ .Description }} &amp;lt;!--{{ if .Truncated }}--&amp;gt; &amp;lt;!--&amp;lt;div class=&amp;#34;read-more-link&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;{{ .RelPermalink }}&amp;#34;&amp;gt;Read More…&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt;--&amp;gt; &amp;lt;!--{{ end }}--&amp;gt; &amp;lt;/article&amp;gt; 这里面的 {{ .Description }} 就是指用文章的参数 Description 作为首页上显示的文章概要。
+同时不希望显示 Read More… 链接按钮。
+日期 上面代码的这部分 .Date.Format &amp;quot;2006-01-02 15:04:05&amp;quot; }} 指明了我希望的日期风格。
+文章分类 分类的原理 Hugo 本身提供非常方便的分类机制。</description>
+    </item>
     
     <item>
       <title>Hugo配置教程（一）创建网页并发布到github</title>
