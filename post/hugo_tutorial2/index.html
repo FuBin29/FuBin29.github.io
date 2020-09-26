@@ -1,30 +1,50 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+
+
+-->
+<script>
+    MathJax = {
+    tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+    fontCache: 'global'
+    }
+    };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="en-us" lang="en-us" >
 <head>
-  <link href="https://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.74.3" />
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="generator" content="Hugo 0.74.3" />
 
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Hugo配置教程（二）网页布局及文章分类 &middot; Fu Bin&#39;s Blog</title>
-  <meta name="description" content="调整网页的侧边栏索引，文章分类，增加按类索引页面，调整网页的内容呈现细节" />
+    <title>Hugo配置教程（二）网页布局及文章分类 &middot; Fu Bin&#39;s Blog</title>
+    <meta name="description" content="调整网页的侧边栏索引，文章分类，增加按类索引页面，调整网页的内容呈现细节" />
 
-  
-  <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/print.css" media="print">
-  <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/poole.css">
-  <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/syntax.css">
-  <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/hyde.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+    
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/print.css" media="print">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/poole.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/syntax.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
 
 
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="/favicon.png">
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
 
-  
-  
+    
+    
 </head>
 
   <body class="theme-base-08 ">
@@ -40,7 +60,7 @@
     <nav>
       <ul class="sidebar-nav">
         <li><a href="https://StupidRabbit29.github.io/">Home</a> </li>
-        
+        <li><a href="/posts/"> Blog </a></li><li><a href="/tags/"> Tags </a></li><li><a href="/about"> About </a></li><li><a href="/index.xml"> RSS </a></li>
       </ul>
     </nav>
 
@@ -50,9 +70,25 @@
 
     <main class="content container">
     <div class="post">
-  <h1>Hugo配置教程（二）网页布局及文章分类</h1>
-  <time datetime=2020-09-22T10:00:35&#43;0800 class="post-date">Tue, Sep 22, 2020</time>
-  <h2 id="修改首页的文章样式">修改首页的文章样式</h2>
+    <h1>Hugo配置教程（二）网页布局及文章分类</h1>
+    <time datetime=2020-09-22T10:00:35&#43;0800 class="post-date">2020-09-22 10:00:35</time>
+    
+    
+    
+    <ul id="tags">
+        
+        <li> <a href="https://StupidRabbit29.github.io/tagshugo">hugo</a> </li>
+        
+    </ul>
+    
+    
+    <ul id="categories">
+        
+        <li><a href="https://StupidRabbit29.github.io/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%8A%80%E6%9C%AF">工具与技术</a> </li>
+        
+    </ul>
+    
+    <h2 id="修改首页的文章样式">修改首页的文章样式</h2>
 <h3 id="文章概要">文章概要</h3>
 <p>原本的概要会截取显示非常多的原文内容，我希望能够精简的描述文章内容，同时可以自定义概要。使用下面的方法可以使这部分文字变成每篇博客开头自定义的参数 <code>Description</code> 。</p>
 <p>首先找到文件 <code>/themes/Hyde/layouts/index.html</code> ，然后将对应部分替换为下面的代码。</p>
@@ -123,15 +159,15 @@ Categories: [&#34;工具与技术&#34;, &#34;电影&#34;, &#34;读书札记&#34;
 ---
 </code></pre></div><p>他是默认的archetype，</p>
 <p>在生成本篇博客时，会自动填充到新建的文章头部，然后按照需要修改为</p>
-<pre><code>---
-title: &quot;Hugo配置教程（二）网页布局及文章分类&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">---
+title: &#34;Hugo配置教程（二）网页布局及文章分类&#34;
 date: 2020-09-22T10:00:35+08:00
 draft: false
-Description: &quot;调整网页的侧边栏索引，文章分类，增加按类索引页面，调整网页的内容呈现细节&quot;
-Tags: [&quot;hugo&quot;]
-Categories: [&quot;工具与技术&quot;]
+Description: &#34;调整网页的侧边栏索引，文章分类，增加按类索引页面，调整网页的内容呈现细节&#34;
+Tags: [&#34;hugo&#34;]
+Categories: [&#34;工具与技术&#34;]
 ---
-</code></pre>
+</code></pre></div>
 </div>
 
 

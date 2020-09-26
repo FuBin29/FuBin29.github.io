@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+
+-->
+<script>
+    MathJax = {
+    tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+    fontCache: 'global'
+    }
+    };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="en-us" lang="en-us" >
+<head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>线性代数笔记（一） 行列式 &middot; Fu Bin&#39;s Blog</title>
+    <meta name="description" content="行列式的基本定义，行列式展开定理以及拉普拉斯定理，克拉默法则与最简单的线性方程组" />
+
+    
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/print.css" media="print">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/poole.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/syntax.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+
+    
+    
+</head>
+
+  <body class="theme-base-08 ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://StupidRabbit29.github.io/"><h1>Fu Bin&#39;s Blog</h1></a>
+      <p class="lead">
+       这里是Fu Bin的个人博客 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://StupidRabbit29.github.io/">Home</a> </li>
+        <li><a href="/posts/"> Blog </a></li><li><a href="/tags/"> Tags </a></li><li><a href="/about"> About </a></li><li><a href="/index.xml"> RSS </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2020. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+    <h1>线性代数笔记（一） 行列式</h1>
+    <time datetime=2020-09-26T09:46:59&#43;0800 class="post-date">2020-09-26 09:46:59</time>
+    
+    
+    
+    <ul id="tags">
+        
+        <li> <a href="https://StupidRabbit29.github.io/tags%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0">线性代数</a> </li>
+        
+    </ul>
+    
+    
+    <ul id="categories">
+        
+        <li><a href="https://StupidRabbit29.github.io/categories/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0">大学课程笔记</a> </li>
+        
+    </ul>
+    
+    <h2 id="全排列和逆序数">全排列和逆序数</h2>
+
+<h3 id="全排列">全排列</h3>
+
+<h3 id="自然排列">自然排列</h3>
+
+<p>正序排列</p>
+
+<h3 id="逆序">逆序</h3>
+
+<p>在一个 <span  class="math">\(n\)</span> 元排列 <span  class="math">\( p_1p_2\dots p_n \)</span> 中，若一个大的数排在一个小的数前面，则称这两个数形成一个逆序，一个排列中所有的逆序的总数叫做这个排列的逆序数，记为 <span  class="math">\( \tau (p_1p_2\dots p_n)\)</span> 。</p>
+
+<h3 id="逆序数的性质">逆序数的性质</h3>
+
+<ul>
+<li>逆序数为奇数的排列称为奇排列，偶数的排列称为偶排列。</li>
+<li>将一个排列中的某两个数的位置互换，其余数不动，得到一个全新排列，称这样的变换为一次对换，将相邻两个数对换，称为相邻对换
+
+<ul>
+<li>一次对换改变奇偶性</li>
+<li>奇排列调换成自然排列的对换次数为奇数，偶排列为偶数</li>
+</ul></li>
+<li>全体 <span  class="math">\(n\)</span> 元排列（<span  class="math">\(n>1\)</span>）的集合中，奇排列和偶排列各一半。</li>
+</ul>
+
+<h2 id="行列式">行列式</h2>
+
+<p>将 <span  class="math">\(n^2\)</span> 个数 <span  class="math">\(a_{ij}(i, j = 1, 2, \dots, n)\)</span> 排成 <span  class="math">\(n\)</span> 行 <span  class="math">\(n\)</span> 列，在其左右加两条竖线，按照下式</p>
+
+<p><span  class="math">\[
+D_n =\begin{vmatrix}a_{11} & a_{12} & \cdots & a_{1n}  \\
+a_{21} & a_{22} & \cdots & a_{2n}  \\
+\vdots & \vdots & \ddots & \vdots  \\
+a_{n1} & a_{n2} & \cdots & a_{nn}  \\
+\end{vmatrix}
+=\sum(-1)^{\tau (p_1p_2\dots p_n)}a_{1p_1}a_{2p_2}\dots a_{np_n}
+\]</span></p>
+
+<p>计算得到一个数，称为 <span  class="math">\(n\)</span> 阶行列式，简记作<span  class="math">\(D = det(a_{ij})\)</span>，其中 <span  class="math">\(\sum\)</span> 表示对所有 <span  class="math">\(n\)</span> 元排列求和。</p>
+
+<p>（行标排成自然排列， 相应的列标是 <span  class="math">\(1, 2, 3, \dots, n\)</span> 的一个 <span  class="math">\(n\)</span> 元排列 <span  class="math">\(p_1p_2\dots p_n\)</span> ）</p>
+
+<p>一些特殊的行列式</p>
+
+<ul>
+<li>上三角行列式</li>
+<li>下三角行列式</li>
+</ul>
+
+<p><span  class="math">\(n\)</span> 阶行列式的另一种定义方法</p>
+
+<p><span  class="math">\[
+D_n=\sum(-1)^{\tau (p_1p_2\dots p_n)}a_{p_11}a_{p_22}\dots a_{p_nn}
+\]</span></p>
+
+<h3 id="行列式的性质">行列式的性质</h3>
+
+<ol>
+<li>行列式与它的转置行列式相等。</li>
+<li>交换行列式的任意两行（列），行列式的值改变符号。</li>
+<li>如果行列式中有两行（列）相同或成比例，则此行列式的值等于零。</li>
+<li>行列式的某一行（列）中所有的元素都乘以同一个常数 $k$ ，等于用数 $k$ 乘此行列式。</li>
+<li>行列式可以按行（列）拆开，注意展开时要逐行、逐列拆开</li>
+</ol>
+
+<p><span  class="math">\[
+\begin{align}D & =\begin{vmatrix}a_{11} & a_{12} & \cdots & a_{1n}  \\\vdots & \vdots &  & \vdots  \\a_{i1}+b_{i1} & a_{i2}+b_{i2} & \cdots & a_{in}+b_{in}  \\\vdots & \vdots &  & \vdots  \\a_{n1} & a_{n2} & \cdots & a_{nn}  \\\end{vmatrix}\\& =\begin{vmatrix}a_{11} & a_{12} & \cdots & a_{1n}  \\\vdots & \vdots &  & \vdots  \\a_{i1} & a_{i2} & \cdots & a_{in}  \\\vdots & \vdots &  & \vdots  \\a_{n1} & a_{n2} & \cdots & a_{nn}  \\\end{vmatrix}+\begin{vmatrix}a_{11} & a_{12} & \cdots & a_{1n}  \\\vdots & \vdots &  & \vdots  \\b_{i1} & b_{i2} & \cdots & b_{in}  \\\vdots & \vdots &   & \vdots  \\a_{n1} & a_{n2} & \cdots & a_{nn}  \\\end{vmatrix}\end{align}
+\]</span></p>
+
+<ol start="6">
+<li>把行列式 $D$ 的某一行（列）的所有元素都乘以同一个数以后加到另一行（列）的对应元素上去，得到的行列式仍为 $D$ 。</li>
+</ol>
+
+<h3 id="计算行列式的方法">计算行列式的方法</h3>
+
+<ul>
+<li>对换行列式的两行</li>
+<li>把行列式的某一行（列）提出公因子 $k$</li>
+<li>把行列式的某一行（列）的 $k$ 倍加到另一行（列）上</li>
+</ul>
+
+<h2 id="行列式的展开定理">行列式的展开定理</h2>
+
+<h3 id="余子式">余子式</h3>
+
+<p>在 <span  class="math">\(D_n\)</span> 中划去元素 <span  class="math">\( a_{ij} \)</span> 所在的第 <span  class="math">\(i\)</span> 行和第 <span  class="math">\(j\)</span> 列后剩下的 <span  class="math">\(n-1\)</span> 行和 <span  class="math">\(n-1\)</span> 列元素，按照原来的相对顺序组成一个 <span  class="math">\(n-1\)</span> 阶行列式，记作 <span  class="math">\(M_{ij}\)</span> ，即</p>
+
+<p><span  class="math">\[
+M_{ij} =\begin{vmatrix}a_{11} & \cdots & a_{1, j-1} & a_{1,j+1} & \cdots & a_{1n}  \\\vdots & & \vdots & \vdots & & \vdots  \\a_{i-1,1} & \cdots & a_{i-1, j-1} & a_{i-1,j+1} & \cdots & a_{i-1,n}  \\a_{i+1,1} & \cdots & a_{i+1, j-1} & a_{i+1,j+1} & \cdots & a_{i+1,n}  \\\vdots & & \vdots & \vdots & & \vdots  \\a_{n1} & \cdots & a_{n, j-1} & a_{n,j+1} & \cdots & a_{nn}  \\\end{vmatrix}\\
+\]</span></p>
+
+<p>称 <span  class="math">\(M_{ij}\)</span> 为元素 $a_{ij}$ 的余子式</p>
+
+<h3 id="代数余子式">代数余子式</h3>
+
+<p><span  class="math">\[
+A_{ij} = (-1)^{i+j}M_{ij}
+\]</span></p>
+
+<p>称 <span  class="math">\(A_{ij}\)</span> 为元素 <span  class="math">\(a_{ij}\)</span> 的代数余子式</p>
+
+<h3 id="克罗内克尔kronecker符号">克罗内克尔（Kronecker）符号</h3>
+
+<p><span  class="math">\[
+\sum^n_{j=1} a_{kj}A_{ij} = \delta_{ki}D,
+\]</span></p>
+
+<p><span  class="math">\[
+\sum^n_{j=1} a_{jk}A_{ji} = \delta_{ki}D
+\]</span></p>
+
+<p>其中，称</p>
+
+<p><span  class="math">\[
+\delta_{ki}= \begin{cases} 1, & k=i,\\ 0, & k\neq i.  \end{cases}
+\]</span></p>
+
+<p>为克罗内克尔（Kronecker）符号，或克氏符号。</p>
+
+<h2 id="拉普拉斯定理">拉普拉斯定理</h2>
+
+<p>在 <span  class="math">\(n\)</span> 阶行列式</p>
+
+<p><span  class="math">\[
+D =\begin{vmatrix}a_{11} & a_{12} & \cdots & a_{1n}  \\
+a_{21} & a_{22} & \cdots & a_{2n}  \\
+\vdots & \vdots &   & \vdots  \\
+a_{n1} & a_{n2} & \cdots & a_{nn}  \\
+\end{vmatrix}
+\]</span></p>
+
+<p>中任意选定 <span  class="math">\(k\)</span> 行（第 <span  class="math">\(i_1, i_2, \dots, i_k\)</span> 行）与 <span  class="math">\(k\)</span> 列（第 <span  class="math">\(j_1, j_2, \dots, j_k\)</span> 列），位于这些行和列的相交处的元素按原来的次序构成的  阶行列式</p>
+
+<p><span  class="math">\[
+N =\begin{vmatrix}a_{i_1,j_1} & a_{i_1,j_2} & \cdots & a_{i_1,j_k}  \\
+a_{i_2,j_1} & a_{i_2,j_2} & \cdots & a_{i_2,j_k}  \\
+\vdots & \vdots &   & \vdots  \\
+a_{i_k,j_1} & a_{i_k,j_2} & \cdots & a_{i_k,j_k}  \\
+\end{vmatrix}
+\]</span></p>
+
+<p>称为该行列式的一个 <span  class="math">\(k\)</span> 阶子式，在 <span  class="math">\(D\)</span> 中去掉这些行和列后剩下的元素按照原来的次序构成一个 <span  class="math">\(n-k\)</span> 阶子式，称为 <span  class="math">\(N\)</span> 的余子式，记为 <span  class="math">\(M\)</span> ，称</p>
+
+<p><span  class="math">\[
+A=(-1)^{i_1 + \dots + i_k + j_1  + \dots + j_k} M
+\]</span></p>
+
+<p>为 <span  class="math">\(N\)</span> 的代数余子式。</p>
+
+<p>在 <span  class="math">\(n\)</span> 阶行列式 <span  class="math">\(D\)</span> 中，任取 <span  class="math">\(k\)</span> 行（列），设由这 <span  class="math">\(k\)</span> 行（列）元素所组成的所有 <span  class="math">\(k\)</span> 阶子式为 <span  class="math">\(N_1, N_2, \dots, N_m (m=C^k_n)\)</span> ，其所对应的代数余子式分别为 <span  class="math">\(A_1, A_2, \dots, A_m\)</span> ，则有</p>
+
+<p><span  class="math">\[
+D = N_1A_1 + N_2A_2 + \dots + N_mA_m
+\]</span></p>
+
+<p>拉普拉斯定理是行列式一行展开公式的推广。</p>
+
+<h2 id="克拉默cramer法则">克拉默(Cramer)法则</h2>
+
+<h3 id="定理">定理</h3>
+
+<p><span  class="math">\[
+Ax = b
+\]</span></p>
+
+<p><span  class="math">\[
+\begin{pmatrix}a_{11} & a_{12} & \cdots & a_{1n}  \\a_{21} & a_{22} & \cdots & a_{2n}  \\\vdots & \vdots & \ddots & \vdots  \\a_{n1} & a_{n2} & \cdots & a_{nn}  \\\end{pmatrix}\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\\\end{pmatrix}=\begin{pmatrix}b_1\\b_2\\\vdots\\b_n\\\end{pmatrix}
+\]</span></p>
+
+<p><span  class="math">\[
+D = \begin{vmatrix}a_{11} & a_{12} & \cdots & a_{1n}  \\a_{21} & a_{22} & \cdots & a_{2n}  \\\vdots & \vdots & \ddots & \vdots  \\a_{n1} & a_{n2} & \cdots & a_{nn}  \\\end{vmatrix}
+\]</span></p>
+
+<p>如果含有 <span  class="math">\(n\)</span> 个方程的 <span  class="math">\(n\)</span> 元线性方程组的系数行列式 <span  class="math">\(D=det(a_{ij})\ne0\)</span> ，则方程组必有唯一解</p>
+
+<p><span  class="math">\[
+x_j = \frac {D_j} D, \ j=1, 2,\dots, n
+\]</span></p>
+
+<p>其中，</p>
+
+<p><span  class="math">\[
+D_j=\begin{vmatrix}a_{11} & \cdots & a_{1,j-1} & b_1 & a_{1,j+1} & \cdots & a_{1n}  \\a_{21} & \cdots & a_{2,j-1} & b_2 & a_{2,j+1} & \cdots & a_{2n}  \\\vdots &  & \vdots &  & \vdots  \\a_{n1} & \cdots & a_{n,j-1} & b_n & a_{n,j+1} & \cdots & a_{nn}  \\\end{vmatrix}, \ j=1, 2,\dots, n
+\]</span></p>
+
+<p>是将系数行列式 <span  class="math">\(D\)</span> 的第 <span  class="math">\(j\)</span> 列元素 <span  class="math">\(a_{1j}, a_{2j}, \dots, a_{nj}\)</span> 对应地替换为方程组的常数项 <span  class="math">\(b_{1}, b_{2}, \dots, b_{n}\)</span> 得到的行列式。</p>
+
+<h3 id="推论">推论</h3>
+
+<p>当 <span  class="math">\(\vec b = \vec 0\)</span> 时，称方程组为齐次线性方程组，当 <span  class="math">\(b_{1}, b_{2}, \dots, b_{n} \)</span> 不全为零时，为非齐次线性方程组。</p>
+
+<p>显然，齐次线性方程组总有解，<span  class="math">\(x_1 = x_2 = \dots = x_n = 0\)</span> 就是一组解，称为零解；如果有一组解不全为零，称为非零解。</p>
+
+<p><span  class="math">\(n\)</span> 元齐次线性方程组只有零解当且仅当它的系数行列式 <span  class="math">\(D\ne0\)</span> ；它有非零解当且仅当它的系数行列式 <span  class="math">\(D=0\)</span> 。</p>
+
+<h3 id="几何直观理解">几何直观理解</h3>
+
+<p>以 <span  class="math">\(x_1 = \frac {D_1} D\)</span> 为例来解释</p>
+
+<p><span  class="math">\[
+Ax = b
+\]</span></p>
+
+<p><span  class="math">\[
+D\begin{vmatrix}
+x_{1} & 0 & \cdots & 0  \\
+x_{2} & 1 & \cdots & 0  \\ 
+\vdots & \vdots & \ddots & \vdots  \\
+x_{n} & 0 & \cdots & 1  \\
+\end{vmatrix}
+=\begin{vmatrix}
+b_{1} & a_{12} & \cdots & a_{1n}  \\
+b_{2} & a_{22} & \cdots & a_{2n}  \\
+\vdots & \vdots & \ddots & \vdots  \\
+b_{n} & a_{n2} & \cdots & a_{nn}  \\
+\end{vmatrix}
+\]</span></p>
+
+<ol>
+<li>将原线性方程组看成 $A$ 代表的线性变换将向量 $x$ 变换到了 $b$ ;</li>
+<li>系数矩阵的行列式 $D$ 代表线性变换 $A$ 对整个空间的缩放程度，关于缩放程度的理解：线性变换将线性空间中一个单位变换为原来单位大小的倍数（如果是二维空间，一个单位就是一个1*1正方形；如果是三维空间，一个单位就是一个单位立方体……）；当然行列式的值是有正负的，代表是否对整个空间的进行了“翻转”，因为给空间定义了方向；</li>
+<li>中间的行列式代表 $\vec x$ 和其余 $n-1$个单位向量围成的“体积”；</li>
+<li>等号右测的行列式代表 $\vec x$ 变换结果 $\vec{b} $ 和其余 $n-1$个基向量（线性变换矩阵的列向量是新的线性空间的基向量，也是原来的基向量——单位向量的变换结果）围成的“体积”；</li>
+<li>原空间中若干向量围成的“体积”在线性变换后，会以系数行列式 $D$ 作为缩放倍数，得到变换后的向量围成的“体积”。</li>
+</ol>
+
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>线性代数 on Fu Bin&#39;s Blog</title>
+    <link>https://StupidRabbit29.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</link>
+    <description>Recent content in 线性代数 on Fu Bin&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Sep 2020 09:46:59 +0800</lastBuildDate>
+    
+	<atom:link href="https://StupidRabbit29.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>线性代数笔记（一） 行列式</title>
+      <link>https://StupidRabbit29.github.io/math/linear_algebra1/</link>
+      <pubDate>Sat, 26 Sep 2020 09:46:59 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/math/linear_algebra1/</guid>
+      <description>全排列和逆序数 全排列 自然排列 正序排列
+逆序 在一个 \(n\) 元排列 \( p_1p_2\dots p_n \) 中，若一个大的数排在一个小的数前面，则称这两个数形成一个逆序，一个排列中所有的逆序的总数叫做这个排列的逆序数，记为 \( \tau (p_1p_2\dots p_n)\) 。
+逆序数的性质  逆序数为奇数的排列称为奇排列，偶数的排列称为偶排列。 将一个排列中的某两个数的位置互换，其余数不动，得到一个全新排列，称这样的变换为一次对换，将相邻两个数对换，称为相邻对换  一次对换改变奇偶性 奇排列调换成自然排列的对换次数为奇数，偶排列为偶数  全体 \(n\) 元排列（\(n1\)）的集合中，奇排列和偶排列各一半。  行列式 将 \(n^2\) 个数 \(a_{ij}(i, j = 1, 2, \dots, n)\) 排成 \(n\) 行 \(n\) 列，在其左右加两条竖线，按照下式
+\[ D_n =\begin{vmatrix}a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn} \\ \end{vmatrix} =\sum(-1)^{\tau (p_1p_2\dots p_n)}a_{1p_1}a_{2p_2}\dots a_{np_n} \]</description>
+    </item>
+    
+  </channel>
+</rss>
