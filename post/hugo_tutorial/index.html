@@ -102,7 +102,7 @@
 <p>在站点根目录下，新建文件夹 <code>themes</code> ，然后从官网或其他资源平台下载自己喜欢的Hugo主题，我选择了Hyde，然后用 git 命令，下载这些 GitHub 平台上的主题到文件夹 <code>themes</code> 。</p>
 <p>然后在顶层配置文件 <code>/config.toml</code> 中修改选用的主题。</p>
 <h2 id="上传文章">上传文章</h2>
-<p>使用 <code>hugo new</code> 命令，可以在 <code>content</code> 目录下创建文件， <code>content</code> 目录下还可以设置多个目录，用作“section”来划分文章。</p>
+<p>使用 <code>hugo new</code> 命令，可以在 <code>content</code> 目录下创建文件， <code>content</code> 目录下还可以设置多个目录，用作“section”来划分文章，使用 <code>hugo new section/title.md</code> 命令创建文件。</p>
 <p>注意文章的属性 <code>draft: false</code> 一定要改为 <code>false</code> ，否则会被认为是草稿，而不进行渲染。</p>
 <p>重新使用 <code>hugo server</code> 即可看到刚刚创建的文章已经显示在网页上了。</p>
 <h2 id="部署到github">部署到GitHub</h2>
