@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Photographies on Fu Bin&#39;s Blog</title>
+    <link>https://StupidRabbit29.github.io/photography/</link>
+    <description>Recent content in Photographies on Fu Bin&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Sep 2021 11:18:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://StupidRabbit29.github.io/photography/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>西藏之旅</title>
+      <link>https://StupidRabbit29.github.io/photography/tibet/</link>
+      <pubDate>Thu, 02 Sep 2021 11:18:25 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/photography/tibet/</guid>
+      <description>摄影器材 Fujifilm X-H1
+XF18-55 F2.8-4 R LM OIS
+XF50-140 F2.8 R LM OIS WR
+精选图片 </description>
+    </item>
+    
+  </channel>
+</rss>
