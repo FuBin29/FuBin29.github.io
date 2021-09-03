@@ -81,10 +81,10 @@ Their frail deeds might have danced in a green bay,</description>
     
     <item>
       <title>Hugo配置教程（二）网页布局及文章分类</title>
-      <link>https://StupidRabbit29.github.io/post/hugo_tutorial2/</link>
+      <link>https://StupidRabbit29.github.io/tools/hugo_tutorial2/</link>
       <pubDate>Tue, 22 Sep 2020 10:00:35 +0800</pubDate>
       
-      <guid>https://StupidRabbit29.github.io/post/hugo_tutorial2/</guid>
+      <guid>https://StupidRabbit29.github.io/tools/hugo_tutorial2/</guid>
       <description>修改首页的文章样式 文章概要 原本的概要会截取显示非常多的原文内容，我希望能够精简的描述文章内容，同时可以自定义概要。使用下面的方法可以使这部分文字变成每篇博客开头自定义的参数 Description 。
 首先找到文件 /themes/Hyde/layouts/index.html ，然后将对应部分替换为下面的代码。
 &amp;lt;article class=&amp;#34;post&amp;#34;&amp;gt; &amp;lt;h1 class=&amp;#34;post-title&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;{{ .Permalink }}&amp;#34;&amp;gt;{{ .Title }}&amp;lt;/a&amp;gt; &amp;lt;/h1&amp;gt; &amp;lt;time datetime=&amp;#34;{{ .Date.Format &amp;#34;2006-01-02T15:04:05Z0700&amp;#34; }}&amp;#34; class=&amp;#34;post-date&amp;#34;&amp;gt;{{ .Date.Format &amp;#34;2006-01-02 15:04:05&amp;#34; }}&amp;lt;/time&amp;gt; {{ .Description }} &amp;lt;!--{{ if .Truncated }}--&amp;gt; &amp;lt;!--&amp;lt;div class=&amp;#34;read-more-link&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;{{ .RelPermalink }}&amp;#34;&amp;gt;Read More…&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt;--&amp;gt; &amp;lt;!--{{ end }}--&amp;gt; &amp;lt;/article&amp;gt; 这里面的 {{ .Description }} 就是指用文章的参数 Description 作为首页上显示的文章概要。
@@ -139,10 +139,10 @@ Their frail deeds might have danced in a green bay,</description>
     
     <item>
       <title>Hugo配置教程（一）创建网页并发布到github</title>
-      <link>https://StupidRabbit29.github.io/post/hugo_tutorial/</link>
+      <link>https://StupidRabbit29.github.io/tools/hugo_tutorial/</link>
       <pubDate>Tue, 08 Sep 2020 20:48:11 +0800</pubDate>
       
-      <guid>https://StupidRabbit29.github.io/post/hugo_tutorial/</guid>
+      <guid>https://StupidRabbit29.github.io/tools/hugo_tutorial/</guid>
       <description>安装Hugo 直接在官网下载Hugo最新版本，并设置环境变量 path ，然后在命令行中输入下列命令以检验是否安装成功。
 hugo version 生成静态站点 使用下面的命令创建名为“myblog”的静态站点：
 hugo new site myblog hugo new site 指令建立了网站的后台目录结构，但是是全空的，除了 /config.toml 中的少量配置内容。
@@ -154,7 +154,7 @@ hugo server 之后通过浏览器访问http://localhost:1313，就可以看到�
 注意文章的属性 draft: false 一定要改为 false ，否则会被认为是草稿，而不进行渲染。
 重新使用 hugo server 即可看到刚刚创建的文章已经显示在网页上了。
 部署到GitHub 使用下面的命令进行部署
-hugo --theme=hyde --baseUrl=&amp;quot;https://StupidRabbit29.github.io/&amp;quot; --buildDrafts 编写脚本文件，简化上传
+hugo --theme=hyde --baseUrl=&amp;quot;https://StupidRabbit29.github.io/&amp;quot; --buildDrafts 编写脚本文件 push.sh ，简化上传
 hugo --theme=hyde --baseUrl=&amp;quot;https://StupidRabbit29.github.io/&amp;quot; --buildDrafts cd public git add .</description>
     </item>
     

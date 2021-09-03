@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+
+-->
+<script>
+    MathJax = {
+    tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+    fontCache: 'global'
+    }
+    };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="en-us" lang="en-us" >
+<head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hugo配置教程（一）创建网页并发布到github &middot; Fu Bin&#39;s Blog</title>
+    <meta name="description" content="静态网站的快速入门配置，并且部署到GitHub" />
+
+    
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/print.css" media="print">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/poole.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/syntax.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+
+    
+    
+</head>
+
+  <body class="theme-base-08 ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://StupidRabbit29.github.io/"><h1>Fu Bin&#39;s Blog</h1></a>
+      <p class="lead">
+       这里是Fu Bin的个人博客 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://StupidRabbit29.github.io/">Home</a> </li>
+        <li><a href="/posts/"> Blog </a></li><li><a href="/tags/"> Tags </a></li><li><a href="/about"> About </a></li><li><a href="/index.xml"> RSS </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2021. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+    <h1>Hugo配置教程（一）创建网页并发布到github</h1>
+    <time datetime=2020-09-08T20:48:11&#43;0800 class="post-date">2020-09-08 20:48:11</time>
+    
+    
+    
+    <ul id="tags">
+        
+        <li> <a href="https://StupidRabbit29.github.io/tagshugo">hugo</a> </li>
+        
+    </ul>
+    
+    
+    <ul id="categories">
+        
+        <li><a href="https://StupidRabbit29.github.io/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%8A%80%E6%9C%AF">工具与技术</a> </li>
+        
+    </ul>
+    
+    <h2 id="安装hugo">安装Hugo</h2>
+<p>直接在官网下载Hugo最新版本，并设置环境变量 <code>path</code> ，然后在命令行中输入下列命令以检验是否安装成功。</p>
+<pre><code>hugo version
+</code></pre><h2 id="生成静态站点">生成静态站点</h2>
+<p>使用下面的命令创建名为“myblog”的静态站点：</p>
+<pre><code>hugo new site myblog
+</code></pre><p><code>hugo new site</code> 指令建立了网站的后台目录结构，但是是全空的，除了 <code>/config.toml</code> 中的少量配置内容。</p>
+<p>可以使用下面的指令，预览网站</p>
+<pre><code>hugo server
+</code></pre><p>之后通过浏览器访问http://localhost:1313，就可以看到一个空白的网站了。</p>
+<h2 id="选择网站主题">选择网站主题</h2>
+<p>在站点根目录下，新建文件夹 <code>themes</code> ，然后从官网或其他资源平台下载自己喜欢的Hugo主题，我选择了Hyde，然后用 git 命令，下载这些 GitHub 平台上的主题到文件夹 <code>themes</code> 。</p>
+<p>然后在顶层配置文件 <code>/config.toml</code> 中修改选用的主题。</p>
+<h2 id="上传文章">上传文章</h2>
+<p>使用 <code>hugo new</code> 命令，可以在 <code>content</code> 目录下创建文件， <code>content</code> 目录下还可以设置多个目录，用作“section”来划分文章，使用 <code>hugo new section/title.md</code> 命令创建文件。</p>
+<p>注意文章的属性 <code>draft: false</code> 一定要改为 <code>false</code> ，否则会被认为是草稿，而不进行渲染。</p>
+<p>重新使用 <code>hugo server</code> 即可看到刚刚创建的文章已经显示在网页上了。</p>
+<h2 id="部署到github">部署到GitHub</h2>
+<p>使用下面的命令进行部署</p>
+<pre><code>hugo --theme=hyde --baseUrl=&quot;https://StupidRabbit29.github.io/&quot; --buildDrafts
+</code></pre><p>编写脚本文件 <code>push.sh</code> ，简化上传</p>
+<pre><code>hugo --theme=hyde --baseUrl=&quot;https://StupidRabbit29.github.io/&quot; --buildDrafts
+cd public
+git add .
+git commit -m &quot;$1 $2&quot;
+git push -u origin master
+cd ..
+</code></pre><p>部署时使用命令 <code>push.sh [date] [time]</code></p>
+<p>或使用 <code>.bat</code> 文件格式，双击执行</p>
+<pre><code>hugo --theme=hyde --baseUrl=&quot;https://StupidRabbit29.github.io/&quot; --buildDrafts
+cd public
+git add .
+git commit -m &quot;%DATE% %RANDOM%&quot;
+git push -u origin master
+cd ..
+</code></pre>
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>

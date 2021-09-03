@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+
+-->
+<script>
+    MathJax = {
+    tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+    fontCache: 'global'
+    }
+    };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="en-us" lang="en-us" >
+<head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hugo配置教程（二）网页布局及文章分类 &middot; Fu Bin&#39;s Blog</title>
+    <meta name="description" content="调整网页的侧边栏索引，文章分类，增加按类索引页面，调整网页的内容呈现细节" />
+
+    
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/print.css" media="print">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/poole.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/syntax.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+
+    
+    
+</head>
+
+  <body class="theme-base-08 ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://StupidRabbit29.github.io/"><h1>Fu Bin&#39;s Blog</h1></a>
+      <p class="lead">
+       这里是Fu Bin的个人博客 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://StupidRabbit29.github.io/">Home</a> </li>
+        <li><a href="/posts/"> Blog </a></li><li><a href="/tags/"> Tags </a></li><li><a href="/about"> About </a></li><li><a href="/index.xml"> RSS </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2021. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+    <h1>Hugo配置教程（二）网页布局及文章分类</h1>
+    <time datetime=2020-09-22T10:00:35&#43;0800 class="post-date">2020-09-22 10:00:35</time>
+    
+    
+    
+    <ul id="tags">
+        
+        <li> <a href="https://StupidRabbit29.github.io/tagshugo">hugo</a> </li>
+        
+    </ul>
+    
+    
+    <ul id="categories">
+        
+        <li><a href="https://StupidRabbit29.github.io/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%8A%80%E6%9C%AF">工具与技术</a> </li>
+        
+    </ul>
+    
+    <h2 id="修改首页的文章样式">修改首页的文章样式</h2>
+<h3 id="文章概要">文章概要</h3>
+<p>原本的概要会截取显示非常多的原文内容，我希望能够精简的描述文章内容，同时可以自定义概要。使用下面的方法可以使这部分文字变成每篇博客开头自定义的参数 <code>Description</code> 。</p>
+<p>首先找到文件 <code>/themes/Hyde/layouts/index.html</code> ，然后将对应部分替换为下面的代码。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">article</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post&#34;</span>&gt;
+  &lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post-title&#34;</span>&gt;
+    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Permalink }}&#34;</span>&gt;{{ .Title }}&lt;/<span style="color:#f92672">a</span>&gt;
+  &lt;/<span style="color:#f92672">h1</span>&gt;
+  &lt;<span style="color:#f92672">time</span> <span style="color:#a6e22e">datetime</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Date.Format &#34;</span><span style="color:#a6e22e">2006-01-02T15:04:05Z0700</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">}}&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post-date&#34;</span>&gt;{{ .Date.Format &#34;2006-01-02 15:04:05&#34; }}&lt;/<span style="color:#f92672">time</span>&gt;
+  {{ .Description }}
+  <span style="color:#75715e">&lt;!--{{ if .Truncated }}--&gt;</span>
+  <span style="color:#75715e">&lt;!--&lt;div class=&#34;read-more-link&#34;&gt;
+</span><span style="color:#75715e">    &lt;a href=&#34;{{ .RelPermalink }}&#34;&gt;Read More…&lt;/a&gt;
+</span><span style="color:#75715e">  &lt;/div&gt;--&gt;</span>
+  <span style="color:#75715e">&lt;!--{{ end }}--&gt;</span>
+&lt;/<span style="color:#f92672">article</span>&gt;
+</code></pre></div><p>这里面的 <code>{{ .Description }}</code> 就是指用文章的参数 <code>Description</code> 作为首页上显示的文章概要。</p>
+<p>同时不希望显示 <code>Read More…</code> 链接按钮。</p>
+<h3 id="日期">日期</h3>
+<p>上面代码的这部分 <code>.Date.Format &quot;2006-01-02 15:04:05&quot; }}</code> 指明了我希望的日期风格。</p>
+<h2 id="文章分类">文章分类</h2>
+<h3 id="分类的原理">分类的原理</h3>
+<p>Hugo 本身提供非常方便的分类机制。</p>
+<p>目前我的博客使用 <code>tag</code> 和 <code>category</code> 两级分类</p>
+<p>例如下面的是我希望的分类目标</p>
+<pre><code class="language-ascii" data-lang="ascii">工具与技术
+    hugo
+        Hugo配置教程（一）
+        Hugo配置教程（二）
+        ……
+    Linux
+        ……
+电影
+    科幻
+    	……
+    剧情
+    	《信条》
+    	……
+    动作
+        《信条》
+        ……
+    爱情
+        ……
+    ……
+读书札记
+	……
+大学课程笔记
+    高等数学
+        高数笔记（一）
+        高数笔记（二）
+        ……
+    线性代数
+        线代笔记（一）
+        线代笔记（二）
+        ……
+    ……
+</code></pre><h3 id="具体情况">具体情况</h3>
+<p>按照上面的分类目标，第一级用 <code>category</code> ，第二级用 <code>tag</code> ，第三级就是文章了。</p>
+<h3 id="archetype">archetype</h3>
+<p>用于简化每次创建新文章时的参数定义</p>
+<p>例如 default.md 中定义如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">---
+title: &#34;{{ replace .Name &#34;-&#34; &#34; &#34; | title }}&#34;
+date: {{ .Date }}
+draft: false
+Description: &#34;&#34;
+Tags: [&#34;hugo&#34;, &#34;Linux&#34;]
+Categories: [&#34;工具与技术&#34;, &#34;电影&#34;, &#34;读书札记&#34;, &#34;大学课程笔记&#34;]
+---
+</code></pre></div><p>他是默认的archetype，</p>
+<p>在生成本篇博客时，会自动填充到新建的文章头部，然后按照需要修改为</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">---
+title: &#34;Hugo配置教程（二）网页布局及文章分类&#34;
+date: 2020-09-22T10:00:35+08:00
+draft: false
+Description: &#34;调整网页的侧边栏索引，文章分类，增加按类索引页面，调整网页的内容呈现细节&#34;
+Tags: [&#34;hugo&#34;]
+Categories: [&#34;工具与技术&#34;]
+---
+</code></pre></div>
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>
