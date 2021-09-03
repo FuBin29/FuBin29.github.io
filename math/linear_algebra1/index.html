@@ -332,49 +332,54 @@ b_{n} & a_{n2} & \cdots & a_{nn}  \\
 
 <p><strong>习题一</strong></p>
 
-<p><span  class="math">\(D_n=det\left(a_{ij}\right)\)</span> ，其中 <span  class="math">\(a_{ij}=|i-j|\)</span> ，求解 <span  class="math">\(D_n\)</span> 。
-$$
-D = \begin{vmatrix}
-0 &amp; 1 &amp; 2 &amp; \cdots &amp; n-2 &amp; n-1 <br>
-1 &amp; 0 &amp; 1 &amp; \cdots &amp; n-3 &amp; n-2 <br>
-2 &amp; 1 &amp; 0 &amp; \cdots &amp; n-4 &amp; n-3 <br>
-3 &amp; 2 &amp; 1 &amp; \cdots &amp; n-5 &amp; n-4 <br>
-\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots <br>
-n-1 &amp; n-2 &amp; n-3 &amp; \cdots &amp; 1 &amp; 0 \</p>
+<p><span  class="math">\(D_n=det\left(a_{ij}\right)\)</span> ，其中 <span  class="math">\(a_{ij}=|i-j|\)</span> ，求解 <span  class="math">\(D_n\)</span> 。</p>
 
-<h1 id="endvmatrix-">\end{vmatrix} \</h1>
-
-<p>\begin{vmatrix}
-0 &amp; 1 &amp; 2 &amp; \cdots &amp; n-2 &amp; n-1 <br>
-1 &amp; -1 &amp; -1 &amp; \cdots &amp; -1 &amp; -1 <br>
-1 &amp; 1 &amp; -1 &amp; \cdots &amp; -1 &amp; -1 <br>
-1 &amp; 1 &amp; 1 &amp; \cdots &amp; -1 &amp; -1 <br>
-\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots <br>
-1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 &amp; -1 <br>
-\end{vmatrix} =
+<p><span  class="math">\[
+\begin{align}
+D &= 
 \begin{vmatrix}
-0 &amp; 1 &amp; 2 &amp; \cdots &amp; n-2 &amp; n-1 <br>
-1 &amp; -1 &amp; -1 &amp; \cdots &amp; -1 &amp; -1 <br>
-0 &amp; 2 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 <br>
-0 &amp; 0 &amp; 2 &amp; \cdots &amp; 0 &amp; 0 <br>
-\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots <br>
-0 &amp; 0 &amp; 0 &amp; \cdots &amp; 2 &amp; 0 <br>
-\end{vmatrix} <br>
-= (-1)<sup>{n-1}(n-1)2</sup>{n-2}
-$$
-两次变换都是从最后一行开始，下面一行减上面一行，最后按第一行展开。</p>
+0 & 1 & 2 & \cdots & n-2 & n-1 \\
+1 & 0 & 1 & \cdots & n-3 & n-2 \\
+2 & 1 & 0 & \cdots & n-4 & n-3 \\
+3 & 2 & 1 & \cdots & n-5 & n-4 \\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+n-1 & n-2 & n-3 & \cdots & 1 & 0 \\
+\end{vmatrix} \\
+&= 
+\begin{vmatrix}
+0 & 1 & 2 & \cdots & n-2 & n-1 \\
+1 & -1 & -1 & \cdots & -1 & -1 \\
+1 & 1 & -1 & \cdots & -1 & -1 \\
+1 & 1 & 1 & \cdots & -1 & -1 \\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+1 & 1 & 1 & \cdots & 1 & -1 \\
+\end{vmatrix} = 
+\begin{vmatrix}
+0 & 1 & 2 & \cdots & n-2 & n-1 \\
+1 & -1 & -1 & \cdots & -1 & -1 \\
+0 & 2 & 0 & \cdots & 0 & 0 \\
+0 & 0 & 2 & \cdots & 0 & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+0 & 0 & 0 & \cdots & 2 & 0 \\
+\end{vmatrix} \\
+&= (-1)^{n-1}(n-1)2^{n-2} \\
+\end{align}
+\]</span></p>
+
+<p>两次变换都是从最后一行开始，下面一行减上面一行，最后按第一行展开。</p>
 
 <p><strong>习题二</strong></p>
 
-<p>证明：奇数阶反对称行列式等于零（<span  class="math">\(D=det(a_{ij})\)</span> 中 <span  class="math">\(a_{ij}=a_{ji}\)</span>）。
-<span  class="math">\(
+<p>证明：奇数阶反对称行列式等于零（<span  class="math">\(D=det(a_{ij})\)</span> 中 <span  class="math">\(a_{ij}=a_{ji}\)</span>）。</p>
+
+<p><span  class="math">\[
 \begin{align}
 2 D & = \sum (-1)^{\tau(p_1p_2\dots p_n)}a_{1p_1}a_{2p_2} \dots a_{np_n} + \sum (-1)^{\tau(p_1p_2\dots p_n)}a_{p_1 1}a_{p_22} \dots a_{p_nn} \\
 & = \sum (-1)^{\tau(p_1p_2\dots p_n)}a_{1p_1}a_{2p_2} \dots a_{np_n} + \sum (-1)^{\tau(p_1p_2\dots p_n) + n}a_{1p_1}a_{2p_2} \dots a_{np_n} \\
 & = \sum (-1)^{\tau(p_1p_2\dots p_n)}a_{1p_1}a_{2p_2} \dots a_{np_n} - \sum (-1)^{\tau(p_1p_2\dots p_n)}a_{1p_1}a_{2p_2} \dots a_{np_n} \\
 & = 0
 \end{align}
-\)</span></p>
+\]</span></p>
 
 </div>
 
