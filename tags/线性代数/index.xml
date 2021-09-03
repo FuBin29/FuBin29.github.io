@@ -6,10 +6,29 @@
     <description>Recent content in 线性代数 on Fu Bin&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Sep 2020 09:46:59 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 03 Sep 2021 23:07:27 +0800</lastBuildDate>
     
 	<atom:link href="https://StupidRabbit29.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>线性代数笔记（二） 矩阵</title>
+      <link>https://StupidRabbit29.github.io/math/linear_algebra2/</link>
+      <pubDate>Fri, 03 Sep 2021 23:07:27 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/math/linear_algebra2/</guid>
+      <description>矩阵的定义及运算 \[ AB = C \]
+对上面的矩阵乘法的解析：
+ $A$ 的一行乘 $B$ 的一列，得到 $C$ 某个位置的一个数 $C$ 的行是 $B$ 的行的组合 $C$ 的列是 $A$ 的列的组合 $A$ 的一列乘 $B$ 的一行（ $A$ 的列号等于 $B$ 的行号），得到的结果是一个矩阵（和 $C$ 一样大），所有矩阵相加得到 $C$ 分块矩阵相乘  逆矩阵 首先，矩阵的逆是对方阵讨论的。
+如果一个方阵可逆，就称这个方阵是可逆的，非奇异的；反之，称它奇异的。
+不可逆的标准定义：
+如果 $ \exist \vec{x}, \vec{x} \ne \vec{0}, $ 使得 $ A\vec{x} = \vec{0},$ 则 $A$ 不可逆
+采用反证法证明：假设 $A$ 可逆
+$\vec{x} = A^{-1}A\vec{x} = A^{-1}\vec{0} = \vec{0}$
+如何求 $A^{-1}$
+矩阵的秩和初等变换 矩阵消元和多元方程组消元求解是同一回事，只是以矩阵的形式简化了格式。
+最终的目的是得到上三角矩阵，即对角线上的“主元”不能为0，而对角线下方的下三角全为0。</description>
+    </item>
     
     <item>
       <title>线性代数笔记（一） 行列式</title>

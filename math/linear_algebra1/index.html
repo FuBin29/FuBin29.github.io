@@ -84,7 +84,7 @@
     
     <ul id="categories">
         
-        <li><a href="https://StupidRabbit29.github.io/categories/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0">大学课程笔记</a> </li>
+        <li><a href="https://StupidRabbit29.github.io/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0">课程笔记</a> </li>
         
     </ul>
     
@@ -207,12 +207,28 @@ A_{ij} = (-1)^{i+j}M_{ij}
 
 <p>为克罗内克尔（Kronecker）符号，或克氏符号。</p>
 
+<h3 id="范德蒙德vandermonde行列式">范德蒙德（Vandermonde）行列式</h3>
+
+<p><span  class="math">\[
+D_n =\begin{vmatrix}
+1 & 1 & \cdots & 1  \\
+a_{1} & a_{2} & \cdots & a_{n}  \\
+a_{1}^2 & a_{2}^2 & \cdots & a_{n}^2  \\
+\vdots & \vdots &   & \vdots  \\
+a_{1}^{n-1} & a_{2}^{n-1} & \cdots & a_{n}^{n-1}  \\
+\end{vmatrix}
+= \prod_{1 \le j \lt i \le n} (a_i - a_j)
+\]</span></p>
+
+<p>使用数学归纳法，在证明时由 <span  class="math">\(D_n\)</span> 的最后一行开始，后行减去前行的 <span  class="math">\(a_1\)</span> 倍，再按第一列展开。</p>
+
 <h2 id="拉普拉斯定理">拉普拉斯定理</h2>
 
 <p>在 <span  class="math">\(n\)</span> 阶行列式</p>
 
 <p><span  class="math">\[
-D =\begin{vmatrix}a_{11} & a_{12} & \cdots & a_{1n}  \\
+D =\begin{vmatrix}
+a_{11} & a_{12} & \cdots & a_{1n}  \\
 a_{21} & a_{22} & \cdots & a_{2n}  \\
 \vdots & \vdots &   & \vdots  \\
 a_{n1} & a_{n2} & \cdots & a_{nn}  \\
@@ -313,6 +329,54 @@ b_{n} & a_{n2} & \cdots & a_{nn}  \\
 <li>等号右测的行列式代表 $\vec x$ 变换结果 $\vec{b} $ 和其余 $n-1$个基向量（线性变换矩阵的列向量是新的线性空间的基向量，也是原来的基向量——单位向量的变换结果）围成的“体积”；</li>
 <li>原空间中若干向量围成的“体积”在线性变换后，会以系数行列式 $D$ 作为缩放倍数，得到变换后的向量围成的“体积”。</li>
 </ol>
+
+<h2 id="习题">习题</h2>
+
+<p><strong>习题一</strong></p>
+
+<p><span  class="math">\(D_n=det\left(a_{ij}\right)\)</span> ，其中 <span  class="math">\(a_{ij}=|i-j|\)</span> ，求解 <span  class="math">\(D_n\)</span> 。
+$$
+D = \begin{vmatrix}
+0 &amp; 1 &amp; 2 &amp; \cdots &amp; n-2 &amp; n-1 <br>
+1 &amp; 0 &amp; 1 &amp; \cdots &amp; n-3 &amp; n-2 <br>
+2 &amp; 1 &amp; 0 &amp; \cdots &amp; n-4 &amp; n-3 <br>
+3 &amp; 2 &amp; 1 &amp; \cdots &amp; n-5 &amp; n-4 <br>
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots <br>
+n-1 &amp; n-2 &amp; n-3 &amp; \cdots &amp; 1 &amp; 0 \</p>
+
+<h1 id="endvmatrix-">\end{vmatrix} \</h1>
+
+<p>\begin{vmatrix}
+0 &amp; 1 &amp; 2 &amp; \cdots &amp; n-2 &amp; n-1 <br>
+1 &amp; -1 &amp; -1 &amp; \cdots &amp; -1 &amp; -1 <br>
+1 &amp; 1 &amp; -1 &amp; \cdots &amp; -1 &amp; -1 <br>
+1 &amp; 1 &amp; 1 &amp; \cdots &amp; -1 &amp; -1 <br>
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots <br>
+1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 &amp; -1 <br>
+\end{vmatrix} =
+\begin{vmatrix}
+0 &amp; 1 &amp; 2 &amp; \cdots &amp; n-2 &amp; n-1 <br>
+1 &amp; -1 &amp; -1 &amp; \cdots &amp; -1 &amp; -1 <br>
+0 &amp; 2 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 <br>
+0 &amp; 0 &amp; 2 &amp; \cdots &amp; 0 &amp; 0 <br>
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots <br>
+0 &amp; 0 &amp; 0 &amp; \cdots &amp; 2 &amp; 0 <br>
+\end{vmatrix} <br>
+= (-1)<sup>{n-1}(n-1)2</sup>{n-2}
+$$
+两次变换都是从最后一行开始，下面一行减上面一行，最后按第一行展开。</p>
+
+<p><strong>习题二</strong></p>
+
+<p>证明：奇数阶反对称行列式等于零（<span  class="math">\(D=det(a_{ij})\)</span> 中 <span  class="math">\(a_{ij}=a_{ji}\)</span>）。
+<span  class="math">\(
+\begin{align}
+2 D & = \sum (-1)^{\tau(p_1p_2\dots p_n)}a_{1p_1}a_{2p_2} \dots a_{np_n} + \sum (-1)^{\tau(p_1p_2\dots p_n)}a_{p_1 1}a_{p_22} \dots a_{p_nn} \\
+& = \sum (-1)^{\tau(p_1p_2\dots p_n)}a_{1p_1}a_{2p_2} \dots a_{np_n} + \sum (-1)^{\tau(p_1p_2\dots p_n) + n}a_{1p_1}a_{2p_2} \dots a_{np_n} \\
+& = \sum (-1)^{\tau(p_1p_2\dots p_n)}a_{1p_1}a_{2p_2} \dots a_{np_n} - \sum (-1)^{\tau(p_1p_2\dots p_n)}a_{1p_1}a_{2p_2} \dots a_{np_n} \\
+& = 0
+\end{align}
+\)</span></p>
 
 </div>
 

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+
+-->
+<script>
+    MathJax = {
+    tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+    fontCache: 'global'
+    }
+    };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="en-us" lang="en-us" >
+<head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>线性代数笔记（二） 矩阵 &middot; Fu Bin&#39;s Blog</title>
+    <meta name="description" content="矩阵的定义及运算，逆矩阵，矩阵的秩与初等变换，初等方阵，矩阵的分块法" />
+
+    
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/print.css" media="print">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/poole.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/syntax.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+
+    
+    
+</head>
+
+  <body class="theme-base-08 ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://StupidRabbit29.github.io/"><h1>Fu Bin&#39;s Blog</h1></a>
+      <p class="lead">
+       这里是Fu Bin的个人博客 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://StupidRabbit29.github.io/">Home</a> </li>
+        <li><a href="/posts/"> Blog </a></li><li><a href="/tags/"> Tags </a></li><li><a href="/about"> About </a></li><li><a href="/index.xml"> RSS </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2021. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+    <h1>线性代数笔记（二） 矩阵</h1>
+    <time datetime=2021-09-03T23:07:27&#43;0800 class="post-date">2021-09-03 23:07:27</time>
+    
+    
+    
+    <ul id="tags">
+        
+        <li> <a href="https://StupidRabbit29.github.io/tags%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0">线性代数</a> </li>
+        
+    </ul>
+    
+    
+    <ul id="categories">
+        
+        <li><a href="https://StupidRabbit29.github.io/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0">课程笔记</a> </li>
+        
+    </ul>
+    
+    <h2 id="矩阵的定义及运算">矩阵的定义及运算</h2>
+
+<p><span  class="math">\[
+AB = C
+\]</span></p>
+
+<p>对上面的矩阵乘法的解析：</p>
+
+<ul>
+<li>$A$ 的一行乘 $B$ 的一列，得到 $C$ 某个位置的一个数</li>
+<li>$C$ 的行是 $B$ 的行的组合</li>
+<li>$C$ 的列是 $A$ 的列的组合</li>
+<li>$A$ 的一列乘 $B$ 的一行（ $A$ 的列号等于 $B$ 的行号），得到的结果是一个矩阵（和 $C$ 一样大），所有矩阵相加得到 $C$</li>
+<li>分块矩阵相乘</li>
+</ul>
+
+<h2 id="逆矩阵">逆矩阵</h2>
+
+<p>首先，矩阵的逆是对方阵讨论的。</p>
+
+<p>如果一个方阵可逆，就称这个方阵是可逆的，非奇异的；反之，称它奇异的。</p>
+
+<p>不可逆的标准定义：</p>
+
+<p>如果 $ \exist \vec{x}, \vec{x} \ne \vec{0}, $ 使得 $ A\vec{x} = \vec{0},$ 则 $A$ 不可逆</p>
+
+<p>采用反证法证明：假设 $A$ 可逆</p>
+
+<p>$\vec{x} = A^{-1}A\vec{x} = A^{-1}\vec{0} = \vec{0}$</p>
+
+<p>如何求 $A^{-1}$</p>
+
+<h2 id="矩阵的秩和初等变换">矩阵的秩和初等变换</h2>
+
+<p>矩阵消元和多元方程组消元求解是同一回事，只是以矩阵的形式简化了格式。</p>
+
+<p>最终的目的是得到上三角矩阵，即对角线上的“主元”不能为0，而对角线下方的下三角全为0。</p>
+
+<p>消元过程为：</p>
+
+<ol>
+<li>第一行的第一个元素选定为主元（假定非零）。</li>
+<li>给第二行加上一定倍数的第一行，使得第二行的第一个元素为0，然后对第三行进行操作，以此类推，直到第一列只有第一个元素非零。</li>
+<li>然后选定第二行的第二个元素为主元（假定非零），以此类推，使第二列第二个元素以下非零。</li>
+<li>继续消元直到得到上三角矩阵。</li>
+</ol>
+
+<p>上面的思路仅仅是最理想的状态，如果某一时刻发现该选定为主元的位置的0，则需要进行行交换，将下面的某一行交换上来（上面的行已经固定了），使得主元位置非零，如果行交换也没法解决问题，则消元法失效。这种情况下原来的方程组中有无效的方程，如果矩阵是方阵，那么它将不可逆。</p>
+
+<p>如果想要完整求解原方程组，还需要对 $\vec{b}$ 也进行同样的消元过程：
+<span  class="math">\(
+\left(
+\begin{array}{c:c}
+A&
+b
+\end{array}
+\right)
+\to
+\left(
+\begin{array}{c:c}
+U&
+c
+\end{array}
+\right)
+\)</span>
+ $U$ 是消元后的上三角矩阵， $\vec{c}$ 是 $\vec{b}$ 消元后的结果。</p>
+
+<p>$A \vec{x} = \vec{b}$ 和 $U \vec{x} = \vec{c}$ 的解是相同的。由于 $U$ 是上三角矩阵，求解等价的方程组是十分容易的，先求解最后一个方程，然后依次回代结果即可。</p>
+
+<h2 id="初等方阵">初等方阵</h2>
+
+<h2 id="矩阵的分块法">矩阵的分块法</h2>
+
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>
