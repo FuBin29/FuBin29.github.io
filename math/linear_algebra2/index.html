@@ -90,6 +90,56 @@
     
     <h2 id="矩阵的定义及运算">矩阵的定义及运算</h2>
 
+<h3 id="基本概念">基本概念</h3>
+
+<p>一个 $m$ 行 $n$ 列的数表称为 $m \times n$ 矩阵 $A=(a_{ij})<em>{m \times n}$ 。 $m=n$ 时，称 $A=(a</em>{ij})_{n \times n}$ 为 $n$ 阶方阵。</p>
+
+<ul>
+<li><p>$a_{11}, a_{22}, \dots , a_{nn}$ 称为此方阵的对角元，所在对角线为主对角线。</p></li>
+
+<li><p>$1 \times n$ 矩阵为 $n$ 维行向量</p></li>
+
+<li><p>$m \times 1$ 矩阵为 $m$ 维列向量</p></li>
+
+<li><p>向量的维数是其中所含元素个数。</p></li>
+</ul>
+
+<p><strong>同型矩阵</strong>：矩阵的行数和列数相等。</p>
+
+<p>关键词：零矩阵、对角矩阵、数量矩阵、单位矩阵、上三角矩阵、下三角矩阵、实矩阵、复矩阵。</p>
+
+<p><strong>线性变换和矩阵一一对应。</strong></p>
+
+<h3 id="矩阵加法">矩阵加法</h3>
+
+<ul>
+<li><p>交换律： $A+B=B+A$</p></li>
+
+<li><p>结合律： $(A+B) +C=A+(B+C)$</p></li>
+
+<li><p>$A+O=O+A=A$</p></li>
+
+<li><p>消去律： $A+C=B+C \Leftrightarrow A=B$</p></li>
+</ul>
+
+<h3 id="数乘运算">数乘运算</h3>
+
+<ul>
+<li><p>结合律： $(kl)A = k(lA)=l(kA)$</p></li>
+
+<li><p>分配律： $k(A+B)=kA+kB, (k+l)A=kA+lA$</p></li>
+</ul>
+
+<h3 id="矩阵乘法">矩阵乘法</h3>
+
+<ul>
+<li>矩阵乘法不满足交换律和消去律</li>
+<li>当两个矩阵满足 $AB=BA$ 时，称 $A$ 与 $B$ 可交换，此时 $A$ 与 $B$ 必为同阶方阵（矩阵大小限制）。</li>
+<li>结合律： $(AB)C=A(BC)$</li>
+<li>分配律： $(A+B)C=AC+BC, A(B+C)=AB+AC$</li>
+<li>两种乘法的结合律： $k(AB)=(kA)B=A(kB)$</li>
+</ul>
+
 <p><span  class="math">\[
 AB = C
 \]</span></p>
@@ -102,6 +152,39 @@ AB = C
 <li>$C$ 的列是 $A$ 的列的组合</li>
 <li>$A$ 的一列乘 $B$ 的一行（ $A$ 的列号等于 $B$ 的行号），得到的结果是一个矩阵（和 $C$ 一样大），所有矩阵相加得到 $C$</li>
 <li>分块矩阵相乘</li>
+</ul>
+
+<h3 id="方阵的方幂">方阵的方幂</h3>
+
+<p>$A^0=E$ ， $A<sup>kA</sup>l=A<sup>{k+l},(A</sup>k)<sup>l=A</sup>{kl}$ ， $k,l$ 为任意正整数。</p>
+
+<p>$A$ 为 $n$ 阶方阵， $f(A)=a_0A<sup>m+a_1A</sup>{m-1}+\dots+a_{m-1}A+a_mE_n$ 为 $A$ 的 $m$ 次多项式。</p>
+
+<h3 id="转置矩阵">转置矩阵</h3>
+
+<p><span  class="math">\[
+(A^T)^T=A \\
+(A+B)^T=A^T+B^T \\
+(kA)^T=kA^T \\
+(AB)^T=B^TA^T,(A_1A_2\dots A_k)^T=A_k^TA_{k-1}^T\dots A_1^T
+\]</span></p>
+
+<h4 id="实对称矩阵">实对称矩阵</h4>
+
+<p>$A=(a_{ij})_{n \times n}$ 为 $n$ 阶实方阵，且 $A^T=A$ 。</p>
+
+<p>若 $A^T=-A$ ，则为实反对称矩阵。</p>
+
+<p>任意一个方阵 $A$ 都可以唯一表示为一个对称矩阵和一个反对称矩阵之和。其中对称矩阵为 $X=\frac 1 2 (A+A^T)$ ，反对称矩阵为 $Y=\frac 1 2 (A-A^T)$ 。</p>
+
+<h3 id="矩阵的行列式">矩阵的行列式</h3>
+
+<p>只有方阵才可以取行列式。</p>
+
+<ul>
+<li>$|A^T|=|A|$</li>
+<li>$|kA|=k^n|A|$</li>
+<li>$|AB|=|A| \cdot |B|$</li>
 </ul>
 
 <h2 id="逆矩阵">逆矩阵</h2>
