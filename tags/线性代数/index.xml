@@ -6,10 +6,19 @@
     <description>Recent content in 线性代数 on Fu Bin&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Sep 2021 23:07:27 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Sep 2021 16:56:16 +0800</lastBuildDate>
     
 	<atom:link href="https://StupidRabbit29.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>矩阵论笔记（一） 线性空间与线性变换</title>
+      <link>https://StupidRabbit29.github.io/math/matrix1/</link>
+      <pubDate>Tue, 07 Sep 2021 16:56:16 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/math/matrix1/</guid>
+      <description>预备知识 集合</description>
+    </item>
     
     <item>
       <title>线性代数笔记（二） 矩阵</title>
