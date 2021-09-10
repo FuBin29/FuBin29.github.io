@@ -176,11 +176,11 @@
 
 <h3 id="线性相关">线性相关</h3>
 
-<p>如果 $x_1,x_2, \dots ,x_m$ 为线性空间 $V$ 中的 $m$ （有限正整数）个向量， $x \in V$ ，且存在数域 $K$ 中的一组数 $c_1,c_2, \dots ,c_m$ ，使
+<p>如果 $x_1,x_2, \cdots ,x_m$ 为线性空间 $V$ 中的 $m$ （有限正整数）个向量， $x \in V$ ，且存在数域 $K$ 中的一组数 $c_1,c_2, \cdots ,c_m$ ，使
 <span  class="math">\(
-x = c_1 x_1 + c_2 x_2 + \dots + c_m x_m
+x = c_1 x_1 + c_2 x_2 + \cdots + c_m x_m
 \)</span>
-则称 $x$ 为向量组 $x_1,x_2, \dots ,x_m$ 的线性组合，也称向量 $x$ 可由 $x_1,x_2, \dots ,x_m$ 线性表示。
+则称 $x$ 为向量组 $x_1,x_2, \cdots ,x_m$ 的线性组合，也称向量 $x$ 可由 $x_1,x_2, \cdots ,x_m$ 线性表示。
 <span  class="math">\(
 x = 
 \begin{pmatrix}
@@ -188,15 +188,15 @@ x_1, x_2, \cdots , x_m
 \end{pmatrix}
 \begin{pmatrix} c_1\\ c_2\\ \vdots \\ c_m\\ \end{pmatrix}
 \)</span>
-需要注意 $x_1,x_2, \dots ,x_m$ 只是抽象的向量， <span  class="math">\(\begin{pmatrix}
+需要注意 $x_1,x_2, \cdots ,x_m$ 只是抽象的向量， <span  class="math">\(\begin{pmatrix}
 x_1, x_2, \cdots , x_m
 \end{pmatrix}\)</span> 并非矩阵。</p>
 
-<p>如果 $c_1,c_2, \dots ,c_m$ 不全为零，且使
+<p>如果 $c_1,c_2, \cdots ,c_m$ 不全为零，且使
 <span  class="math">\(
-c_1 x_1 + c_2 x_2 + \dots + c_m x_m = \pmb{0}
+c_1 x_1 + c_2 x_2 + \cdots + c_m x_m = \pmb{0}
 \)</span>
-则称向量组 $x_1,x_2, \dots ,x_m$ 线性相关，如果不存在这样一组数 $c_1,c_2, \dots ,c_m$ ，则向量组线性无关。注意等号右侧为零向量。</p>
+则称向量组 $x_1,x_2, \cdots ,x_m$ 线性相关，如果不存在这样一组数 $c_1,c_2, \cdots ,c_m$ ，则向量组线性无关。注意等号右侧为零向量。</p>
 
 <ul>
 <li>含有零向量的一组向量一定线性相关</li>
@@ -215,16 +215,16 @@ c_1 x_1 + c_2 x_2 + \dots + c_m x_m = \pmb{0}
 
 <p><strong>证明</strong></p>
 
-<p>设 $x_1,x_2, \dots ,x_m$ 和 $y_1,y_2, \dots ,y<em>n$ 为线性空间 $V$ 中的两个极大线性无关组。则存在矩阵 $A</em>{n \times m},B_{m \times n}$ 使得
+<p>设 $x_1,x_2, \cdots ,x_m$ 和 $y_1,y_2, \cdots ,y<em>n$ 为线性空间 $V$ 中的两个极大线性无关组。则存在矩阵 $A</em>{n \times m},B_{m \times n}$ 使得
 <span  class="math">\(
-(x_1,x_2, \dots ,x_m) = (y_1,y_2, \dots ,y_n) A      \ \ \ (1) \\
-(y_1,y_2, \dots ,y_n) = (x_1,x_2, \dots ,x_m) B      \ \ \ (2)
+(x_1,x_2, \cdots ,x_m) = (y_1,y_2, \cdots ,y_n) A      \ \ \ (1) \\
+(y_1,y_2, \cdots ,y_n) = (x_1,x_2, \cdots ,x_m) B      \ \ \ (2)
 \)</span>
 将式(1)代入式(2)可得
 <span  class="math">\(
-(y_1,y_2, \dots ,y_n) = (x_1,x_2, \dots ,x_m) B = (y_1,y_2, \dots ,y_n) AB      \ \ \ (3)
+(y_1,y_2, \cdots ,y_n) = (x_1,x_2, \cdots ,x_m) B = (y_1,y_2, \cdots ,y_n) AB      \ \ \ (3)
 \)</span>
-另一方面，我们知道 $(y_1,y_2, \dots ,y_n) = (y_1,y_2, \dots ,y_n) E_n $ ，其中， $E_n$ 为 $n$ 阶单位矩阵。由于 $y_1,y_2, \dots ,y_n$ 为极大线性无关组，因此表示系数矩阵应该唯一，也就说， $AB = E_n$ ， 由此有
+另一方面，我们知道 $(y_1,y_2, \cdots ,y_n) = (y_1,y_2, \cdots ,y_n) E_n $ ，其中， $E_n$ 为 $n$ 阶单位矩阵。由于 $y_1,y_2, \cdots ,y_n$ 为极大线性无关组，因此表示系数矩阵应该唯一，也就说， $AB = E_n$ ， 由此有
 <span  class="math">\(
 trace(AB) = trace(E_n) = n      \ \ \ (4)
 \)</span>
@@ -249,14 +249,14 @@ n= trace(AB)= trace(BA)=m
 
 <h3 id="线性空间的基">线性空间的基</h3>
 
-<p>若线性空间 $V$ 的向量满 $x_1,x_2, \dots ,x_r$ 满足：</p>
+<p>若线性空间 $V$ 的向量满 $x_1,x_2, \cdots ,x_r$ 满足：</p>
 
 <ol>
-<li>$x_1,x_2, \dots ,x_r$ 线性无关；</li>
-<li>$V$ 中的任意向量都是 $x_1,x_2, \dots ,x_r$ 的线性组合 $x = c_1 x_1 + c_2 x_2 + \dots + c_r x_r$</li>
+<li>$x_1,x_2, \cdots ,x_r$ 线性无关；</li>
+<li>$V$ 中的任意向量都是 $x_1,x_2, \cdots ,x_r$ 的线性组合 $x = c_1 x_1 + c_2 x_2 + \cdots + c_r x_r$</li>
 </ol>
 
-<p>则称 $x_1,x_2, \dots ,x_r$ 为 $V$ 的一个基或基底，相应地称 $x_i$ 为基向量。</p>
+<p>则称 $x_1,x_2, \cdots ,x_r$ 为 $V$ 的一个基或基底，相应地称 $x_i$ 为基向量。</p>
 
 <p><strong>注意：组成基的向量排列是有顺序的！</strong></p>
 
@@ -266,15 +266,15 @@ n= trace(AB)= trace(BA)=m
 
 <h3 id="坐标系与坐标">坐标系与坐标</h3>
 
-<p>称线性空间 $V^n$ 的一个基为 $x_1,x_2, \dots ,x_n$ 为 $V^n$ 的一个坐标系。设向量 $x \in V^n$ ，它在该坐标系下的线性表示为
+<p>称线性空间 $V^n$ 的一个基为 $x_1,x_2, \cdots ,x_n$ 为 $V^n$ 的一个坐标系。设向量 $x \in V^n$ ，它在该坐标系下的线性表示为
 <span  class="math">\(
-x = c_1 x_1 + c_2 x_2 + \dots + c_n x_n
+x = c_1 x_1 + c_2 x_2 + \cdots + c_n x_n
 \)</span>
-则称 $c_1,c_2, \dots ,c_n$ 为 $x$ 在该坐标系下的坐标或分量，有时我们称 $n$ 维向量 <span  class="math">\((c_1, c_2, \cdots , c_n) ^T\)</span> 为向量 $x$ 在该坐标系下的表示。在不同的坐标系下，同一个向量的坐标一般是不同的。</p>
+则称 $c_1,c_2, \cdots ,c_n$ 为 $x$ 在该坐标系下的坐标或分量，有时我们称 $n$ 维向量 <span  class="math">\((c_1, c_2, \cdots , c_n) ^T\)</span> 为向量 $x$ 在该坐标系下的表示。在不同的坐标系下，同一个向量的坐标一般是不同的。</p>
 
 <ul>
-<li>$x \in V^n$ ，则 $x$ 可以唯一地表示成 $x_1,x_2, \dots ,x_n$ 的线性组合，也就是唯一的坐标 <span  class="math">\((c_1, c_2, \cdots , c_n) ^T\)</span></li>
-<li>由于线性空间的封闭性，任意一组坐标 <span  class="math">\((c_1, c_2, \cdots , c_n) ^T\)</span> 都可以找到 $x \in V^n$ ，使得 $x = c_1 x_1 + c_2 x_2 + \dots + c_n x_n$</li>
+<li>$x \in V^n$ ，则 $x$ 可以唯一地表示成 $x_1,x_2, \cdots ,x_n$ 的线性组合，也就是唯一的坐标 <span  class="math">\((c_1, c_2, \cdots , c_n) ^T\)</span></li>
+<li>由于线性空间的封闭性，任意一组坐标 <span  class="math">\((c_1, c_2, \cdots , c_n) ^T\)</span> 都可以找到 $x \in V^n$ ，使得 $x = c_1 x_1 + c_2 x_2 + \cdots + c_n x_n$</li>
 </ul>
 
 <p>这说明，在给定坐标系下，坐标表示定义了一个 $V$ 和 $R^n$ （或 $C^n$ ）之间的一一映射
@@ -320,17 +320,17 @@ k \odot x = \sigma ^{-1} (k \sigma (x)) = e ^{k \ln x} = x^k
 
 <p>抽象的向量及向量组的有关问题可以转化为通常的向量及向量组的对应问题。</p>
 
-<p>设线性空间 $V^n$ 的基为 $x_1,x_2, \dots ,x_n$ ，抽象的向量 $y_1,y_2, \dots ,y_m$ 在该基下的坐标依次为 $\alpha _1, \alpha _2, \dots, \alpha _m$ ，则有</p>
+<p>设线性空间 $V^n$ 的基为 $x_1,x_2, \cdots ,x_n$ ，抽象的向量 $y_1,y_2, \cdots ,y_m$ 在该基下的坐标依次为 $\alpha _1, \alpha _2, \cdots, \alpha _m$ ，则有</p>
 
 <ol>
-<li>$y$ 可由 $y_1,y_2, \dots ,y_m$ 线性表示的充要条件是 $\alpha$ 可由 $\alpha _1, \alpha _2, \dots, \alpha _m$ 线性表示；</li>
-<li>$y_1,y_2, \dots ,y_m$ 线性相关的充要条件是 $\alpha _1, \alpha _2, \dots, \alpha _m$ 线性相关；</li>
-<li>$y_{i<em>1},y</em>{i<em>2}, \dots ,y</em>{i_r}$ 是 $y_1,y_2, \dots ,y_m$ 的极大线性无关组的充要条件是 $\alpha _{i_1}, \alpha _{i_2}, \dots, \alpha _{i_r}$ 是 $\alpha _1, \alpha _2, \dots, \alpha _m$ 的极大线性无关组。</li>
+<li>$y$ 可由 $y_1,y_2, \cdots ,y_m$ 线性表示的充要条件是 $\alpha$ 可由 $\alpha _1, \alpha _2, \cdots, \alpha _m$ 线性表示；</li>
+<li>$y_1,y_2, \cdots ,y_m$ 线性相关的充要条件是 $\alpha _1, \alpha _2, \cdots, \alpha _m$ 线性相关；</li>
+<li>$y_{i<em>1},y</em>{i<em>2}, \cdots ,y</em>{i_r}$ 是 $y_1,y_2, \cdots ,y_m$ 的极大线性无关组的充要条件是 $\alpha _{i_1}, \alpha _{i_2}, \cdots, \alpha _{i_r}$ 是 $\alpha _1, \alpha _2, \cdots, \alpha _m$ 的极大线性无关组。</li>
 </ol>
 
 <p><strong>思考题</strong></p>
 
-<p>给定一个集合 $V$ ，能否定义不同的加法和数乘使得线性空间 $(V,R, \oplus , \odot )$ 和 $(V,R, \oplus ', \odot ' )$ 维数不同？维数为 $1,2,\dots , \infty $ 。</p>
+<p>给定一个集合 $V$ ，能否定义不同的加法和数乘使得线性空间 $(V,R, \oplus , \odot )$ 和 $(V,R, \oplus ', \odot ' )$ 维数不同？维数为 $1,2,\cdots , \infty $ 。</p>
 
 <p>也就是能否找到不同的线性映射 $\sigma$ 将 $V$ 映射到不同的 $R^n$ 上。但是由于一一映射， $|R| = |R^2|$</p>
 
@@ -350,9 +350,11 @@ k \odot x = \sigma ^{-1} (k \sigma (x)) = e ^{k \ln x} = x^k
 </ul></li>
 </ul>
 
+<p><figure><img src="https://raw.githubusercontent.com/StupidRabbit29/Img-Area/master/img/20210910083818.png" alt="image-20210910083816045"></figure></p>
+
 <h3 id="基变换与坐标变换">基变换与坐标变换</h3>
 
-<p>在线性空间 $V^n$ 中， 同一向量对不同的基，它的坐标表示是不一样的。当由一个基 $x_1,x_2, \dots ,x_n$ 变换为另一个基 $y_1,y_2, \dots ,y_n$ 时，则由基的定义可得
+<p>在线性空间 $V^n$ 中， 同一向量对不同的基，它的坐标表示是不一样的。当由一个基 $x_1,x_2, \cdots ,x_n$ 变换为另一个基 $y_1,y_2, \cdots ,y_n$ 时，则由基的定义可得
 <span  class="math">\(
 \begin{cases}
 y_1 = c_{11} x_1 + c_{21} x_2 + \cdots +c_{n1} x_n \\
@@ -364,7 +366,7 @@ y_n = c_{1n} x_1 + c_{2n} x_2 + \cdots +c_{nn} x_n \\
 或用矩阵形式写为
 <span  class="math">\(
 Y=XC \\
-(y_1,y_2, \dots ,y_n) = (x_1,x_2, \dots ,x_n)
+(y_1,y_2, \cdots ,y_n) = (x_1,x_2, \cdots ,x_n)
 \begin{pmatrix}
 c_{11} & c_{12} & \cdots & c_{1n}  \\
 c_{21} & c_{22} & \cdots & c_{2n}  \\
@@ -388,9 +390,9 @@ Y \alpha = (XC)\alpha = X(C\alpha) = X 0 = 0
 
 <h3 id="向量在不同基下的表示">向量在不同基下的表示</h3>
 
-<p>基 $x_1,x_2, \dots ,x_n$ 变换为另一个基 $y_1,y_2, \dots ,y_n$ 时的过渡矩阵为 $C$ ，向量 $x$ 在基 $x_1,x_2, \dots ,x_n$ 和基 $y_1,y_2, \dots ,y_n$ 下的坐标表示分别为
+<p>基 $x_1,x_2, \cdots ,x_n$ 变换为另一个基 $y_1,y_2, \cdots ,y_n$ 时的过渡矩阵为 $C$ ，向量 $x$ 在基 $x_1,x_2, \cdots ,x_n$ 和基 $y_1,y_2, \cdots ,y_n$ 下的坐标表示分别为
 <span  class="math">\(
-\xi = [\xi _1, \xi _2, \dots, \xi _n]^T, \eta = [\eta _1, \eta _2, \dots , \eta _n]^T
+\xi = [\xi _1, \xi _2, \cdots, \xi _n]^T, \eta = [\eta _1, \eta _2, \cdots , \eta _n]^T
 \)</span>
 则有
 <span  class="math">\(
@@ -400,7 +402,7 @@ x = X \cdot \xi = Y \cdot \eta = (X \cdot C) \cdot \eta = X \cdot (C \cdot \eta)
 
 <h4 id="n-维列向量空间-rn-或-cn-的向量与坐标的关系">$n$ 维列向量空间 $R^n$ （或 $C^n$ ）的向量与坐标的关系</h4>
 
-<p>对于$n$ 维列向量空间 $R^n$ （或 $C^n$ ），存在一个基 ${ e_i , i = 1,2,\dots, n}$ ，其中 $e_i$ 的第 $i$ 个分量为1，其余分量为0；这个基称为 $R^n$ （或 $C^n$ ）的自然基。在自然基下， $R^n$ （或 $C^n$ ）中的任意向量 $x$ 和它在自然基下的表示坐标 $\xi$ 是完全一致的。即
+<p>对于$n$ 维列向量空间 $R^n$ （或 $C^n$ ），存在一个基 ${ e_i , i = 1,2,\cdots, n}$ ，其中 $e_i$ 的第 $i$ 个分量为1，其余分量为0；这个基称为 $R^n$ （或 $C^n$ ）的自然基。在自然基下， $R^n$ （或 $C^n$ ）中的任意向量 $x$ 和它在自然基下的表示坐标 $\xi$ 是完全一致的。即
 <span  class="math">\(
 x = \sum _{i=1} ^ n \xi _i e_i = \sum _{i=1} ^ n x_i e_i 
 \)</span>
@@ -408,27 +410,38 @@ x = \sum _{i=1} ^ n \xi _i e_i = \sum _{i=1} ^ n x_i e_i
 
 <h4 id="n-维列向量空间-rn-或-cn-的基向量组与矩阵的关系">$n$ 维列向量空间 $R^n$ （或 $C^n$ ）的基、向量组与矩阵的关系</h4>
 
-<p>假设在 $R^n$ （或 $C^n$ ）中的另外一个基为 $Y =  (y_1,y_2, \dots ,y_n)$ ，那么 $Y$ 和自然基 $I = (e_1, e_2, \dots, e_n)$ 的过渡矩阵 $B$ 为 $Y=I \cdot B$ 。很明显 $B=Y$ ，即 $B$ 的每个元素和 $Y$ 的每个元素在数值上是完全相同的。因此，很多时候我们将 $R^n$ （或 $C^n$ ）中的基看作一个可逆矩阵，并且进行矩阵的代数运算。究其本质上来说，运算的对象是该基在自然基下的过渡矩阵，很多时候为了简单起见并没有明确说明取自然基。</p>
+<p>假设在 $R^n$ （或 $C^n$ ）中的另外一个基为 $Y =  (y_1,y_2, \cdots ,y_n)$ ，那么 $Y$ 和自然基 $I = (e_1, e_2, \cdots, e_n)$ 的过渡矩阵 $B$ 为 $Y=I \cdot B$ 。很明显 $B=Y$ ，即 $B$ 的每个元素和 $Y$ 的每个元素在数值上是完全相同的。因此，很多时候我们将 $R^n$ （或 $C^n$ ）中的基看作一个可逆矩阵，并且进行矩阵的代数运算。究其本质上来说，运算的对象是该基在自然基下的过渡矩阵，很多时候为了简单起见并没有明确说明取自然基。</p>
 
-<p>同样的，对于 $R^n$ （或 $C^n$ ）中的向量组 $Y =  (y_1,y_2, \dots ,y_r)$ ，我们也可以看作矩阵，进行矩阵运算。从严格意义上说，其实作为矩阵的 $Y$ 只不过表示的是作为向量组的 $Y$ 的在自然基下的坐标表示组成矩阵。由于在数值上完全相同，因此很多时候我们可以使用同样的符号，并且省略自然基的表示。</p>
+<p>同样的，对于 $R^n$ （或 $C^n$ ）中的向量组 $Y =  (y_1,y_2, \cdots ,y_r)$ ，我们也可以看作矩阵，进行矩阵运算。从严格意义上说，其实作为矩阵的 $Y$ 只不过表示的是作为向量组的 $Y$ 的在自然基下的坐标表示组成矩阵。由于在数值上完全相同，因此很多时候我们可以使用同样的符号，并且省略自然基的表示。</p>
 
 <p>这样的说法。在使用中可以根据上下文进行正确理解和使用。</p>
 
 <h2 id="线性子空间">线性子空间</h2>
 
-<p>设是数域上线性空间</p>
+<p>设 $V_1$ 是数域 $K$ 上线性空间 $V$ 的非空子集合，且对 $V$ 已有的线性运算满足以下条件</p>
 
-<p>对加法封闭</p>
+<ol>
+<li>对加法封闭：若 $x,y \in V_1$ ，则 $x+y \in V_1$</li>
+<li>对数乘封闭：若 $x \in V_1, k \in K$ ，则 $k \cdot x \in V_1$</li>
+</ol>
 
-<p>对数乘封闭</p>
+<p>则称 $V_1$ 为 $V$ 的线性子空间或子空间。</p>
+
+<p>仅由零元素构成的子空间为零子空间。注意：零子空间的维数为0而不是1。 </p>
 
 <p>线性子空间是线性空间，线性空间需要满足的8条性质，可以由上述两条封闭性条件以及子空间是原线性空间的子集证明。</p>
 
-<p>仅有零元素构成的子空间为零子空间，零子空间的维数是0。</p>
+<h3 id="子空间的交和">子空间的交、和</h3>
 
-<p>子空间的和仍为子空间
+<p>设 $V_1$ ， $V_2$ 为数域 $K$ 上的线性空间 $V$ 的子空间，且 $x \in V_1 , y \in V_2$ ，则由 $x+y$ 的全体构成的集合称为 $V_1$ 和 $V_2$ 的和，记为 $V_1+V_2$ 。记 $V_1+V_2= {z|z=x+y, x \in V_1, y \in V_2 }$ 。子空间的交记为 $ V_1 \cap V_2$ 。</p>
+
+<ul>
+<li>子空间的交仍为子空间</li>
+<li>子空间的和仍为子空间</li>
+</ul>
+
+<p>举例证明 $V_1+V_2$ 对加法的封闭性
 <span  class="math">\(
-V_1 + V_2 \\
 x \in V_1 + V_2, y \in V_1 + V_2 \\
 x = x_1 + x_ 2, y = y_1 + y_2 \\
 x + y = x_1 + x_2 + y_1 + y_2 = (x_1 + y_1) + (x_2 + y_2)\\
@@ -436,14 +449,27 @@ x_1 + y_1 \in V_1, x_2 + y_2 \in V_2 \\
 x + y \in V_1 + V_2
 \)</span></p>
 
-<p>交与和的结合律</p>
-
-<p>证明方法为证明两边的集合相等，即证明两个集合互相包含。</p>
-
-<p>子空间和的维数公式
+<p>交与和的结合律
 <span  class="math">\(
+(V_1 \cap V_2) \cap V_3 = V_1 \cap (V_2 \cap V_3) , \\
+(V_1 + V_2) + V_3 = V_1 + (V_2 + V_3) 
+\)</span>
+可以推广到 $n$ 个子空间的情形，且
+<span  class="math">\(
+V_1 \cap V_2 \cap \cdots \cap V_n , \\
+V_1 + V_2 + \cdots + V_n
+\)</span>
+有意义。</p>
+
+<p>结合律的证明方法为证明两边的集合相等，即证明两个集合互相包含。</p>
+
+<h3 id="子空间和的维数公式">子空间和的维数公式</h3>
+
+<p><span  class="math">\[
 \dim V_1 + \dim V_2 = \dim (V_1 + V_2) + \dim (V_1 \cap V_2)
-\)</span></p>
+\]</span></p>
+
+<p>证明思路：从最小的子空间 $ V_1 \cap V<em>2$ 出发构造它的一个基 $X</em>{12}$ ，然后分别扩展成 $V<em>1$ 的一个基 ${X</em>{12}, X_1 }$ 和 $V<em>2$ 的一个基 ${X</em>{12}, X<em>2 }$ ，最后证明向量组 ${X</em>{12}, X_1, X_2 }$ 为 $V_1+V_2$ 的一个基，从而命题得证。</p>
 
 </div>
 
