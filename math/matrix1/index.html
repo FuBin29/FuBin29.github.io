@@ -223,11 +223,13 @@ c_1 x_1 + c_2 x_2 + \cdots + c_m x_m = \pmb{0}
 
 <p><strong>证明</strong></p>
 
-<p>设 $x_1,x_2, \cdots ,x_m$ 和 $y_1,y_2, \cdots ,y<em>n$ 为线性空间 $V$ 中的两个极大线性无关组。则存在矩阵 $$A</em>{n \times m},B_{m \times n}$$ 使得</p>
+<p>设 <span  class="math">\(x_1,x_2, \cdots ,x_m\)</span> 和 <span  class="math">\(y_1,y_2, \cdots ,y_n\)</span> 为线性空间 <span  class="math">\(V\)</span> 中的两个极大线性无关组。则存在矩阵 <span  class="math">\(A_{n \times m}, B_{m \times n}\)</span> 使得</p>
 
 <p><span  class="math">\[
-(x_1,x_2, \cdots ,x_m) = (y_1,y_2, \cdots ,y_n) A      \ \ \ (1)  \\
-(y_1,y_2, \cdots ,y_n) = (x_1,x_2, \cdots ,x_m) B      \ \ \ (2)
+\begin{align}
+& (x_1,x_2, \cdots ,x_m) = (y_1,y_2, \cdots ,y_n) A      \ \ \ (1)  \\
+& (y_1,y_2, \cdots ,y_n) = (x_1,x_2, \cdots ,x_m) B      \ \ \ (2)
+\end{align}
 \]</span></p>
 
 <p>将式(1)代入式(2)可得</p>
@@ -329,8 +331,9 @@ k \odot x & \triangleq \sigma ^{-1}(k \sigma (x))
 
 <p><strong>证明</strong></p>
 
-<p>充分性：可以利用线性空间的定义证明上述加法和数乘满足定义中的8个条件。
-必要性：取 $X$ 为 $V$ 中的一个基，那么 $\sigma(x)$ 定义为 $x$ 在 $X$ 下的表示坐标，那么易验证 $\sigma$ 为 <span  class="math">\( V \to R^n(C^n)\)</span> 的一一映射。</p>
+<p>充分性：可以利用线性空间的定义证明上述加法和数乘满足定义中的8个条件。</p>
+
+<p>必要性：取 $X$ 为 $V$ 中的一个基，那么 $\sigma(x)$ 定义为 $x$ 在 $X$ 下的表示坐标，那么易验证 $\sigma$ 为 <span  class="math">\( V \to R^n(C^n)\)</span> 的一一映射。</p>
 
 <p>线性空间的加法和数乘形式上可以有多种定义，但在代数同构意义下都和 $R^n$ （或 $C^n$ ）上的普通列向量加法和数乘等价。虽然 $n$ 维线性空间有无穷多，但是从代数的角度我们仅仅研究 $n$ 维实（或复）向量空间就足够了。</p>
 
@@ -338,11 +341,12 @@ k \odot x & \triangleq \sigma ^{-1}(k \sigma (x))
 
 <p>线性空间四元组为 $V = R^+ , K = R, x \oplus y = xy, k \odot x = x^k $ ，加法和乘法可以通过定义一一映射为 $\sigma (x) = \ln x$  得到</p>
 
-<p>$$
-x \oplus y = \sigma ^{-1} (\sigma (x) + \sigma (y)) = e ^{(\ln x + \ln y)} = xy \</p>
-
-<p>k \odot x = \sigma ^{-1} (k \sigma (x)) = e ^{k \ln x} = x^k
-$$</p>
+<p><span  class="math">\[
+\begin{align}
+& x \oplus y = \sigma ^{-1} (\sigma (x) + \sigma (y)) = e ^{(\ln x + \ln y)} = xy \\
+& k \odot x = \sigma ^{-1} (k \sigma (x)) = e ^{k \ln x} = x^k
+\end{align}
+\]</span></p>
 
 <p>线性空间的维数为1，1是该空间的零向量，任何不是1的数都可以作为该空间的基，设基为 $x$ ，则任一元素 $y$ 都可以线性表示为 $y = \frac {\ln y} { \ln x} \odot x$ 。上面提到的一一映射 $\sigma (x) = \ln x$  是 $V$ 中元素在以 $e$ 为基时的坐标。</p>
 
@@ -395,17 +399,18 @@ y_n = c_{1n} x_1 + c_{2n} x_2 + \cdots +c_{nn} x_n \\
 
 <p>或用矩阵形式写为</p>
 
-<p>$$
-Y=XC \</p>
-
-<p>(y_1,y_2, \cdots ,y_n) = (x_1,x_2, \cdots ,x<em>n)
+<p><span  class="math">\[
+\begin{align}
+Y & =XC \\
+(y_1,y_2, \cdots ,y_n) & = (x_1,x_2, \cdots ,x_n)
 \begin{pmatrix}
-c</em>{11} &amp; c_{12} &amp; \cdots &amp; c_{1n}  <br>
-c_{21} &amp; c_{22} &amp; \cdots &amp; c_{2n}  <br>
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots  <br>
-c_{n1} &amp; c_{n2} &amp; \cdots &amp; c_{nn}  <br>
+c_{11} & c_{12} & \cdots & c_{1n}  \\
+c_{21} & c_{22} & \cdots & c_{2n}  \\
+\vdots & \vdots & \ddots & \vdots  \\
+c_{n1} & c_{n2} & \cdots & c_{nn}  \\
 \end{pmatrix}
-$$</p>
+\end{align}
+\]</span></p>
 
 <p>称为基变换公式，其中矩阵 $C$ 称为由旧基到新基的过渡矩阵。</p>
 
@@ -416,11 +421,12 @@ $$</p>
 <li>任何一个可逆矩阵都可以看成是线性空间的两个基之间的过渡矩阵，也就是一个基在另一个基下的坐标表示</li>
 </ul>
 
-<p>$$
-C \alpha = 0, \to \alpha = 0  \</p>
-
-<p>Y \alpha = (XC)\alpha = X(C\alpha) = X 0 = 0
-$$</p>
+<p><span  class="math">\[
+\begin{align}
+C \alpha = 0 & , \to \alpha = 0  \\
+Y \alpha = (XC)\alpha = & X(C\alpha) = X 0 = 0 \\
+\end{align}
+\]</span></p>
 
 <h3 id="向量在不同基下的表示">向量在不同基下的表示</h3>
 
@@ -483,25 +489,31 @@ x = \sum _{i=1} ^ n \xi _i e_i = \sum _{i=1} ^ n x_i e_i
 <p>举例证明 $V_1+V_2$ 对加法的封闭性</p>
 
 <p><span  class="math">\[
-x \in V_1 + V_2, y \in V_1 + V_2 \\
-x = x_1 + x_ 2, y = y_1 + y_2 \\
-x + y = x_1 + x_2 + y_1 + y_2 = (x_1 + y_1) + (x_2 + y_2)\\
-x_1 + y_1 \in V_1, x_2 + y_2 \in V_2 \\
-x + y \in V_1 + V_2
+\begin{gathered}[t]
+x \in V_1 + V_2 , y \in V_1 + V_2 \\
+x = x_1 + x_ 2 , y = y_1 + y_2 \\
+x + y = x_1 + x_2 + y_1 + y_2 = (x_1 + y_1) + (x_2 + y_2) \\
+x_1 + y_1 \in V_1 , x_2 + y_2 \in V_2 \\
+x + y \in V_1 + V_2 \\
+\end{gathered}
 \]</span></p>
 
 <p>交与和的结合律</p>
 
 <p><span  class="math">\[
-(V_1 \cap V_2) \cap V_3 = V_1 \cap (V_2 \cap V_3) , \\
-(V_1 + V_2) + V_3 = V_1 + (V_2 + V_3)
+\begin{align}
+& (V_1 \cap V_2) \cap V_3 = V_1 \cap (V_2 \cap V_3) , \\
+& (V_1 + V_2) + V_3 = V_1 + (V_2 + V_3)
+\end{align}
 \]</span></p>
 
 <p>可以推广到 $n$ 个子空间的情形，且</p>
 
 <p><span  class="math">\[
-V_1 \cap V_2 \cap \cdots \cap V_n , \\
-V_1 + V_2 + \cdots + V_n
+\begin{align}
+& V_1 \cap V_2 \cap \cdots \cap V_n , \\
+& V_1 + V_2 + \cdots + V_n
+\end{align}
 \]</span></p>
 
 <p>有意义。</p>
@@ -514,7 +526,7 @@ V_1 + V_2 + \cdots + V_n
 \dim V_1 + \dim V_2 = \dim (V_1 + V_2) + \dim (V_1 \cap V_2)
 \]</span></p>
 
-<p>证明思路：从最小的子空间 $ V_1 \cap V<em>2$ 出发构造它的一个基 $$X</em>{12}<span  class="math">\( ，然后分别扩展成 $V_1$ 的一个基 \)</span>{X_{12}, X_1 }<span  class="math">\( 和 $V_2$ 的一个基 \)</span>{X_{12}, X<em>2 }<span  class="math">\( ，最后证明向量组 \)</span>{X</em>{12}, X_1, X_2 }$$ 为 $V_1+V_2$ 的一个基，从而命题得证。</p>
+<p>证明思路：从最小的子空间 <span  class="math">\( V_1 \cap V_2\)</span> 出发构造它的一个基 <span  class="math">\(X_{12}\)</span> ，然后分别扩展成 <span  class="math">\(V_1\)</span> 的一个基 <span  class="math">\(\{X_{12}, X_1 \}\)</span> 和 <span  class="math">\(V_2\)</span> 的一个基 <span  class="math">\(\{X_{12}, X_2 \}\)</span> ，最后证明向量组 <span  class="math">\(\{X_{12}, X_1, X_2 \}\)</span> 为 <span  class="math">\(V_1+V_2\)</span> 的一个基，从而命题得证。</p>
 
 <p><strong>证明</strong></p>
 
