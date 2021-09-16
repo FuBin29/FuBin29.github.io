@@ -6,13 +6,25 @@
     <description>Recent content in 课程笔记 on Fu Bin&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Sep 2021 16:56:16 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 16 Sep 2021 23:47:32 +0800</lastBuildDate>
     
 	<atom:link href="https://StupidRabbit29.github.io/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>矩阵论笔记（一） 线性空间与线性变换</title>
+      <title>矩阵论笔记（二） 线性变换</title>
+      <link>https://StupidRabbit29.github.io/math/matrix2/</link>
+      <pubDate>Thu, 16 Sep 2021 23:47:32 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/math/matrix2/</guid>
+      <description>线性映射及矩阵表示 线性变换是线性映射的特例。
+表示究是本质来说是一种映射，它把我们不熟悉或抽象的事物映射为我们熟知或具体的事物。
+抽象的线性空间在一个基下可表示为实或复的列向量空间。同样地，线性空间之间的线性映射都可以表示为矩阵。这正是矩阵的代数本质所在。
+定义：数域相同的线性空间 $X$ 到线性空间 $Y$ 的映射 $T$ 称为线性映射，若 $T$ 满足下列条件： \( \begin{align} &amp; T(x+y)=T(x)+T(y) \\ &amp; T(kx)=kT(x) \end{align} \)</description>
+    </item>
+    
+    <item>
+      <title>矩阵论笔记（一） 线性空间</title>
       <link>https://StupidRabbit29.github.io/math/matrix1/</link>
       <pubDate>Tue, 07 Sep 2021 16:56:16 +0800</pubDate>
       

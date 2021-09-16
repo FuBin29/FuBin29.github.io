@@ -28,8 +28,8 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>矩阵论笔记（一） 线性空间与线性变换 &middot; Fu Bin&#39;s Blog</title>
-    <meta name="description" content="线性空间、线性变换及其矩阵、两个特殊的线性空间：欧式空间和酉空间" />
+    <title>矩阵论笔记（一） 线性空间 &middot; Fu Bin&#39;s Blog</title>
+    <meta name="description" content="线性空间" />
 
     
     <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/print.css" media="print">
@@ -70,7 +70,7 @@
 
     <main class="content container">
     <div class="post">
-    <h1>矩阵论笔记（一） 线性空间与线性变换</h1>
+    <h1>矩阵论笔记（一） 线性空间</h1>
     <time datetime=2021-09-07T16:56:16&#43;0800 class="post-date">2021-09-07 16:56:16</time>
     
     
@@ -475,7 +475,23 @@ x = \sum _{i=1} ^ n \xi _i e_i = \sum _{i=1} ^ n x_i e_i
 
 <p>仅由零元素构成的子空间为零子空间。注意：零子空间的维数为0而不是1。 </p>
 
-<p>线性子空间是线性空间，线性空间需要满足的8条性质，可以由上述两条封闭性条件以及子空间是原线性空间的子集证明。</p>
+<p><strong>证明</strong>：零元素和任一元素的负元素也在子空间中</p>
+
+<p>因为 0 在数域 $K$ 中， $0 \pmb{x} = \pmb{0}$ ，故零元素在子空间中；由于有理数在 $K$ 中， $(-1) \pmb{x} = - \pmb{x}$ ，因此任一元素的负元素也在子空间中。</p>
+
+<p><strong>注</strong>：线性子空间是线性空间，线性空间需要满足的8条性质，可以由上述两条封闭性条件、子空间是原线性空间的子集以及数域的性质证明。</p>
+
+<p><strong>定义</strong>：非零线性空间至少有两个子空间（平凡子空间）：自身和零子空间。</p>
+
+<p><strong>推论</strong>： $\dim V_1 \le \dim V$</p>
+
+<p><strong>定义</strong>：设 $x_1,x_2, \cdots ,x_m$ 是数域 $K$ 上的线性空间 $V$ 的一组向量，其所有可能的线性组合的集合
+<span  class="math">\(
+V_1 = \{ k_1x_1 + \cdots + k_mx_m \} \ \ \  (k_i \in K, \  i = 1,2,\cdots, m)
+\)</span>
+是非空的，且对 $V$ 的线性运算封闭，因此 $V_1$ 是 $V$ 的一个线性子空间，称为由 $x_1,x_2, \cdots ,x_m$ 生成（或张成）的子空间，记为 $L(x_1, x_2, \cdots, x_m) = { k_1x_1 + \cdots + k_mx_m }$</p>
+
+<p>在有限维空间中，它的任意一个子空间都可以由上式表示。</p>
 
 <h3 id="子空间的交和">子空间的交、和</h3>
 
@@ -601,6 +617,106 @@ k_{1}=\cdots=k_{m}=0, \quad p_{1}=\cdots=p_{n_{1}-m}=0
 \]</span></p>
 
 <p>这就证明了向量组 <span  class="math">\(x_{1}, x_{2}, \cdots, x_{m}, y_1, y_2, \cdots, y_{n_1 - m},z_1, z_2, \cdots, z_{n_2 - m}\)</span> 线性无关，因此它是 <span  class="math">\(V_1+V_2\)</span> 的基。</p>
+
+<h3 id="直和">直和</h3>
+
+<p>对于空间的和 <span  class="math">\(V_1+V_2\)</span> ，首先 $0 \in V_1, 0 \in V_2$ ，所以 <span  class="math">\(V_1+V_2\)</span> 中的零向量可以分解为 $0 + 0$ 。如果 <span  class="math">\( V_1 \cap V_2 \ne 0\)</span> ，对于 $x \in V_1 \cap V_2, x \ne 0, -x \in V_1 \cap V_2$ ，可知 $x \in V_1, -x \in V_2$ ，因此 <span  class="math">\(V_1+V_2\)</span> 中的零向量可分解为 $x + (-x)$ 。这样 <span  class="math">\(V_1+V_2\)</span> 中的零向量就会有很多种分解方式。当 <span  class="math">\( V_1 \cap V_2 = 0\)</span> 时，就不会存在这种现象。</p>
+
+<p><strong>定义</strong>：如果 <span  class="math">\(V_1+V_2\)</span> 中任一向量只能唯一地表示为子空间 $V_1$ 的一个向量和子空间 $V_2$ 的一个向量的和，则称 <span  class="math">\(V_1+V_2\)</span> 为 $V_1$ 和 $V_2$ 的直和，记为 <span  class="math">\(V_1 \oplus V_2\)</span> 。</p>
+
+<p><strong>定理</strong>： <span  class="math">\(V_1+V_2\)</span> 为直和的充要条件为 <span  class="math">\( V_1 \cap V_2 = L(0)\)</span> 。</p>
+
+<p>充分性：若 <span  class="math">\( V_1 \cap V_2 = L(0)\)</span> ，则 <span  class="math">\(V_1+V_2\)</span> 为 $V_1$ 和 $V_2$ 的直和。假设元素 $z$ 在 $V_1$ 和 $V_2$ 中存在两种分解 $z = x_1 + y_1, z = x_2 + y_2， x_1 \ne x_2, y_1 \ne y_2$ ，合并可得 $(x_1 - x_2) + (y_1 - y_2) = 0$ ，设 $v = x_1 - x_2 = y_2 - y_1$ ，可知 $v = x_1 - x_2 \in V_1, v = y_2 - y_1 \in V_2 \to v \in V_1 \cap V_2$ ，因为 <span  class="math">\( V_1 \cap V_2 = L(0)\)</span> ，故 <span  class="math">\(v = 0 , \to x_1 = x_2, y_1 = y_2\)</span> ，与假设矛盾，于是 $z$ 的分解唯一。</p>
+
+<p>必要性：如果 <span  class="math">\( V_1 \cap V_2 \ne L(0)\)</span> ，对于 $x \in V_1 \cap V_2, x \ne 0, -x \in V_1 \cap V_2$ ，可知 $x \in V_1, -x \in V_2$ ，因此 <span  class="math">\(V_1+V_2\)</span> 中的零向量可分解为 $x + (-x)$ 。这样 <span  class="math">\(V_1+V_2\)</span> 中的零向量就会有很多种分解方式。与 <span  class="math">\(V_1+V_2\)</span> 为直和的条件矛盾。</p>
+
+<p><strong>推论</strong>： <span  class="math">\(V_1+V_2\)</span> 为直和的充要条件为 <span  class="math">\(\dim (V_1 + V_2) = \dim V_1 + \dim V_2\)</span> 。</p>
+
+<p><strong>推论</strong>：如果 <span  class="math">\(x_{1}, x_{2}, \cdots, x_{k}\)</span> 为 $V<em>1$ 的基， $$y</em>{1}, y_{2}, \cdots, y_{l}<span  class="math">\( 为 $V_2$ 的基，且 \)</span>V_1+V<em>2<span  class="math">\( 为直和，则 \)</span>x</em>{1}, x_{2}, \cdots, x_{k}, y_{1}, y_{2}, \cdots, y_{l}<span  class="math">\( 为 \)</span>V_1 \oplus V_2$$ 的基。</p>
+
+<p><strong>定义</strong>：子空间的直和概念可以推广到多个子空间的情形：设 $V<em>i (i = 1,2,\cdots , s)$ 是线性空间 $V$ 的子空间，如果和 $\sum</em> ^{s} V_i$ 中每个向量的分解式
+<span  class="math">\(
+x = x_1 + \cdots + x_i \ \ (x_i \in V_i, i = 1,2,\cdots , s)
+\)</span>
+是唯一的，则该和为直和，记为 $V_1 \oplus V_2 \oplus \cdots \oplus V_s$ 。</p>
+
+<h3 id="子空间的性质" i="1">子空间的性质</h3>
+
+<ul>
+<li>由几个子空间的交或和构成</li>
+<li>由向量组张成。</li>
+</ul>
+
+<p>如果记单个非零向量 $x$ 对数乘运算封闭构成的一维子空间 $L(x) = { z | z = k \cdot x, k \in K}$ 。可记 $L(x_{1}, x_{2}, \cdots, x_{m}) = L(x_1) + L(x_2) + \cdots + L(x<em>m)$ 。易证 $\dim (L(x</em>{1}, x_{2}, \cdots, x_{m})) \le m$ 。</p>
+
+<p><strong>思考题</strong>：一个 $n$ 维线性空间的真子空间有多少？</p>
+
+<p>解： $2^{n} - 2$ 。</p>
+
+<p><strong>思考题</strong>：若 $V_1, V_2, \cdots, V_m$ 为有限维线性空间 $V$ 的真子空间，证明存在一个向量 $x \in V$ ，但 $x \notin V_1 \cup V_2 \cup \cdots \cup V_m$ 成立。数域满足 $K = R(\text{or} \ C)$</p>
+
+<p>解：设 $V$ 的一个基为 $x_{1}, x_{2}, \cdots, x_{n}$ ，令 $x = x_{1} + x_{2} + \cdots + x_{n}$ ，由于 $V_i$ 是 $V$ 的真子空间，则 $\exists x_j, \  x_j \notin V_i$ ，因此 $\forall V_i , \ x \notin V_i$ ，因此 $x \notin \bigcap _ ^m V_i$ 。</p>
+
+<h3 id="值域和核空间" i="1">值域和核空间</h3>
+
+<h3 id="值域">值域</h3>
+
+<p>设 $A \in R^{m \times n}$ ，以 $a<em>i$ 表示 $A$ 的第 $i$ 个列向量，称子空间 $L(a</em>{1}, a_{2}, \cdots, a_{m})$ 为矩阵 $A$ 的值域（列空间），记为 $R(A) = L(a_{1}, a_{2}, \cdots, a_{m})$ 。 $R(A)$ 还可以这样生成， $R(A) = { Ax | x \in R^n } \subset R^m $ 。</p>
+
+<p>同理可定义 $A^T$ 的值域（ $A$ 的行空间）为 $R(A^T) = { A^T x | x \in R^m } \subset R^n $ 。</p>
+
+<p><strong>矩阵的列秩</strong>：由矩阵的列向量构成的最大无关组的向量个数。 $\dim \  R(A)$
+<strong>矩阵的行秩</strong>：由矩阵的行向量构成的最大无关组的向量个数。 $\dim \  R(A^T)$</p>
+
+<p><strong>核心定理：矩阵的秩等于矩阵的列秩</strong></p>
+
+<p>这里矩阵的秩的定义是用行列式不为0的子式的最大阶数来定义的，假设矩阵的秩为 $r$ ，则存在一个 $r$ 阶子式的行列式非零，易证明这个 $r$ 阶子式所在的 $r$ 个列向量就是矩阵的列空间的一个最大无关组（证明选取的这 $r$ 个列向量线性无关，且任意 $r+1$ 个列向量线性相关）。因此矩阵的秩等于列秩。</p>
+
+<p>由该定理可知
+<span  class="math">\(
+\begin{gathered}[t]
+\text{rank}\  A = \dim \  R(A) \\
+\text{rank}\  A^T = \dim \  R(A^T)
+\end{gathered}
+\)</span>
+又因为 $\text{rank}\  A = \text{rank}\  A^T $ ，有
+<span  class="math">\(
+\text{rank}\  A = \dim \  R(A) = \dim \  R(A^T) = \text{rank}\  A^T
+\)</span>
+即矩阵的行秩等于列秩，综上有矩阵的秩 = 行秩 = 列秩。</p>
+
+<h3 id="核空间">核空间</h3>
+
+<p>设 $A \in R^{m \times n}$ ，称集合 $N(A) = { x | Ax=0}$ 为 $A$ 的核空间（零空间），记为 $N(A)= { x | Ax=0 }$ 。 $N(A)$ 是齐次线性方程组 $Ax=0$ 的解空间，是 $R^n$ 的一个子空间。 $A$ 的核空间的维数称为 $A$ 的零度，记为 $n(A)$ ，即 $n(A) = \dim \  N(A)$ 。
+<span  class="math">\(
+\begin{gathered}[t]
+\text{rank}\  A + n(A) = n \Leftrightarrow 
+\dim R(A) + n(A) = n \\
+\text{rank}\  A^T + n(A^T) = m \Leftrightarrow 
+\dim R(A) + n(A^T) = m \\
+n(A) - n(A^T) = n - m
+\end{gathered}
+\)</span></p>
+
+<p><strong>定理</strong>：设 $V<em>1$ 为数域 $K$ 上的线性空间 $V^n$ 的一个 $m$ 维子空间， $x</em>{1}, x_{2}, \cdots, x_{m}$ 是 $V<em>1$ 的基，则这 $m$ 个基向量必可扩充为 $V^n$ 的一个基。换言之，在 $V^n$ 中可以找到个 $n-m$ 向量 $x</em>{m+1}, x_{m+2}, \cdots, x_{n}$ ，使得 $x_{1}, x_{2}, \cdots, x_{n}$ 是 $V^n$ 的一个基。</p>
+
+<p>使用数学归纳法，一个一个添加原本 $x_{1}, x_{2}, \cdots, x_{m}$ 无法线性表示的向量即可。</p>
+
+<p><strong>证明</strong>： $\dim R(A) + n(A) = n$</p>
+
+<p>思路：构造 $N(A)$ 的一个基 $X_1$ ，将它扩张成 $R_n$ 的一个基 ${ X_1, X_2 }$ ，然后证明 $A X_2$ 为 $R(A)$ 的一个基，从而命题得证。</p>
+
+<p>设 $x_{1}, x_{2}, \cdots, x_{r}$ 是 $N(A)$ 的一个基，将其扩张为 $R<em>n$ 的一个基 $x</em>{1}, x_{2}, \cdots, x_{r}, x_{r+1}, x_{r+2}, \cdots, x_{n}$ 。要证明 $Ax_{r+1}, Ax_{r+2}, \cdots, Ax_{n}$ 是 $R(A)$ 的一个基。</p>
+
+<p>首先证明 $Ax_{r+1}, Ax_{r+2}, \cdots, Ax_{n}$ 线性无关。假设存在一组不全为零的数 $c_{r+1}, c_{r+2}, \cdots, c_{n}$ 使得 $c_{r+1}Ax_{r+1} + c_{r+2}Ax_{r+2} + \cdots + c_{n}Ax_{n} = \pmb{0}$ ，即 $A\sum <em>{i = r+1} ^ {n} c</em>{i}x_{i} = \pmb{0}$ ，因此 $\sum <em>{i = r+1} ^ {n} c</em>{i}x_{i} \in N(A)$ ，由 $x_{1}, x_{2}, \cdots, x_{r}$ 是 $N(A)$ 的一个基， $\sum <em>{i = r+1} ^ {n} c</em>{i}x_{i} = c_{1}x_{1}+c_{2}x_{2}+ \cdots +c_{r}x_{r}$ ，即 $\sum <em>{i = 1} ^ {n} c</em>{i}x_{i} = \pmb{0}$ ，由于 $x_{1}, x_{2}, \cdots, x_{r}, x_{r+1}, x_{r+2}, \cdots, x_{n}$ 为 $R<em>n$ 的一个基，因此 $c</em>{i}=0, i=1,2,\cdots,n$  与假设矛盾，因此 $Ax_{r+1}, Ax_{r+2}, \cdots, Ax_{n}$ 线性无关。</p>
+
+<p>还需证明任意 $x \in R(A)\ \ \to \ \  \exists c_{i}, i=r+1,r+2,\cdots,n, x = \sum <em>{i = r+1} ^ {n} c</em>{i} A x_{i}$ 。因为 $x \in R(A)$ ， $\exists y \in R^n$ ，使得 $x=Ay$ ，且 $y = \sum _ ^{n} c_i x_i$ ， $x = Ay = A \sum _ ^{n} c_i x_i = \sum _ ^{n} c_i A x_i = \sum _ ^{n} c_i A x<em>i$ ，因此 $x$ 可以由 $Ax</em>{r+1}, Ax_{r+2}, \cdots, Ax_{n}$ 线性表示。</p>
+
+<p>综上， $Ax_{r+1}, Ax_{r+2}, \cdots, Ax_{n}$ 是 $R(A)$ 的一个基。</p>
+
+<p><strong>思考题</strong>：若 $A \in C^{n \times n}$ ， $R(A) \oplus N(A)$ 成立吗？举例说明？成立的条件是什么？</p>
+
+<p>解： $R(A)= R(A^2)$</p>
 
 </div>
 
