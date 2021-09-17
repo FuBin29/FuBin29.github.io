@@ -665,7 +665,7 @@ x = x_1 + \cdots + x_i \ \ (x_i \in V_i, i = 1,2,\cdots , s)
 
 <p>设 <span  class="math">\(A \in R^{m \times n}\)</span> ，以 $a<em>i$ 表示 $A$ 的第 $i$ 个列向量，称子空间 $L(a</em>{1}, a_{2}, \cdots, a_{m})$ 为矩阵 $A$ 的值域（列空间），记为 $R(A) = L(a_{1}, a_{2}, \cdots, a_{m})$ 。 $R(A)$ 还可以这样生成， <span  class="math">\(R(A) = \{ Ax | x \in R^n \} \subset R^m \)</span> 。</p>
 
-<p>同理可定义 $A^T$ 的值域（ $A$ 的行空间）为 $R(A^T) = \left{ A^T x | x \in R^m \right} \subset R^n $ 。</p>
+<p>同理可定义 $A^T$ 的值域（ $A$ 的行空间）为 <span  class="math">\(R(A^T) = \left\{ A^T x | x \in R^m \right\} \subset R^n \)</span> 。</p>
 
 <p><strong>矩阵的列秩</strong>：由矩阵的列向量构成的最大无关组的向量个数。 $\dim \  R(A)$
 <strong>矩阵的行秩</strong>：由矩阵的行向量构成的最大无关组的向量个数。 $\dim \  R(A^T)$</p>
@@ -674,23 +674,26 @@ x = x_1 + \cdots + x_i \ \ (x_i \in V_i, i = 1,2,\cdots , s)
 
 <p>这里矩阵的秩的定义是用行列式不为0的子式的最大阶数来定义的，假设矩阵的秩为 $r$ ，则存在一个 $r$ 阶子式的行列式非零，易证明这个 $r$ 阶子式所在的 $r$ 个列向量就是矩阵的列空间的一个最大无关组（证明选取的这 $r$ 个列向量线性无关，且任意 $r+1$ 个列向量线性相关）。因此矩阵的秩等于列秩。</p>
 
-<p>由该定理可知
-<span  class="math">\(
+<p>由该定理可知</p>
+
+<p><span  class="math">\(
 \begin{gathered}[t]
 \text{rank}\  A = \dim \  R(A) \\
 \text{rank}\  A^T = \dim \  R(A^T)
 \end{gathered}
 \)</span>
-又因为 $\text{rank}\  A = \text{rank}\  A^T $ ，有
-<span  class="math">\(
+又因为 $\text{rank}\  A = \text{rank}\  A^T $ ，有</p>
+
+<p><span  class="math">\(
 \text{rank}\  A = \dim \  R(A) = \dim \  R(A^T) = \text{rank}\  A^T
 \)</span>
 即矩阵的行秩等于列秩，综上有矩阵的秩 = 行秩 = 列秩。</p>
 
 <h3 id="核空间">核空间</h3>
 
-<p>设 $A \in R^{m \times n}$ ，称集合 $N(A) = { x | Ax=0}$ 为 $A$ 的核空间（零空间），记为 $N(A)= { x | Ax=0 }$ 。 $N(A)$ 是齐次线性方程组 $Ax=0$ 的解空间，是 $R^n$ 的一个子空间。 $A$ 的核空间的维数称为 $A$ 的零度，记为 $n(A)$ ，即 $n(A) = \dim \  N(A)$ 。
-<span  class="math">\(
+<p>设 $A \in R^{m \times n}$ ，称集合 $N(A) = { x | Ax=0}$ 为 $A$ 的核空间（零空间），记为 $N(A)= { x | Ax=0 }$ 。 $N(A)$ 是齐次线性方程组 $Ax=0$ 的解空间，是 $R^n$ 的一个子空间。 $A$ 的核空间的维数称为 $A$ 的零度，记为 $n(A)$ ，即 $n(A) = \dim \  N(A)$ 。</p>
+
+<p><span  class="math">\[
 \begin{gathered}[t]
 \text{rank}\  A + n(A) = n \Leftrightarrow 
 \dim R(A) + n(A) = n \\
@@ -698,7 +701,7 @@ x = x_1 + \cdots + x_i \ \ (x_i \in V_i, i = 1,2,\cdots , s)
 \dim R(A) + n(A^T) = m \\
 n(A) - n(A^T) = n - m
 \end{gathered}
-\)</span></p>
+\]</span></p>
 
 <p><strong>定理</strong>：设 $V<em>1$ 为数域 $K$ 上的线性空间 $V^n$ 的一个 $m$ 维子空间， $x</em>{1}, x_{2}, \cdots, x_{m}$ 是 $V<em>1$ 的基，则这 $m$ 个基向量必可扩充为 $V^n$ 的一个基。换言之，在 $V^n$ 中可以找到个 $n-m$ 向量 $x</em>{m+1}, x_{m+2}, \cdots, x_{n}$ ，使得 $x_{1}, x_{2}, \cdots, x_{n}$ 是 $V^n$ 的一个基。</p>
 
@@ -708,7 +711,7 @@ n(A) - n(A^T) = n - m
 
 <p>思路：构造 $N(A)$ 的一个基 $X_1$ ，将它扩张成 $R_n$ 的一个基 ${ X_1, X_2 }$ ，然后证明 $A X_2$ 为 $R(A)$ 的一个基，从而命题得证。</p>
 
-<p>设 $x_{1}, x_{2}, \cdots, x_{r}$ 是 $N(A)$ 的一个基，将其扩张为 $R<em>n$ 的一个基 $x</em>{1}, x_{2}, \cdots, x_{r}, x_{r+1}, x_{r+2}, \cdots, x_{n}$ 。要证明 $Ax_{r+1}, Ax_{r+2}, \cdots, Ax_{n}$ 是 $R(A)$ 的一个基。</p>
+<p>设 $x_{1}, x_{2}, \cdots, x_{r}$ 是 $N(A)$ 的一个基，将其扩张为 $R<em>n$ 的一个基 $x</em>{1}, x_{2}, \cdots, x_{r}, x_{r+1}, x_{r+2}, \cdots, x_{n}$ 。要证明 <span  class="math">\(Ax_{r+1}, Ax_{r+2}, \cdots, Ax_{n}\)</span> 是 $R(A)$ 的一个基。</p>
 
 <p>首先证明 $Ax_{r+1}, Ax_{r+2}, \cdots, Ax_{n}$ 线性无关。假设存在一组不全为零的数 $c_{r+1}, c_{r+2}, \cdots, c_{n}$ 使得 $c_{r+1}Ax_{r+1} + c_{r+2}Ax_{r+2} + \cdots + c_{n}Ax_{n} = \pmb{0}$ ，即 $A\sum <em>{i = r+1} ^ {n} c</em>{i}x_{i} = \pmb{0}$ ，因此 $\sum <em>{i = r+1} ^ {n} c</em>{i}x_{i} \in N(A)$ ，由 $x_{1}, x_{2}, \cdots, x_{r}$ 是 $N(A)$ 的一个基， $\sum <em>{i = r+1} ^ {n} c</em>{i}x_{i} = c_{1}x_{1}+c_{2}x_{2}+ \cdots +c_{r}x_{r}$ ，即 $\sum <em>{i = 1} ^ {n} c</em>{i}x_{i} = \pmb{0}$ ，由于 $x_{1}, x_{2}, \cdots, x_{r}, x_{r+1}, x_{r+2}, \cdots, x_{n}$ 为 $R<em>n$ 的一个基，因此 $c</em>{i}=0, i=1,2,\cdots,n$  与假设矛盾，因此 $Ax_{r+1}, Ax_{r+2}, \cdots, Ax_{n}$ 线性无关。</p>
 
