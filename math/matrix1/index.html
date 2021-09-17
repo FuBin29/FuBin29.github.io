@@ -485,8 +485,9 @@ x = \sum _{i=1} ^ n \xi _i e_i = \sum _{i=1} ^ n x_i e_i
 
 <p><strong>推论</strong>： $\dim V_1 \le \dim V$</p>
 
-<p><strong>定义</strong>：设 $x_1,x_2, \cdots ,x_m$ 是数域 $K$ 上的线性空间 $V$ 的一组向量，其所有可能的线性组合的集合
-<span  class="math">\(
+<p><strong>定义</strong>：设 $x_1,x_2, \cdots ,x_m$ 是数域 $K$ 上的线性空间 $V$ 的一组向量，其所有可能的线性组合的集合</p>
+
+<p><span  class="math">\(
 V_1 = \{ k_1x_1 + \cdots + k_mx_m \} \ \ \  (k_i \in K, \  i = 1,2,\cdots, m)
 \)</span>
 是非空的，且对 $V$ 的线性运算封闭，因此 $V_1$ 是 $V$ 的一个线性子空间，称为由 $x_1,x_2, \cdots ,x_m$ 生成（或张成）的子空间，记为 $L(x_1, x_2, \cdots, x_m) = { k_1x_1 + \cdots + k_mx_m }$</p>
@@ -632,22 +633,23 @@ k_{1}=\cdots=k_{m}=0, \quad p_{1}=\cdots=p_{n_{1}-m}=0
 
 <p><strong>推论</strong>： <span  class="math">\(V_1+V_2\)</span> 为直和的充要条件为 <span  class="math">\(\dim (V_1 + V_2) = \dim V_1 + \dim V_2\)</span> 。</p>
 
-<p><strong>推论</strong>：如果 <span  class="math">\(x_{1}, x_{2}, \cdots, x_{k}\)</span> 为 $V<em>1$ 的基， $$y</em>{1}, y_{2}, \cdots, y_{l}<span  class="math">\( 为 $V_2$ 的基，且 \)</span>V_1+V<em>2<span  class="math">\( 为直和，则 \)</span>x</em>{1}, x_{2}, \cdots, x_{k}, y_{1}, y_{2}, \cdots, y_{l}<span  class="math">\( 为 \)</span>V_1 \oplus V_2$$ 的基。</p>
+<p><strong>推论</strong>：如果 <span  class="math">\(x_{1}, x_{2}, \cdots, x_{k}\)</span> 为 <span  class="math">\(V_1\)</span> 的基， <span  class="math">\(y_{1}, y_{2}, \cdots, y_{l}\)</span> 为 <span  class="math">\(V_2\)</span> 的基，且 <span  class="math">\(V_1+V_2\)</span> 为直和，则 <span  class="math">\(x_{1}, x_{2}, \cdots, x_{k}, y_{1}, y_{2}, \cdots, y_{l}\)</span> 为 <span  class="math">\(V_1 \oplus V_2\)</span> 的基。</p>
 
-<p><strong>定义</strong>：子空间的直和概念可以推广到多个子空间的情形：设 $V<em>i (i = 1,2,\cdots , s)$ 是线性空间 $V$ 的子空间，如果和 $\sum</em> ^{s} V_i$ 中每个向量的分解式
-<span  class="math">\(
+<p><strong>定义</strong>：子空间的直和概念可以推广到多个子空间的情形：设 <span  class="math">\(V_i (i = 1,2,\cdots , s)\)</span> 是线性空间 <span  class="math">\(V\)</span> 的子空间，如果和 <span  class="math">\(\sum_{i=1} ^{s} V_i\)</span> 中每个向量的分解式</p>
+
+<p><span  class="math">\(
 x = x_1 + \cdots + x_i \ \ (x_i \in V_i, i = 1,2,\cdots , s)
 \)</span>
 是唯一的，则该和为直和，记为 $V_1 \oplus V_2 \oplus \cdots \oplus V_s$ 。</p>
 
-<h3 id="子空间的性质" i="1">子空间的性质</h3>
+<h3 id="子空间的性质">子空间的性质</h3>
 
 <ul>
 <li>由几个子空间的交或和构成</li>
 <li>由向量组张成。</li>
 </ul>
 
-<p>如果记单个非零向量 $x$ 对数乘运算封闭构成的一维子空间 $L(x) = { z | z = k \cdot x, k \in K}$ 。可记 $L(x_{1}, x_{2}, \cdots, x_{m}) = L(x_1) + L(x_2) + \cdots + L(x<em>m)$ 。易证 $\dim (L(x</em>{1}, x_{2}, \cdots, x_{m})) \le m$ 。</p>
+<p>如果记单个非零向量 $x$ 对数乘运算封闭构成的一维子空间 $L(x) = { z | z = k \cdot x, k \in K}$ 。可记 <span  class="math">\(L(x_{1}, x_{2}, \cdots, x_{m}) = L(x_1) + L(x_2) + \cdots + L(x_m)\)</span> 。易证 <span  class="math">\(\dim (L(x_{1}, x_{2}, \cdots, x_{m})) \le m\)</span> 。</p>
 
 <p><strong>思考题</strong>：一个 $n$ 维线性空间的真子空间有多少？</p>
 
@@ -655,15 +657,15 @@ x = x_1 + \cdots + x_i \ \ (x_i \in V_i, i = 1,2,\cdots , s)
 
 <p><strong>思考题</strong>：若 $V_1, V_2, \cdots, V_m$ 为有限维线性空间 $V$ 的真子空间，证明存在一个向量 $x \in V$ ，但 $x \notin V_1 \cup V_2 \cup \cdots \cup V_m$ 成立。数域满足 $K = R(\text{or} \ C)$</p>
 
-<p>解：设 $V$ 的一个基为 $x_{1}, x_{2}, \cdots, x_{n}$ ，令 $x = x_{1} + x_{2} + \cdots + x_{n}$ ，由于 $V_i$ 是 $V$ 的真子空间，则 $\exists x_j, \  x_j \notin V_i$ ，因此 $\forall V_i , \ x \notin V_i$ ，因此 $x \notin \bigcap _ ^m V_i$ 。</p>
+<p>解：设 $V$ 的一个基为 $x_{1}, x_{2}, \cdots, x_{n}$ ，令 $x = x_{1} + x_{2} + \cdots + x_{n}$ ，由于 $V_i$ 是 $V$ 的真子空间，则 <span  class="math">\(\exists x_j, \  x_j \notin V_i\)</span> ，因此 <span  class="math">\(\forall V_i , \ x \notin V_i\)</span> ，因此 <span  class="math">\(x \notin \bigcap _{i=1} ^m V_i\)</span> 。</p>
 
-<h3 id="值域和核空间" i="1">值域和核空间</h3>
+<h3 id="值域和核空间">值域和核空间</h3>
 
 <h3 id="值域">值域</h3>
 
-<p>设 $A \in R^{m \times n}$ ，以 $a<em>i$ 表示 $A$ 的第 $i$ 个列向量，称子空间 $L(a</em>{1}, a_{2}, \cdots, a_{m})$ 为矩阵 $A$ 的值域（列空间），记为 $R(A) = L(a_{1}, a_{2}, \cdots, a_{m})$ 。 $R(A)$ 还可以这样生成， $R(A) = { Ax | x \in R^n } \subset R^m $ 。</p>
+<p>设 <span  class="math">\(A \in R^{m \times n}\)</span> ，以 $a<em>i$ 表示 $A$ 的第 $i$ 个列向量，称子空间 $L(a</em>{1}, a_{2}, \cdots, a_{m})$ 为矩阵 $A$ 的值域（列空间），记为 $R(A) = L(a_{1}, a_{2}, \cdots, a_{m})$ 。 $R(A)$ 还可以这样生成， <span  class="math">\(R(A) = \{ Ax | x \in R^n \} \subset R^m \)</span> 。</p>
 
-<p>同理可定义 $A^T$ 的值域（ $A$ 的行空间）为 $R(A^T) = { A^T x | x \in R^m } \subset R^n $ 。</p>
+<p>同理可定义 $A^T$ 的值域（ $A$ 的行空间）为 $R(A^T) = \left{ A^T x | x \in R^m \right} \subset R^n $ 。</p>
 
 <p><strong>矩阵的列秩</strong>：由矩阵的列向量构成的最大无关组的向量个数。 $\dim \  R(A)$
 <strong>矩阵的行秩</strong>：由矩阵的行向量构成的最大无关组的向量个数。 $\dim \  R(A^T)$</p>
