@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+
+-->
+<script>
+    MathJax = {
+    tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+    fontCache: 'global'
+    }
+    };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="en-us" lang="en-us" >
+<head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prml3 &middot; Fu Bin&#39;s Blog</title>
+    <meta name="description" content="" />
+
+    
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/print.css" media="print">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/poole.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/syntax.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+
+    
+    
+</head>
+
+  <body class="theme-base-08 ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://StupidRabbit29.github.io/"><h1>Fu Bin&#39;s Blog</h1></a>
+      <p class="lead">
+       这里是Fu Bin的个人博客 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://StupidRabbit29.github.io/">Home</a> </li>
+        <li><a href="/posts/"> Blog </a></li><li><a href="/tags/"> Tags </a></li><li><a href="/about"> About </a></li><li><a href="/index.xml"> RSS </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2021. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+    <h1>Prml3</h1>
+    <time datetime=2021-10-18T12:56:49&#43;0800 class="post-date">2021-10-18 12:56:49</time>
+    
+    
+    
+    <ul id="tags">
+        
+        <li> <a href="https://StupidRabbit29.github.io/tagsprml">PRML</a> </li>
+        
+    </ul>
+    
+    
+    <ul id="categories">
+        
+        <li><a href="https://StupidRabbit29.github.io/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0">课程笔记</a> </li>
+        
+    </ul>
+    
+    <h1 id="判别函数">判别函数</h1>
+<h2 id="线性判别函数">线性判别函数</h2>
+<h3 id="两类问题的判别函数以二维模式样本为例">两类问题的判别函数（以二维模式样本为例）</h3>
+<p>若 $x$ 是二维模式样本 $x = (x_1, x_2)^T$ ，使用直线方程 $d(x) = w_1x_1 + w_2x_2 + w_3 = 0$  来划分两类模式 的样本。则将一个不知类别的模式代入 $d(x)$ ，若 $d(x) \gt 0$ ，则 $x \in Y_1$ ；若 $d(x) \lt 0$ ，则 $x \in Y_2$ 。</p>
+<h3 id="讨论">讨论</h3>
+<p>用判别函数进行模式分类依赖的两个因素</p>
+<ul>
+<li>判别函数的几何性质：线性的和非线性的函数
+<ul>
+<li>线性的是一条直线；</li>
+<li>非线性的可以是曲线、折线等；</li>
+<li>线性判别函数建立起来比较简单（实际应用较多），非线性判别函数建立起来比较复杂。</li>
+</ul>
+</li>
+<li>判别函数的系数：判别函数的形式确定后，主要就是确定判别函数的系数问题
+<ul>
+<li>只要被研究的模式是可分的，就能用给定的模式样本集来确定判别函数的系数</li>
+</ul>
+</li>
+</ul>
+<h3 id="n-维线性判别函数">$n$ 维线性判别函数</h3>
+<p>$$
+d(x)=w_{1} x_{1}+w_{2} x_{2}+\cdots+w_{n} x_{n}+w_{n+1}=w_{0}^{T} x+w_{n+1}
+$$</p>
+<p>其中 $w_0 = (w_1, w_2, \cdots, w_n)^T$ 称为权向量（或参数向量）。 $d(x)$ 也可以表示为 $d(x) = w^Tx$ 。其中， $x = (x_1, x_2, \cdots, x_n, 1)^T$ 称为增广模式向量， $w = (w_1, w_2, \cdots, w_{n+1})^T$ 称为增广权向量。</p>
+<p>在两类问题中，若 $x \in Y_1$ ，则 $d(x) = w^Tx \gt 0$ ；若 $x \in Y_2$ ，则 $d(x) = w^Tx \le 0$ 。</p>
+<p>在多类情况中，模式可分为 $M$ 种模式类别 $Y_1, Y_2, \cdots, Y_M$ ，有三种划分方法。</p>
+<h3 id="多类情况一">多类情况一</h3>
+<p>用线性判别函数将属于 $Y_i$ 类的模式与不属于 $Y_i$ 类的模式分开，即 $Y_i/\bar {Y_i}$ 两分法，其判别函数为：
+$$
+d_i(x) = w_i^Tx =
+\begin{cases}
+\gt 0 &amp; \text{if } x \in Y_i \<br>
+\le 0 &amp; \text{if } x \notin Y_i
+\end{cases}
+,\ \ i = 1,2,\cdots, M
+$$
+把 $M$ 类多类问题分成 $M$ 个两类问题，因此共有 $M$ 个判别函数，对应的判别函数的权向量为 $w_i,\  i=1,2,\cdots, M$ 。</p>
+<p>判别方法：</p>
+<p>若 $d_i(x) \gt 0, \text{and } d_j(x) \le 0, \forall j \ne i, j = 1,2,\cdots, M $ ，则输入的待判别模式样本属于第 $i$ 类。</p>
+<p>若 $d_i(x) \gt 0$ 的条件超过一个，或者全部 $d_i(x) \le 0$ ，则分类失败，这种区域称为不确定区域。</p>
+<p><img src="https://raw.githubusercontent.com/StupidRabbit29/Img-Area/master/img/20210928135752.png" alt="image-20210928135746197"></p>
+<h3 id="多类情况二">多类情况二</h3>
+<p>采用每对模式之间的二类划分，即 $Y_i/Y_j$ 两分法，此时一个判别界面只能分开两种类别，但不能把它与其余所有的界面分开。其判别函数为：
+$$
+d_{ij}(x) = w_{ij}^Tx
+$$
+若 $d_{ij}(x) \gt 0, \ \forall j \ne i$ ，则 $x \in Y_i$ 。重要的性质是 $d_{ij} = -d_{ji}$</p>
+<p>要分开 $M$ 类模式，共需 $M(M-1)/2$ 个判别函数。</p>
+<p><img src="https://raw.githubusercontent.com/StupidRabbit29/Img-Area/master/img/20210928143325.png" alt="image-20210928143324106"></p>
+<p>不确定性区域是图中的白色区域，即不存在满足 $d_{ij}(x) \gt 0, \ \forall j \ne i$ 的类别 $i$ 。</p>
+<h3 id="多类情况三">多类情况三</h3>
+<p>没有不确定区域的 $Y_i/Y_j$ 两分法。假若多类情况2中的 $d_{ij}$ 可分解成： $d_{ij}(x) = d_i(x) - d_j(x) = (w_i – w_j)^Tx$ ，则 $d_{ij}(x) \gt 0$ 相当于 $d_i(x) &gt; d_j(x), \  \forall j \ne i$ ，这时不存在不确定区域。此时，对 $M$ 类情况应有 $M$ 个判别函数：
+$$
+d_{k}(x) = w_{k}^Tx, \ k = 1,2,\cdots, M
+$$
+即 $d_i(x) \gt d_j(x), \forall j \ne i, j = 1,2,\cdots, M$ ，则 $x \in Y_i$ 。该分类的特点是把M类情况分成M-1个两类问题。</p>
+<h3 id="总结">总结</h3>
+<ul>
+<li>模式分类若可用任一个线性函数来划分，则这些模式就称为线性可分的，否则就是非线性可分的</li>
+<li>一旦线性函数的系数被确定，这些函数就可用作模式分类的基础</li>
+<li>当 $M$ 较大时，多类情况2需要更多的判别式，这是的一个缺点</li>
+<li>采用多类情况1时，每一个判别函数都要把一种类别的模式与其余 $M-1$ 种类别的模式分开，而不是将一种类别的模式仅与另一种类别的模式分开</li>
+<li>由于一种模式的分布要比 $M-1$ 种模式的分布更为聚集，因此多类情况2对模式是线性可分的可能性比多类情况1更大一些，这是多类情况2的一个优点</li>
+</ul>
+<h2 id="广义线性判别函数">广义线性判别函数</h2>
+<ul>
+<li>线性判别函数简单，容易实现；非线性判别函数复杂，不容易实现；</li>
+<li>若能将非线性判别函数转换为线性判别函数，则有利于模式分类的实现；</li>
+</ul>
+<h3 id="基本思想">基本思想</h3>
+<p>设有一个训练用的模式集 ${x}$ ，在模式空间 $x$ 中线性不可分，但在模式空间 $x^{<em>}$ 中线性可分，其中 $x^{</em>}$ 的各个分量是 $x$ 的单值实函数， $x^{<em>}$ 的维数 $k$ 高于 $x$ 的维数 $n$ ，即若取：
+$$
+x^{</em>} = (f_1(x), f_2(x), \cdots, f_k(x))^T, \ k \gt n
+$$
+则分类界面在 $x^{<em>}$ 中是线性的，在 $x$ 中是非线性的，此时只要将模式 $x$ 进行非线性变换，使之变换后得到维数更高的模式 $x^{</em>}$ ，就可以用线性判别函数来进行分类。</p>
+<p>$x^{*}$ 的增广模式向量为 $(f_1(x), f_2(x), \cdots, f_k(x), 1)^T$ 。</p>
+<p>非线性判别函数表示为：
+$$
+d(x) = w_1 f_1(x) + w_2 f_2(x) + \cdots + w_k f_k(x) + w_{k+1}
+$$
+定义成广义形式，有：
+$$
+d(x^{*}) = w^Tx^{*}, \ \ w = (w_1, w_2, \cdots, w_k, w_{k+1})^T
+$$
+非线性判别函数已被变换成广义线性，因此只讨论线性判别函数不会失去一般性意义。</p>
+<h3 id="r-次多项式函数">$r$ 次多项式函数</h3>
+<p>$f_i(x)$ 为 $r$ 次多项式函数， $x$ 为 $n$ 维模式，则有
+$$
+f_{i}(x)=x_{p_{1}}^{s_{1}} x_{p_{2}}^{s_{2}} \cdots x_{p_{r}}^{s_{r}}, \quad p_{1}, p_{2}, \cdots, p_{r}=1,2, \cdots, n, \quad s_{1}, s_{2}, \cdots, s_{r}=0,1
+$$
+常数项：
+$$
+{d}^{(0)}({x}) = w_{n+1}
+$$
+一次项：
+$$
+{d}^{(1)}({x})=\sum_{{p}_{1}=1}^{{n}}{w}_{{p}_{1}} {x}_{{p}_{1}} +{d}^{(0)}({x})
+$$
+二次项：
+$$
+{d}^{(2)}({x})=\sum_{{p}_{1}=1}^{{n}} \sum_{{p}_{2}={p}_{1}}^{{n}} {w}_{{p}_{1} {p}_{2}} {x}_{{p}_{1}} {x}_{{p}_{2}}+{d}^{(1)}({x})
+$$
+$r$ 次项：
+$$
+d^{(r)}(x)=\sum_{p_{1}=1}^{n} \sum_{p_{2}=p_{1}}^{n} \cdots \sum_{p_{r}=p_{r-1}}^{n} w_{p_{1} p_{2} \cdots p_{r}} x_{p_{1}} x_{p_{2}} \cdots x_{p_{r}}+d^{(r-1)}(x)
+$$
+$d(x)$ 的总项数：对于 $n$ 维模式向量 $x$ ，若采用 $r$ 次多项式函数， $d(x)$ 的权系数的总项数为：
+$$
+C_{n+r}^r = \frac {(n+r)!} {r!n!}
+$$</p>
+<ul>
+<li>$d(x)$ 的项数随 $r$ 和 $n$ 的增加会迅速增大，即使原来模式 $x$ 的维数不高，若采用次数 $r$ 较高的多项式来变换，也会使变换后的模式 $x^{*}$ 的维数很高，给分类带来很大困难。</li>
+<li>实际情况可只取 $r=2$ ，或只选多项式的一部分，例如 $r=2$ 时只取二次项，略去一次项，以减少 $x^{*}$ 的维数。</li>
+<li>计数公式可用插板法证明。</li>
+</ul>
+<h2 id="分段线性判别函数">分段线性判别函数</h2>
+<ul>
+<li>线性判别函数在进行分类决策时是最简单有效的，但在实际应用中，常常会出现不能用线性判别函数直接进行分类的情况。</li>
+<li>采用广义线性判别函数的概念，可以通过增加维数来得到线性判别，但维数的大量增加会使在低维空间里在解析和计算上行得通的方法在高维空间遇到困难，增加计算的复杂性。</li>
+<li>引入分段线性判别函数的判别过程，它比一般的线性判别函数的错误率小，但又比非线性判别函数简单。</li>
+</ul>
+<h3 id="最小距离分类">最小距离分类</h3>
+<p>设 $\mu_1$ 和 $\mu_2$ 为两个模式类 $Y_1$ 和 $Y_2$ 的聚类中心，定义决策规则：
+$$
+| x - \mu_1 |^2 - | x - \mu_2 | ^2 \begin{cases}
+\lt 0 &amp; x \in Y_1 \<br>
+\gt 0 &amp; x \in Y_2
+\end{cases}
+$$
+这时的决策面是两类期望连线的垂直平分面，这样的分类器称为最小距离分类器。</p>
+<p>多次应用分段线性分类设计</p>
+<p><img src="https://raw.githubusercontent.com/StupidRabbit29/Img-Area/master/img/20210928213814.png" alt="image-20210928213811402"></p>
+<h2 id="模式空间和权空间">模式空间和权空间</h2>
+<h2 id="fisher线性判别">Fisher线性判别</h2>
+<h2 id="感知器算法perception-approach">感知器算法（Perception Approach）</h2>
+<ul>
+<li>一旦判别函数的形式确定下来，不管它是线性的还是非线性的，剩下的问题就是如何确定它的系数。</li>
+<li>在模式识别中，系数确定的一个主要方法就是通过对已知样本的训练和学习来得到。</li>
+<li>感知器算法就是通过训练样本模式的迭代和学习，产生线性（或广义线性）可分的模式判别函数。</li>
+<li>不需要对各类别中模式的统计性质做任何假设，因此称为确定性的方法。</li>
+</ul>
+<h3 id="感知器的训练算法">感知器的训练算法</h3>
+<p>已知两个训练模式集分别属于 $Y_1$ 类和 $Y_2$ 类，权向量的初始值为 $w(1)$ ，可任意取值。若 $x_k \in Y_1$ ，则 $w^T(k)x_k \gt 0$ ；若 $x_k \in Y_2$ ，则 $w^T(k)x_k \le 0$ 。则在用全部训练模式集进行迭代训练时，第 $k$ 次的训练步骤为：
+$$
+w(k+1) = \begin{cases}
+w(k) &amp; \text{if } w^T(k)x_k \gt 0 \<br>
+w(k) + Cx_k &amp; \text{if } w^T(k)x_k \le 0 \<br>
+\end{cases}
+$$
+其中 $C$ 是一个校正增量（正常数），对于 $x_k \in Y_2$ 的模式样本要乘以 $-1$ 。</p>
+<ul>
+<li>感知器算法实质上是一种赏罚过程
+<ul>
+<li>对正确分类的模式则“赏”，实际上是“不罚”，即权向量不变；</li>
+<li>对错误分类的模式则“罚”，使 $w(k)$ 加上一个正比于 $x_k$ 的分量；</li>
+<li>当用全部模式样本训练过一轮以后，只要有一个模式是判别错误的，则需要进行下一轮迭代，即用全部模式样本再训练一次；</li>
+<li>如此不断反复直到全部模式样本进行训练都能得到正确的分类结果为止。</li>
+</ul>
+</li>
+<li>只要模式类别是线性可分的，就可以在有限的迭代步数里求出权向量。</li>
+</ul>
+<h3 id="例题">例题</h3>
+<p><strong>题目</strong>：用感知器算法求下列模式分类的解向量 $w$ ：
+$$
+\begin{align}
+\omega_1 &amp; : { \begin{pmatrix} 0 &amp; 0 &amp; 0 \end{pmatrix} ^T, \begin{pmatrix} 1 &amp; 0 &amp; 0 \end{pmatrix} ^T , \begin{pmatrix} 1 &amp; 0 &amp; 1 \end{pmatrix} ^T , \begin{pmatrix} 1 &amp; 1 &amp; 0 \end{pmatrix} ^T} \<br>
+\omega_2 &amp; : { \begin{pmatrix} 0 &amp; 0 &amp; 1 \end{pmatrix} ^T, \begin{pmatrix} 0 &amp; 1 &amp; 1 \end{pmatrix} ^T , \begin{pmatrix} 0 &amp; 1 &amp; 0 \end{pmatrix} ^T , \begin{pmatrix} 1 &amp; 1 &amp; 1 \end{pmatrix} ^T} \<br>
+\end{align}
+$$
+编写求解上述问题的感知器算法程序。</p>
+<p><strong>解</strong>：将属于 $\omega_2$ 的训练样本乘以 $-1$ ，并写成增广向量的形式。
+$$
+\begin{align}
+&amp; x_1 = \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} ^T , \
+x_2 = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} ^T , \ \<br>
+&amp; x_3 = \begin{pmatrix} 1 &amp; 0 &amp; 1 &amp; 1 \end{pmatrix} ^T, \
+x_4 = \begin{pmatrix} 1 &amp; 1 &amp; 0 &amp; 1 \end{pmatrix} ^T, \ \<br>
+&amp; x_5 = \begin{pmatrix} 0 &amp; 0 &amp; -1 &amp; -1 \end{pmatrix} ^T , \
+x_6 = \begin{pmatrix} 0 &amp; -1 &amp; -1 &amp; -1 \end{pmatrix} ^T , \ \<br>
+&amp; x_7 = \begin{pmatrix} 0 &amp; -1 &amp; 0 &amp; -1 \end{pmatrix} ^T, \
+x_8 = \begin{pmatrix} -1 &amp; -1 &amp; -1 &amp; -1 \end{pmatrix} ^T, \ \<br>
+\end{align}
+$$
+取 $C=1, \ w(1) = \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix} ^T $ 。</p>
+<p>第 1 轮迭代
+$$
+\begin{align}
+&amp; w^T(1)x_1 = \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}\begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} ^T = 0 \le 0, \ \to \ w(2) = w(1) +x_1 = \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(2)x_2 = \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix}\begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} ^T = 1 \gt 0, \ \to \ w(3) = w(2) = \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(3)x_3 = \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix}\begin{pmatrix} 1 &amp; 0 &amp; 1 &amp; 1 \end{pmatrix} ^T = 1 \gt 0, \ \to \ w(4) = w(3) = \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(4)x_4 = \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix}\begin{pmatrix} 1 &amp; 1 &amp; 0 &amp; 1 \end{pmatrix} ^T = 1 \gt 0, \ \to \ w(5) = w(4) = \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(5)x_5 = \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix}\begin{pmatrix} 0 &amp; 0 &amp; -1 &amp; -1 \end{pmatrix} ^T = -1 \le 0, \ \to \ w(6) = w(5) + x_5 = \begin{pmatrix} 0 &amp; 0 &amp; -1 &amp; 0 \end{pmatrix} ^T \<br>
+&amp; w^T(6)x_6 = \begin{pmatrix} 0 &amp; 0 &amp; -1 &amp; 0 \end{pmatrix}\begin{pmatrix} 0 &amp; -1 &amp; -1 &amp; -1 \end{pmatrix} ^T = 1 \gt 0, \ \to \ w(7) = w(6) = \begin{pmatrix} 0 &amp; 0 &amp; -1 &amp; 0 \end{pmatrix} ^T \<br>
+&amp; w^T(7)x_7 = \begin{pmatrix} 0 &amp; 0 &amp; -1 &amp; 0 \end{pmatrix}\begin{pmatrix} 0 &amp; -1 &amp; 0 &amp; -1 \end{pmatrix} ^T = 0 \le 0, \ \to \ w(8) = w(7) + x_7 = \begin{pmatrix} 0 &amp; -1 &amp; -1 &amp; -1 \end{pmatrix} ^T \<br>
+&amp; w^T(8)x_8 = \begin{pmatrix} 0 &amp; -1 &amp; -1 &amp; -1 \end{pmatrix}\begin{pmatrix} -1 &amp; -1 &amp; -1 &amp; -1 \end{pmatrix} ^T = 3 \gt 0, \ \to \ w(9) = w(8) = \begin{pmatrix} 0 &amp; -1 &amp; -1 &amp; -1 \end{pmatrix} ^T \<br>
+\end{align}
+$$
+第 2 轮迭代
+$$
+\begin{align}
+&amp; w^T(9)x_1 = \begin{pmatrix} 0 &amp; -1 &amp; -1 &amp; -1 \end{pmatrix}\begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} ^T = -1 \le 0, \ \to \ w(10) = w(9) + x_1 = \begin{pmatrix} 0 &amp; -1 &amp; -1 &amp; 0 \end{pmatrix} ^T \<br>
+&amp; w^T(10)x_2 = \begin{pmatrix} 0 &amp; -1 &amp; -1 &amp; 0 \end{pmatrix}\begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} ^T = 0 \le 0, \ \to \ w(11) = w(10) + x_2 = \begin{pmatrix} 1 &amp; -1 &amp; -1 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(11)x_3 = \begin{pmatrix} 1 &amp; -1 &amp; -1 &amp; 1 \end{pmatrix}\begin{pmatrix} 1 &amp; 0 &amp; 1 &amp; 1 \end{pmatrix} ^T = 1 \gt 0, \ \to \ w(12) = w(11) = \begin{pmatrix} 1 &amp; -1 &amp; -1 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(12)x_4 = \begin{pmatrix} 1 &amp; -1 &amp; -1 &amp; 1 \end{pmatrix}\begin{pmatrix} 1 &amp; 1 &amp; 0 &amp; 1 \end{pmatrix} ^T = 1 \gt 0, \ \to \ w(13) = w(12) = \begin{pmatrix} 1 &amp; -1 &amp; -1 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(13)x_5 = \begin{pmatrix} 1 &amp; -1 &amp; -1 &amp; 1 \end{pmatrix}\begin{pmatrix} 0 &amp; 0 &amp; -1 &amp; -1 \end{pmatrix} ^T = 0 \le 0, \ \to \ w(14) = w(13) + x_5 = \begin{pmatrix} 1 &amp; -1 &amp; -2 &amp; 0 \end{pmatrix} ^T \<br>
+&amp; w^T(14)x_6 = \begin{pmatrix} 1 &amp; -1 &amp; -2 &amp; 0 \end{pmatrix}\begin{pmatrix} 0 &amp; -1 &amp; -1 &amp; -1 \end{pmatrix} ^T = 3 \gt 0, \ \to \ w(15) = w(14) = \begin{pmatrix} 1 &amp; -1 &amp; -2 &amp; 0 \end{pmatrix} ^T \<br>
+&amp; w^T(15)x_7 = \begin{pmatrix} 1 &amp; -1 &amp; -2 &amp; 0 \end{pmatrix}\begin{pmatrix} 0 &amp; -1 &amp; 0 &amp; -1 \end{pmatrix} ^T = 1 \gt 0, \ \to \ w(16) = w(15) = \begin{pmatrix} 1 &amp; -1 &amp; -2 &amp; 0 \end{pmatrix} ^T \<br>
+&amp; w^T(16)x_8 = \begin{pmatrix} 1 &amp; -1 &amp; -2 &amp; 0 \end{pmatrix}\begin{pmatrix} -1 &amp; -1 &amp; -1 &amp; -1 \end{pmatrix} ^T = 2 \gt 0, \ \to \ w(17) = w(16) = \begin{pmatrix} 1 &amp; -1 &amp; -2 &amp; 0 \end{pmatrix} ^T \<br>
+\end{align}
+$$
+第 3 轮迭代
+$$
+\begin{align}
+&amp; w^T(17)x_1 = \begin{pmatrix} 1 &amp; -1 &amp; -2 &amp; 0 \end{pmatrix}\begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} ^T = 0 \le 0, \ \to \ w(18) = w(17) + x_1 = \begin{pmatrix} 1 &amp; -1 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(18)x_2 = \begin{pmatrix} 1 &amp; -1 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} ^T = 2 \gt 0, \ \to \ w(19) = w(18) = \begin{pmatrix} 1 &amp; -1 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(19)x_3 = \begin{pmatrix} 1 &amp; -1 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} 1 &amp; 0 &amp; 1 &amp; 1 \end{pmatrix} ^T = 0 \le 0, \ \to \ w(20) = w(19) + x_3 = \begin{pmatrix} 2 &amp; -1 &amp; -1 &amp; 2 \end{pmatrix} ^T \<br>
+&amp; w^T(20)x_4 = \begin{pmatrix} 2 &amp; -1 &amp; -1 &amp; 2 \end{pmatrix}\begin{pmatrix} 1 &amp; 1 &amp; 0 &amp; 1 \end{pmatrix} ^T = 3 \gt 0, \ \to \ w(21) = w(20) = \begin{pmatrix} 2 &amp; -1 &amp; -1 &amp; 2 \end{pmatrix} ^T \<br>
+&amp; w^T(21)x_5 = \begin{pmatrix} 2 &amp; -1 &amp; -1 &amp; 2 \end{pmatrix}\begin{pmatrix} 0 &amp; 0 &amp; -1 &amp; -1 \end{pmatrix} ^T = -1 \le 0, \ \to \ w(22) = w(21) + x_5 = \begin{pmatrix} 2 &amp; -1 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(22)x_6 = \begin{pmatrix} 2 &amp; -1 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} 0 &amp; -1 &amp; -1 &amp; -1 \end{pmatrix} ^T = 2 \gt 0, \ \to \ w(23) = w(22) = \begin{pmatrix} 2 &amp; -1 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(23)x_7 = \begin{pmatrix} 2 &amp; -1 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} 0 &amp; -1 &amp; 0 &amp; -1 \end{pmatrix} ^T = 0 \le 0, \ \to \ w(24) = w(23) + x_7 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 0 \end{pmatrix} ^T \<br>
+&amp; w^T(24)x_8 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 0 \end{pmatrix}\begin{pmatrix} -1 &amp; -1 &amp; -1 &amp; -1 \end{pmatrix} ^T = 2 \gt 0, \ \to \ w(25) = w(24) = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 0 \end{pmatrix} ^T \<br>
+\end{align}
+$$
+第 4 轮迭代
+$$
+\begin{align}
+&amp; w^T(25)x_1 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 0 \end{pmatrix}\begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} ^T = 0 \le 0, \ \to \ w(26) = w(25) + x_1 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(26)x_2 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} ^T = 3 \gt 0, \ \to \ w(27) = w(26) = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(27)x_3 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} 1 &amp; 0 &amp; 1 &amp; 1 \end{pmatrix} ^T = 1 \gt 0, \ \to \ w(28) = w(27) = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(28)x_4 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} 1 &amp; 1 &amp; 0 &amp; 1 \end{pmatrix} ^T = 1 \gt 0, \ \to \ w(29) = w(28) = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(29)x_5 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} 0 &amp; 0 &amp; -1 &amp; -1 \end{pmatrix} ^T = 1 \gt 0, \ \to \ w(30) = w(29) = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(30)x_6 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} 0 &amp; -1 &amp; -1 &amp; -1 \end{pmatrix} ^T = 3 \gt 0, \ \to \ w(31) = w(30) = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(31)x_7 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} 0 &amp; -1 &amp; 0 &amp; -1 \end{pmatrix} ^T = 1 \gt 0, \ \to \ w(32) = w(31) = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(32)x_8 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} -1 &amp; -1 &amp; -1 &amp; -1 \end{pmatrix} ^T = 1 \gt 0, \ \to \ w(33) = w(32) = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+\end{align}
+$$
+第 5 轮迭代
+$$
+\begin{align}
+&amp; w^T(33)x_1 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} ^T = 1 \gt 0, \ \to \ w(34) = w(33) = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(34)x_2 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} ^T = 3 \gt 0, \ \to \ w(35) = w(34) = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(35)x_3 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} 1 &amp; 0 &amp; 1 &amp; 1 \end{pmatrix} ^T = 1 \gt 0, \ \to \ w(36) = w(35) = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(36)x_4 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} 1 &amp; 1 &amp; 0 &amp; 1 \end{pmatrix} ^T = 1 \gt 0, \ \to \ w(37) = w(36) = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(37)x_5 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} 0 &amp; 0 &amp; -1 &amp; -1 \end{pmatrix} ^T = 1 \gt 0, \ \to \ w(38) = w(37) = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(38)x_6 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} 0 &amp; -1 &amp; -1 &amp; -1 \end{pmatrix} ^T = 3 \gt 0, \ \to \ w(39) = w(38) = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(39)x_7 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} 0 &amp; -1 &amp; 0 &amp; -1 \end{pmatrix} ^T = 1 \gt 0, \ \to \ w(40) = w(39) = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+&amp; w^T(40)x_8 = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix}\begin{pmatrix} -1 &amp; -1 &amp; -1 &amp; -1 \end{pmatrix} ^T = 1 \gt 0, \ \to \ w(41) = w(40) = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix} ^T \<br>
+\end{align}
+$$
+该轮的迭代全部正确，因此解向量 $w = \begin{pmatrix} 2 &amp; -2 &amp; -2 &amp; 1 \end{pmatrix} ^T$ ，相应的判别函数为：
+$$
+d(x) = 2x_1 -2x_2- 2x_3 + 1
+$$</p>
+<h2 id="采用感知器算法的多类模式的分类">采用感知器算法的多类模式的分类</h2>
+<h3 id="多类判别函数的推导">多类判别函数的推导</h3>
+<p>对 $M$ 类模式存在 $M$ 个判别函数 ${ d_i , \ i = 1,2,\cdots, M }$ ，若 $x \in Y_i$ ，则 $d_i \gt d_j, \ \forall j \ne i$ 。</p>
+<p>设有 $M$ 种模式类别 $Y_1, Y_2, \cdots, Y_M$ ，若在训练过程的第 $k$ 次迭代时，一个属于 $Y_i$ 类的模式样本 $x$ 送入分类器，则应先计算出 $M$ 个判别函数：
+$$
+d_{j}(k)=w_{j}^T(k) x, \quad j=1,2, \cdots, M
+$$
+若 $d_{i}(k)&gt;d_{j}(k), j=1,2, \cdots, M, \forall j \neq i$ 的条件成立，则权向量不变，即
+$$
+w_{j}(k+1)=w_{j}(k), \quad j=1,2, \cdots, M
+$$
+若其中第 $l$ 个权向量使得 $d_{i}(k) \leq d_{l}(k)$ ，则相应的权向量应做调整，即
+$$
+\left{\begin{array}{l}
+w_{i}(k+1)=w_{i}(k)+C x \<br>
+w_{l}(k+1)=w_{l}(k)-C x \<br>
+w_{j}(k+1)=w_{j}(k), j=1,2, \cdots, M, j \neq i, j \neq l
+\end{array}\right.
+$$
+其中 $C$ 是一个正常数。权向量的初始值 $w_i(1),\ i = 1,2,\cdots,M$ 可视情况任意选择。</p>
+<h3 id="讨论-1">讨论</h3>
+<ul>
+<li>这里的分类算法都是通过模式样本来确定判别函数的系数，但一个分类器的判断性能最终要受并未用于训练的那些未知样本来检验。</li>
+<li>要使一个分类器设计完善，必须采用有代表性的训练数据，它能够合理反映模式数据的整体。</li>
+<li>要获得一个判别性能好的线性分类器，究竟需要多少训练样本？
+<ul>
+<li>直观上是越多越好，但实际上能收集到的样本数目会受到客观条件的限制；</li>
+<li>过多的训练样本在训练阶段会使计算机需要较长的运算时间；</li>
+<li>一般来说，合适的样本数目可如下估计：若 $k$ 是模式的维数，令 $C=2(k+1)$ ，则通常选用的训练样本数目约为 $C$ 的10~20倍。</li>
+</ul>
+</li>
+</ul>
+<h3 id="例题-1">例题</h3>
+<p><strong>题目</strong>：用多类感知器算法求下列模式的判别函数：
+$$
+\omega_1:(-1\  -1)^T, \omega_2:(0\  0)^T, \omega_3:(1 \  1)^T
+$$
+<strong>解</strong>：将模式样本写成增广模式：
+$$
+x_1 = \begin{pmatrix} -1 &amp; -1 &amp; 1 \end{pmatrix} ^T , \
+x_2 = \begin{pmatrix} 0 &amp; 0 &amp; 1 \end{pmatrix} ^T , \
+x_3 = \begin{pmatrix} 1 &amp; 1 &amp; 1 \end{pmatrix} ^T
+$$
+取初始判别函数的权向量为 $$w_1(1)=w_2(1)=w_3(1)=\begin{pmatrix} 0 &amp; 0 &amp; 0 \end{pmatrix} ^T, C=1$$ 。</p>
+<p>第1轮迭代（ $k=1$ ）：以 $x_1$ 为训练样本， $d_1(1) = 0, d_2(1) = 0, d_3(1) = 0$ ，因为 $$d_1(1)\le d_2(1), d_1(1)\le d_3(1)$$ ，
+$$
+\begin{align}
+w_1(2) &amp; = w_1(1) + x_1 = \begin{pmatrix} -1 &amp; -1 &amp; 1 \end{pmatrix} ^T \<br>
+w_2(2) &amp; = w_2(1) - x_1 = \begin{pmatrix} 1 &amp; 1 &amp; -1 \end{pmatrix} ^T \<br>
+w_3(2) &amp; = w_3(1) - x_1 = \begin{pmatrix} 1 &amp; 1 &amp; -1 \end{pmatrix} ^T \<br>
+\end{align}
+$$
+第2轮迭代（ $k=2$ ）：以 $x_2$ 为训练样本， $d_1(2) = 1, d_2(2) = -1, d_3(2) = -1$ ，因为 $$d_2(2)\le d_1(2), d_2(2)\le d_3(2)$$ ，
+$$
+\begin{align}
+w_1(3) &amp; = w_1(2) - x_2 = \begin{pmatrix} -1 &amp; -1 &amp; 0 \end{pmatrix} ^T \<br>
+w_2(3) &amp; = w_2(2) + x_2 = \begin{pmatrix} 1 &amp; 1 &amp; 0 \end{pmatrix} ^T \<br>
+w_3(3) &amp; = w_3(2) - x_2 = \begin{pmatrix} 1 &amp; 1 &amp; -2 \end{pmatrix} ^T \<br>
+\end{align}
+$$
+第3轮迭代（ $k=3$ ）：以 $x_3$ 为训练样本， $d_1(3) = -2, d_2(3) = 2, d_3(3) = 0$ ，因为 $$d_3(3)\gt d_1(3), d_3(3)\le d_2(3)$$ ，
+$$
+\begin{align}
+w_1(4) &amp; = w_1(3) = \begin{pmatrix} -1 &amp; -1 &amp; 0 \end{pmatrix} ^T \<br>
+w_2(4) &amp; = w_2(3) - x_3 = \begin{pmatrix} 0 &amp; 0 &amp; -1 \end{pmatrix} ^T \<br>
+w_3(4) &amp; = w_3(3) + x_3 = \begin{pmatrix} 2 &amp; 2 &amp; -1 \end{pmatrix} ^T \<br>
+\end{align}
+$$
+第4轮迭代（ $k=4$ ）：以 $x_1$ 为训练样本， $d_1(4) = 2, d_2(4) = -1, d_3(4) = -5$ ，因为 $$d_1(4)\gt d_2(4), d_1(4)\gt d_3(4)$$ ，
+$$
+\begin{align}
+w_1(5) &amp; = w_1(4) = \begin{pmatrix} -1 &amp; -1 &amp; 0 \end{pmatrix} ^T \<br>
+w_2(5) &amp; = w_2(4) = \begin{pmatrix} 0 &amp; 0 &amp; -1 \end{pmatrix} ^T \<br>
+w_3(5) &amp; = w_3(4) = \begin{pmatrix} 2 &amp; 2 &amp; -1 \end{pmatrix} ^T \<br>
+\end{align}
+$$
+第5轮迭代（ $k=5$ ）：以 $x_2$ 为训练样本， $d_1(5) = 0, d_2(5) = -1, d_3(5) = -1$ ，因为 $$d_2(5)\le d_1(5), d_2(5)\le d_3(5)$$ ，
+$$
+\begin{align}
+w_1(6) &amp; = w_1(5) - x_2 = \begin{pmatrix} -1 &amp; -1 &amp; -1 \end{pmatrix} ^T \<br>
+w_2(6) &amp; = w_2(5) + x_2 = \begin{pmatrix} 0 &amp; 0 &amp; 0 \end{pmatrix} ^T \<br>
+w_3(6) &amp; = w_3(5) - x_2 = \begin{pmatrix} 2 &amp; 2 &amp; -2 \end{pmatrix} ^T \<br>
+\end{align}
+$$
+第6轮迭代（ $k=6$ ）：以 $x_3$ 为训练样本， $d_1(6) = -3, d_2(6) = 0, d_3(6) = 2$ ，因为 $$d_3(6)\gt d_1(6), d_3(6)\gt d_2(6)$$ ，
+$$
+\begin{align}
+w_1(7) &amp; = w_1(6) = \begin{pmatrix} -1 &amp; -1 &amp; -1 \end{pmatrix} ^T \<br>
+w_2(7) &amp; = w_2(6) = \begin{pmatrix} 0 &amp; 0 &amp; 0 \end{pmatrix} ^T \<br>
+w_3(7) &amp; = w_3(6) = \begin{pmatrix} 2 &amp; 2 &amp; -2 \end{pmatrix} ^T \<br>
+\end{align}
+$$
+第7轮迭代（ $k=7$ ）：以 $x_1$ 为训练样本， $d_1(7) = 1, d_2(7) = 0, d_3(7) = -2$ ，因为 $$d_1(7)\gt d_2(7), d_1(7)\gt d_3(7)$$ ，
+$$
+\begin{align}
+w_1(8) &amp; = w_1(7) = \begin{pmatrix} -1 &amp; -1 &amp; -1 \end{pmatrix} ^T \<br>
+w_2(8) &amp; = w_2(7) = \begin{pmatrix} 0 &amp; 0 &amp; 0 \end{pmatrix} ^T \<br>
+w_3(8) &amp; = w_3(7) = \begin{pmatrix} 2 &amp; 2 &amp; -2 \end{pmatrix} ^T \<br>
+\end{align}
+$$
+第8轮迭代（ $k=8$ ）：以 $x_2$ 为训练样本， $d_1(8) = -1, d_2(8) = 0, d_3(8) = -2$ ，因为 $$d_2(8)\gt d_1(8), d_2(8)\gt d_3(8)$$ ，
+$$
+\begin{align}
+w_1(9) &amp; = w_1(8) = \begin{pmatrix} -1 &amp; -1 &amp; -1 \end{pmatrix} ^T \<br>
+w_2(9) &amp; = w_2(8) = \begin{pmatrix} 0 &amp; 0 &amp; 0 \end{pmatrix} ^T \<br>
+w_3(9) &amp; = w_3(8) = \begin{pmatrix} 2 &amp; 2 &amp; -2 \end{pmatrix} ^T \<br>
+\end{align}
+$$
+因为在第6、7、8次迭代中，训练样本都已经正确分类，所以权向量为
+$$
+w_1 = \begin{pmatrix} -1 &amp; -1 &amp; -1 \end{pmatrix} ^T , \
+w_2 = \begin{pmatrix} 0 &amp; 0 &amp; 0 \end{pmatrix} ^T , \
+w_3 = \begin{pmatrix} 2 &amp; 2 &amp; -2 \end{pmatrix} ^T
+$$
+三个判别函数为：
+$$
+\begin{align}
+d_1(x) &amp;= -x_1-x_2-1 \<br>
+d_2(x) &amp;= 0 \<br>
+d_3(x) &amp;= 2x_1 +2x_2 -2 \<br>
+\end{align}
+$$</p>
+<h2 id="可训练的确定性分类器的迭代算法">可训练的确定性分类器的迭代算法</h2>
+<h3 id="梯度法">梯度法</h3>
+<p>设函数 $f(x)$ 是向量 $x = (x_1, x_2, \cdots , x_n)^T$ 的函数，则 $f(x)$ 的梯度定义为：
+$$
+\nabla f(x)=\frac{d}{d x} f(x)=\left(\frac{\partial f}{\partial x_{1}} \frac{\partial f}{\partial x_{2}} \cdots \frac{\partial f}{\partial x_{n}}\right)^{T}
+$$</p>
+<ul>
+<li>梯度是一个向量，它的最重要性质就是指出了函数 $f$ 在其自变量 $x$ 增加时最大增长率的方向</li>
+<li>负梯度指出 $f$ 的最陡下降方向</li>
+<li>利用这个性质，可以设计一个迭代方案来寻找函数的最小值。</li>
+</ul>
+<p>定义一个对错误分类敏感的准则函数 $J(w, x)$ 。先任选一个初始权向量 $w(1)$ ，计算准则函数 $J$ 的梯度，然后从 $w(1)$ 出发，在最陡方向（梯度方向）上移动某一距离得到下一个权向量 $w(2)$ 。持续迭代直至收敛。</p>
+<p>从 $w(k)$ 导出 $w(k+1)$ 的一般关系式：
+$$
+{w}({k}+1)={w}({k})-{C}\left{\frac{\partial {J}({w}, {x})}{\partial {w}}\right}_{{w}={w}({k})}={w}({k})-{C} \cdot \nabla {J}
+$$
+其中 $C$ 是一个正的比例因子（步长）。</p>
+<ul>
+<li>若正确地选择了准则函数 $J(w, x)$ ，则当权向量 $w$ 是一个解时， $J$ 达到极小值（ $J$ 的梯度为零）。由于权向量是按 $J$ 的梯度值减小，因此这种方法称为梯度法（最速下降法）。</li>
+<li>为了使权向量能较快地收敛于一个使函数 $J$ 极小的解， $C$ 值的选择是很重要的。
+<ul>
+<li>若 $C$ 值太小，则收敛太慢；</li>
+<li>若 $C$ 值太大，则搜索可能过头，引起发散；</li>
+<li>比较好的方法是选用动态变化的 $C$ ，一开始 $C$ 较大，快速收敛，然后 $C$ 减小，防止震荡。</li>
+</ul>
+</li>
+</ul>
+<h3 id="固定增量的逐次调整算法">固定增量的逐次调整算法</h3>
+<h4 id="举例">举例</h4>
+<p>设取准则函数为：
+$$
+J(w,x) = \frac {|w^T x | - w^Tx} {2}
+$$
+则 $J$ 对 $w$ 的微分式：
+$$
+\frac{\partial {J}}{\partial {w}} = \frac 1 2 [x \cdot \text{sign}(w^Tx) - x]
+$$
+定义：
+$$
+\text{sign}(w^Tx) =
+\begin{cases}
++1 &amp; \text{if } w^Tx \gt 0 \<br>
+-1 &amp; \text{if } w^Tx \le 0 \<br>
+\end{cases}
+$$
+则由梯度法中 $w(k)$ 导出 $w(k+1)$ 的关系有：
+$$
+\begin{align}
+w(k+1) &amp;= w(k) + \frac C 2 [x_k - x_k \cdot \text{sign}(w^T(k)x_k)] \<br>
+&amp;= w(k) + C \cdot
+\begin{cases}
+0 &amp; \text{if } w^T(k)x_k \gt 0 \<br>
+x_k &amp; \text{if } w^T(k)x_k \le 0 \<br>
+\end{cases}
+\end{align}
+$$
+这就是之前所说的感知器算法，感知器算法是梯度法的一个特例。在上式中 $C$ 是预先选好的固定值，在迭代过程中，只要 $$w^T(k)x_k \le 0$$ ，就要对权向量修正 $Cx_k$ 值，因此称为固定增量算法。</p>
+<p><img src="https://raw.githubusercontent.com/StupidRabbit29/Img-Area/master/img/20210927212109.png" alt="image-20210927212103784"></p>
+<h4 id="讨论-2">讨论</h4>
+<ul>
+<li>若模式是线性可分的，选择合适的准则函数 $J(w, x)$ ，算法就能给出解。</li>
+<li>若模式不是线性可分的，算法的结果就会来回摆动，得不到收敛。</li>
+</ul>
+<h4 id="例题-2">例题</h4>
+<p><strong>题目</strong>：采用梯度法和准则函数
+$$
+J(w,x,b) = \frac {1} {8|x|^2} \left[ (w^Tx-b) - |w^Tx-b| \right]^2
+$$
+式中实数 $b&gt;0$ ，试导出两类模式的分类算法。</p>
+<p><strong>解</strong>：设判别函数为 $d(x) = w^Tx - b$ 。
+$$
+\begin{align}
+\frac{\partial {J}}{\partial {w}} &amp; = \frac {1} {4 | x | ^2} [(w^Tx-b) - |w^Tx-b|] [x - x \cdot \text{sign}(w^Tx - b)] \<br>
+\frac{\partial {J}}{\partial {b}} &amp; = \frac {1} {4 | x | ^2} [(w^Tx-b) - |w^Tx-b|] [ \text{sign}(w^Tx - b) - 1] \<br>
+\end{align}
+$$
+定义：
+$$
+\text{sign}(w^Tx - b) =
+\begin{cases}
++1 &amp; \text{if } w^Tx - b \gt 0 \<br>
+-1 &amp; \text{if } w^Tx - b \le 0 \<br>
+\end{cases}
+$$
+在对 $w(1)$ 和 $b(1)$ 进行初始化后，开始在训练数据集上进行迭代，在第 $k$ 次迭代时，使用的训练数据是 $x_k$ ，则判别函数的参数迭代公式为：
+$$
+\begin{align}
+w(k+1) &amp; = w(k) - \frac {C} {| x | ^2} \cdot \begin{cases}
+0 &amp; \text{if } w^T(k)x_k-b(k) \gt 0 \<br>
+[w^T(k)x_k-b(k)]x_k &amp; \text{if } w^T(k)x_k-b(k) \le 0 \<br>
+\end{cases} \<br>
+b(k+1) &amp; = b(k) + \frac {C} {| x | ^2} \cdot \begin{cases}
+0 &amp; \text{if } w^T(k)x_k-b(k) \gt 0 \<br>
+w^T(k)x_k-b(k) &amp; \text{if } w^T(k)x_k-b(k) \le 0 \<br>
+\end{cases} \<br>
+\end{align}
+$$
+当迭代收敛后，可以得到两类模式的判别函数 $d(x) = w^Tx - b$ 。</p>
+<h3 id="最小平方误差lmse算法">最小平方误差（LMSE）算法</h3>
+<ul>
+<li>感知器算法只是当被分模式可用一个特定的判别界面分开时才收敛，在不可分情况下，只要计算程序不终止，它就始终不收敛。即使在模式可分的情况下，也很难事先算出达到收敛时所需要的迭代次数。</li>
+<li>这样，在模式分类过程中，有时候会出现一次又一次迭代却不见收敛的情况，白白浪费时间。为此需要知道：发生迟迟不见收敛的情况时，到底是由于收敛速度过慢造成的呢，还是由于所给的训练样本集不是线性可分造成的呢？</li>
+<li>最小平方误差（LMSE）算法，除了对可分模式是收敛的以外，对于类别不可分的情况也能指出来。</li>
+</ul>
+<p>分类器的不等式方程</p>
+<p>求两类问题的解相当于求一组线性不等式的解，因此，若给出分别属于 $Y_1$ 和 $Y_2$ 的两个模式样本的训练样本集，即可求出其权向量 $w$ 的解，其性质应满足：</p>
+<h2 id="势函数法确定性的非线性分类方法">势函数法——确定性的非线性分类方法</h2>
+<p>用势函数的概念来确定判别函数和划分类别界面。</p>
+<ul>
+<li>假设要划分属于两种类别 $Y_1$ 和 $Y_2$ 的模式样本，这些样本可看成是分布在 $n$ 维模式空间中的点 $x_k$</li>
+<li>把属于 $Y_1$ 的点比拟为某种能源点，在点上，电位达到峰值</li>
+<li>随着与该点距离的增大，电位分布迅速减小，即把样本 $x_k$ 附近空间 $x$ 点上的电位分布，看成是一个势函数 $K(x, x_k)$</li>
+<li>对于属于 $Y_1$ 的样本集群，其附近空间会形成一个“高地”，这些样本点所处的位置就是“山头”</li>
+<li>同理，用电位的几何分布来看待属于 $Y_2$ 的模式样本，在其附近空间就形成“凹地”。</li>
+<li>只要在两类电位分布之间选择合适的等高线，就可以认为是模式分类的判别函数。</li>
+</ul>
+<h3 id="判别函数的产生">判别函数的产生</h3>
+<ul>
+<li>模式分类的判别函数可由分布在模式空间中的许多样本向量的势函数产生</li>
+<li>任意一个样本所产生的势函数以 $K(x, x_k)$ 表征，则判别函数 $d(x)$ 可由势函数序列 $K(x, x_1)$ ， $K(x, x_2)$ ，……来构成，序列中的这些势函数相应于在训练过程中输入机器的训练模式样本 $x_1, x_2, \cdots$</li>
+<li>在训练状态，模式样本逐个输入分类器，分类器就连续计算相应的势函数，在第 $k$ 步迭代时的积累位势决定于在该步前所有的单独势函数的累加</li>
+<li>以 $K(x)$ 表示积累位势函数，若加入的训练样本 $x_{k+1}$ 是错误分类，则积累函数需要修改，若是正确分类，则不变</li>
+</ul>
+<p>设初始势函数 $K_0(x) = 0$</p>
+<p>第一步：加入第一个训练样本 $x_1$ ，则有
+$$
+K_1(x) = \begin{cases}
+K(x,x_1) &amp; \text{if } x_1 \in Y_1 \<br>
+-K(x,x_1) &amp; \text{if } x_1 \in Y_2
+\end{cases}
+$$
+这里第一步积累势函数 $K_1(x)$ 描述了加入第一个样本时的边界划分。当样本属于 $Y_1$ 时，势函数为正；当样本属于 $Y_2$ 时，势函数为负。</p>
+<p>第 $K$ 步：设 $K_k(x)$ 为加入训练样本 $x_1, x_2, \cdots, x_k$ 后的积累位势，则加入第 $(k+1)$ 个样本时， $K_{k+1}(x)$ 决定如下：</p>
+<ul>
+<li>若 $x_{k+1} \in Y_1$ 且 $K_k(x_{k+1}) \gt 0$ ，或 $x_{k+1} \in Y_2$ 且 $K_k(x_{k+1}) \lt 0$ ，则分类正确，此时 $K_{k+1}(x) = K_k(x)$ ，即积累位势不变。</li>
+<li>若 $x_{k+1} \in Y_1$ 且 $K_k(x_{k+1}) \lt 0$ ，则 $K_{k+1}(x) = K_k(x) + K(x, x_{k+1})$</li>
+<li>若 $x_{k+1} \in Y_2$ 且 $K_k(x_{k+1}) \gt 0$ ，则 $K_{k+1}(x) = K_k(x) - K(x, x_{k+1})$</li>
+</ul>
+<p>若从给定的训练样本集 ${x_1, x_2, \cdots, x_k, \cdots}$ 中去除不使积累位势发生变化的样本，则可得一简化的样本序列 ${\hat x_1, \hat x_2, \cdots, \hat x_j, \cdots}$ ，它们完全是校正错误的样本。此时，上述迭代公式可归纳为：
+$$
+K_{k+1}(x) = \sum_{\hat x_j} a_j K(x, \hat x_j)
+$$
+其中
+$$
+a_j = \begin{cases}
++1 &amp; \text{for } \hat x_j \in Y_1 \<br>
+-1 &amp; \text{for } \hat x_j \in Y_2 \<br>
+\end{cases}
+$$
+也就是说，由 $k+1$ 个训练样本产生的积累位势，等于 $Y_1$ 和 $Y_2$ 两类中的校正错误样本的总位势之差。</p>
+<h3 id="势函数的选择">势函数的选择</h3>
+<p>一般来说，若两个 $n$ 维向量 $x$ 和 $x_k$ 的函数 $K(x, x_k)$ 同时满足下列三个条件，则可作为势函数。</p>
+<ul>
+<li>$K(x, x_k) = K(x_k, x)$ ，并且当且仅当 $x=x_k$ 时达到最大值；</li>
+<li>当向量 $x$ 与 $x_k$ 的距离趋于无穷时， $K(x, x_k)$ 趋于零；</li>
+<li>$K(x, x_k)$ 是光滑函数，且是 $x$ 与 $x_k$ 之间距离的单调下降函数。</li>
+</ul>
+<h3 id="第一类势函数">第一类势函数</h3>
+<p>可用对称的有限多项式展开，即：
+$$
+{K}\left({x}, {x}<em>{{k}}\right)=\sum</em>{{i}=1}^{{m}} \varphi_{{i}}({x}) \varphi_{{i}}\left({x}_{{k}}\right)
+$$
+其中 ${\varphi_{{i}}({x})}$ 在模式定义域内为正交函数集。将这类势函数代入判别函数，有：
+$$
+{d}_{ {k}+1}( {x})= {d}_{ {k}}( {x})+ {r}_{ {k}+1} \sum_{ {i}=1}^{ {m}} \varphi_{ {i}}\left( {x}_{ {k}+1}\right) \varphi_{ {i}}( {x})= {d}_{ {k}}( {x})+\sum_{ {i}=1}^{ {m}}  {r}_{ {k}+1} \varphi_{ {i}}\left( {x}_{ {k}+1}\right) \varphi_{ {i}}( {x})
+$$
+得迭代关系：
+$$
+d_{k+1}(x) = \sum_{ {i}=1}^{ {m}} C_i(k+1) \varphi_{ {i}}( {x})
+$$
+其中
+$$
+C_i(k+1) = C_i(k) + r_{k+1}\varphi_{ {i}}( {x}_{k+1})
+$$
+因此，积累位势可写成：
+$$
+K_{k+1}(x) = \sum_{ {i}=1}^{ {m}} C_i(k+1) \varphi_{ {i}}( {x})
+$$
+$C_i$ 可用迭代式求得。</p>
+<h4 id="例题-3">例题</h4>
+<ol>
+<li>
+<p>选择合适的正交函数集 ${\varphi_{{i}}({x})}$</p>
+<p>选择Hermite多项式，其正交域为 $(-\infty, + \infty)$ ，其一维形式是
+$$
+\begin{gathered}
+\phi_{k}=\frac{e^{-x^{2} / 2}}{\sqrt{2^{k} \cdot k ! \sqrt{\pi}}} H_{k}(x), \quad k=0,1,2, \cdots \<br>
+H_{n}(x)=(-1)^{n} e^{x^{2}} \frac{d^{n}}{d x^{n}} e^{-x^{2}}
+\end{gathered}
+$$
+其正交性：$$\int_{-\infty}^{+\infty} H_{m}(x) H_{n}(x) e^{-x^{2}} d x=\left{\begin{array}{cc}
+0 &amp; m \neq n \<br>
+2^{n} n ! \sqrt{\pi} &amp; m=n
+\end{array}\right.$$</p>
+<p>其中， $K_k(x)$ 前面的乘式为正交归一化因子，为计算简便可省略。因此，Hermite多项式前面几项的表达式为。
+$$
+\begin{align}
+&amp; H_0(x) = 1 \<br>
+&amp; H_1(x) = 2x \<br>
+&amp; H_2(x) = 4x^2 - 2 \<br>
+&amp; H_3(x) = 8x^3 - 12x \<br>
+&amp; H_4(x) = 16x^4-48x^2+12
+\end{align}
+$$</p>
+</li>
+<li>
+<p>建立二维的正交函数集</p>
+<p>二维的正交函数集可由任意一对一维的正交函数组成，这里取四项最低阶的二维的正交函数
+$$
+\begin{aligned}
+&amp;\varphi_{1}(x)=\varphi_{1}\left(x_{1}, x_{2}\right)=H_{0}\left(x_{1}\right) H_{0}\left(x_{2}\right)=1 \<br>
+&amp;\varphi_{2}(x)=\varphi_{2}\left(x_{1}, x_{2}\right)=H_{1}\left(x_{1}\right) H_{0}\left(x_{2}\right)=2 x_{1} \<br>
+&amp;\varphi_{3}(x)=\varphi_{3}\left(x_{1}, x_{2}\right)=H_{0}\left(x_{1}\right) H_{1}\left(x_{2}\right)=2 x_{2} \<br>
+&amp;\varphi_{4}(x)=\varphi_{4}\left(x_{1}, x_{2}\right)=H_{1}\left(x_{1}\right) H_{1}\left(x_{2}\right)=4 x_{1} x_{2}
+\end{aligned}
+$$</p>
+</li>
+<li>
+<p>生成势函数</p>
+<p>按第一类势函数定义，得到势函数
+$$
+K(x,x_k) =1 + 4x_1x_{k_1} + 4x_2x_{k_2} + 16 x_1x_2x_{k_1}x_{k_2}
+$$</p>
+</li>
+<li>
+<p>通过训练样本逐步计算累积位势 $K(x)$</p>
+</li>
+</ol>
+<h3 id="第二类势函数">第二类势函数</h3>
+<p>选择双变量 $x$ 和 $x_k$ 的对称函数作为势函数，即 $K(x, x_k) = K(x_k, x)$ ，并且它可展开成无穷级数，例如：
+$$
+\begin{aligned}
+&amp;K\left(x, x_{k}\right)=e^{-\alpha\left|x-x_{k}\right|^{2}} \<br>
+&amp;K\left(x, x_{k}\right)=\frac{1}{1+\alpha\left|x-x_{k}\right|^{2}}, \  \alpha \in R^{+}\<br>
+&amp;K\left(x, x_{k}\right)=\left|\frac{\sin \alpha\left|x-x_{k}\right|^{2}}{\alpha\left|x-x_{k}\right|^{2}}\right|
+\end{aligned}
+$$</p>
+<ul>
+<li>缺点：用第二类势函数，当训练样本维数和数目都较高时，需要计算和存储的指数项较多。</li>
+<li>优点：正因为势函数由许多新项组成，因此有很强的分类能力。</li>
+</ul>
+<h4 id="例题-4">例题</h4>
+<h2 id="决策树多级分类器">决策树（多级分类器）</h2>
+<ul>
+<li>决策树是模式识别中进行分类的一种有效方法，对于多类或多峰分布问题，这种方法尤为方便。</li>
+<li>利用树分类器可以把一个复杂的多类别分类问题，转化为若干个简单的分类问题来解决。</li>
+<li>它不是企图用一种算法、一个决策规则去把多个类别一次分开，而是采用分级的形式，使分类问题逐步得到解决。</li>
+<li>一般来讲，一个决策树由一个根节点 $n_1$ ，一组非终止节点 $n_i$ 和一些终止节点 $t_j$ 组成，可对 $t_j$ 标以各种类别标签，有时不同的终止节点上可以出现相同的类别标签。</li>
+<li>如果用 $T$ 表示决策树，则一个决策树 $T$ 对应于特征空间的一种划分，它把特征空间分成若干个区域，在每个区域中，某类的样本占优势，因此可以标出该类样本的类别标签。</li>
+<li>决策树的一种简单形式是二叉树，它是指除叶结点外，树的每个节点仅分为两个分支，即每个非终止节点 $n_i$ 都有且仅有两个子节点 $n_{il}$ 和 $n_{ir}$ 。</li>
+<li>二叉树结构分类器可以把一个复杂的多类别分类问题转化为多级多个两类问题来解决，在每个非终止节点 $n_i$ 都把样本集分成左右两个子集。</li>
+<li>分成的每一部分仍然可能包含多个类别的样本，可以把每一部分再分成两个子集，如此下去，直至分成的每一部分只包含同一类别的样本，或某一类样本占优势为止。</li>
+<li>二叉树结构分类器概念简单、直观、便于解释，而且在各个节点上可以选择不同的特征和采用不同的决策规则，因此设计方法灵活多样，便于利用先验知识来获得一个较好的分类器。</li>
+<li>在设计一个决策树时，主要应解决以下几个问题：
+<ul>
+<li>选择一个合适的树结构，即合理安排树的节点和分支；</li>
+<li>确定在每个非终止节点上要使用的特征；</li>
+<li>在每个非终止节点上选择合适的决策规则。</li>
+</ul>
+</li>
+<li>上述三个问题解决了，决策树的设计也就完成了。二叉树的设计也不例外。</li>
+<li>把一个多类别分类问题转化为两类问题的形式是多种多样的，因此，对应的二叉树的结构也是各不相同的。通常的目的是要找一个最优的决策树。</li>
+<li>一个性能良好的决策树结构应该具有小的错误率和低的决策代价。</li>
+<li>但是由于很难把错误率的解析表达式和树的结构联系起来，而且在每个节点上所采用的决策规则也仅仅是在该节点上所采用的特征观测值的函数，因此，即使每个节点上的性能都达到最优，也不能说整个决策树的性能达到最优。</li>
+<li>在实际问题中，人们往往提出其它一些优化准则，例如极小化整个树的节点数目，或从根节点到叶结点的最大路经长度，或从根节点到叶结点的平均路经长度等，然后采用动态规划的方法，力争设计出能满足某种准则的“最优”决策树。</li>
+</ul>
+
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>

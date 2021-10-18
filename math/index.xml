@@ -6,10 +6,44 @@
     <description>Recent content in Maths on Fu Bin&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Sep 2021 23:47:32 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 12 Oct 2021 00:57:32 +0800</lastBuildDate>
     
 	<atom:link href="https://StupidRabbit29.github.io/math/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Norm2</title>
+      <link>https://StupidRabbit29.github.io/math/norm2/</link>
+      <pubDate>Tue, 12 Oct 2021 00:57:32 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/math/norm2/</guid>
+      <description>定理
+谱范数和F-范数都是酉不变范数，即对于任意酉矩阵 $P$ 和 $Q$ ，有 $|PAQ|=|A|$ 。
+如果一个范数是酉不变范数，那么一定是奇异值的函数。
+范数的应用 矩阵的可逆性条件 定理：设 $A \in C^{n \times n}$ ，且对 $C^{n \times n}$ 的矩阵范数 $| \cdot |$ ，满足 $|A| \lt 1$ ，则矩阵 $I-A$ 非奇异，且有 \( \| (I-A)^{-1} \| \le \frac {\|I\|} {1-\|A\|} \)
+\[ \| I-(I-A)^{-1} \| \le \frac {\|A\|} {1-\|A\|} \]
+可逆性证明：选取向量范数 $|x|{v}$ ，使得 $|A|$ 与 $|x|{v}$ 相容。如果 $\det (I-A) = 0$ ，则 $(I-A)x = 0$ 有非零解 $x_0$ ， $x_0 = Ax_0 \to |x0|{v} = |Ax0|{v} \le |A||x0|{v} \lt |x0|{v}$ ，产生了矛盾，故 $\det (I-A) \ne 0$ ，因此 $I-A$ 可逆。</description>
+    </item>
+    
+    <item>
+      <title>向量范数及其性质</title>
+      <link>https://StupidRabbit29.github.io/math/norm1/</link>
+      <pubDate>Tue, 12 Oct 2021 00:57:24 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/math/norm1/</guid>
+      <description>向量范数的概念 定义 假设 $V$ 是数域 $K$ 上的线性空间，对 $V$ 的任一向量 $x$ ，定义一个实值函数 $|x|$ ，如果这个函数满足： （1）非负性： $|x| \ge 0$ ，且 $|x| = 0$ 当且仅当 $x = 0$ ； （2）齐次性： $|kx| = |k| |x|, k \in K, x \in V$ ； （3）三角不等式： $|x+y| \le |x| + |y|, x,y\in V$ 。 则称 $|x|$ 为 $V$ 上的向量范数。
+注：（2）中 $|k|$ 表示绝对值（ $K=R$ ）或模（ $K=C$ ）。
+向量范数的性质  当 $|x| \ne 0$ 时， $\left| \frac{1}{|x|} x \right| = 1$ $\forall x \in V$ ， $|-x| = |x|$ $\forall x,y \in V$ ， $ |x| - |y| \le |x - y| $ ，同理 $ |y| - |x| \le |y - x| = |x - y| $  向量范数是定义在一般的线性空间上的，但是由于前面的讨论，我们知道任何 $n$ 维线性空间在一个基下都代数同构于常用的 $n$ 维复（或实）列向量空间，因此下面我们仅仅讨论 $n$ 维复（或实）列向量空间就足够了。</description>
+    </item>
+    
+    <item>
+      <title>Matrix3</title>
+      <link>https://StupidRabbit29.github.io/math/matrix3/</link>
+      <pubDate>Tue, 12 Oct 2021 00:53:13 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/math/matrix3/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>矩阵论笔记（二） 线性变换</title>

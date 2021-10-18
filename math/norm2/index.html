@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+
+-->
+<script>
+    MathJax = {
+    tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+    fontCache: 'global'
+    }
+    };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="en-us" lang="en-us" >
+<head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Norm2 &middot; Fu Bin&#39;s Blog</title>
+    <meta name="description" content="" />
+
+    
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/print.css" media="print">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/poole.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/syntax.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+
+    
+    
+</head>
+
+  <body class="theme-base-08 ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://StupidRabbit29.github.io/"><h1>Fu Bin&#39;s Blog</h1></a>
+      <p class="lead">
+       这里是Fu Bin的个人博客 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://StupidRabbit29.github.io/">Home</a> </li>
+        <li><a href="/posts/"> Blog </a></li><li><a href="/tags/"> Tags </a></li><li><a href="/about"> About </a></li><li><a href="/index.xml"> RSS </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2021. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+    <h1>Norm2</h1>
+    <time datetime=2021-10-12T00:57:32&#43;0800 class="post-date">2021-10-12 00:57:32</time>
+    
+    
+    
+    <ul id="tags">
+        
+        <li> <a href="https://StupidRabbit29.github.io/tags%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0">线性代数</a> </li>
+        
+        <li> <a href="https://StupidRabbit29.github.io/tags%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6">高等数学</a> </li>
+        
+        <li> <a href="https://StupidRabbit29.github.io/tags%E6%A6%82%E7%8E%87%E8%AE%BA">概率论</a> </li>
+        
+        <li> <a href="https://StupidRabbit29.github.io/tags%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6">离散数学</a> </li>
+        
+        <li> <a href="https://StupidRabbit29.github.io/tags%E6%95%B0%E5%AD%A6%E5%B0%8Ftips">数学小tips</a> </li>
+        
+    </ul>
+    
+    
+    <ul id="categories">
+        
+        <li><a href="https://StupidRabbit29.github.io/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0">课程笔记</a> </li>
+        
+    </ul>
+    
+    <p><strong>定理</strong></p>
+
+<p>谱范数和F-范数都是酉不变范数，即对于任意酉矩阵 $P$ 和 $Q$ ，有 $|PAQ|=|A|$ 。</p>
+
+<p>如果一个范数是酉不变范数，那么一定是奇异值的函数。</p>
+
+<h2 id="范数的应用">范数的应用</h2>
+
+<h3 id="矩阵的可逆性条件">矩阵的可逆性条件</h3>
+
+<p><strong>定理</strong>：设 $A \in C^{n \times n}$ ，且对 $C^{n \times n}$ 的矩阵范数 $| \cdot |$ ，满足 $|A| \lt 1$ ，则矩阵 $I-A$ 非奇异，且有
+<span  class="math">\(
+\| (I-A)^{-1} \| \le \frac {\|I\|} {1-\|A\|}
+\)</span></p>
+
+<p><span  class="math">\[
+\| I-(I-A)^{-1} \| \le \frac {\|A\|} {1-\|A\|}
+\]</span></p>
+
+<p><strong>可逆性证明</strong>：选取向量范数 $|x|<em>{v}$ ，使得 $|A|$ 与 $|x|</em>{v}$ 相容。如果 $\det (I-A) = 0$ ，则 $(I-A)x = 0$ 有非零解 $x_0$ ， $x_0 = Ax_0 \to |x<em>0|</em>{v} = |Ax<em>0|</em>{v} \le |A||x<em>0|</em>{v} \lt |x<em>0|</em>{v}$ ，产生了矛盾，故 $\det (I-A) \ne 0$ ，因此 $I-A$ 可逆。</p>
+
+<p><strong>注意</strong>：矩阵 $I+A$ 也非奇异</p>
+
+<p><strong>不等式一的证明</strong>：
+<span  class="math">\(
+\begin{align}
+& (I-A)^{-1}(I-A) = I \\
+\to & (I-A)^{-1} = I + (I-A)^{-1}A \\
+\to & \|(I-A)^{-1}\| \le \|I\| + \|(I-A)^{-1}A\| \\
+\to & \|(I-A)^{-1}\| \le \|I\| + \|(I-A)^{-1}\|\|A\| \\
+\to & \|(I-A)^{-1}\| \le \frac {\|I\|} {1-\|A\|} \\
+\end{align}
+\)</span>
+<strong>不等式二的证明</strong>：</p>
+
+<p>有恒等式： $(I-A)-I = -A$</p>
+
+<p>右乘 $(I-A)^{-1}$ ： $I - (I-A)^{-1} = -A(I-A)^{-1}$</p>
+
+<p>左乘 $A$ ： $A - A(I-A)^{-1} = -A^{2} (I-A)^{-1}$
+<span  class="math">\(
+\begin{align}
+& A(I-A)^{-1} = A + A^{2} (I-A)^{-1} \\
+\to & \|A(I-A)^{-1}\| \le \|A\| + \|A\| \|A(I-A)^{-1}\| \\
+\to & \|A(I-A)^{-1}\| \le \frac {\|A\|} {1-\|A\|} \\
+\to & \|I - (I-A)^{-1} \| = \|-A(I-A)^{-1}\| \le \frac {\|A\|} {1-\|A\|} \\
+\end{align}
+\)</span></p>
+
+<h3 id="近似逆矩阵的误差逆矩阵的摄动">近似逆矩阵的误差——逆矩阵的摄动</h3>
+
+<p><strong>定理</strong>：设 $A \in C^{n \times n}$ 可逆， $B \in C^{n \times n}$ ，且对某种 $C^{n \times n}$ 的矩阵范数 $| \cdot |$ ，有 $|A^{-1}B| \lt 1$ ，则有</p>
+
+<p>（1） $A+B$ 非奇异</p>
+
+<p>（2）设 $F = I - (I + A<sup>{-1}B)</sup>{-1} $ ，则 $ |F| \le \frac {|A<sup>{-1}B|}{1-|A</sup>{-1}B|}$</p>
+
+<p>（3） $\frac {|A^{-1} - (A+B)^{-1} |}{|A^{-1}|} \le \frac {|A<sup>{-1}B|}{1-|A</sup>{-1}B|}$</p>
+
+<p>称 $cond(A)=|A| |A^{-1}|$为矩阵 $A$ 的条件数（condition number），它反映了 $A^{-1}$ 对扰动的敏感程度。
+<span  class="math">\(
+A^{-1} - (A+B)^{-1} = A^{-1} - (A(I + A^{-1}B))^{-1} = A^{-1} - (I + A^{-1}B)^{-1}A^{-1}
+\)</span></p>
+
+<p><span  class="math">\[
+\| A^{-1} - (A+B)^{-1} \| = \| A^{-1} - (I + A^{-1}B)^{-1}A^{-1} \| \le \| A^{-1} \| \| I - (I + A^{-1}B)^{-1} \|
+\]</span></p>
+
+<p><strong>证明</strong>：</p>
+
+<p>（1）选取向量范数 $|\cdot|<em>{v}$ ，使得矩阵范数 $| \cdot |$ 与 $|\cdot|</em>{v}$ 相容。如果 $\det (A+B) = 0$ ，则 $(A+B)x = 0$ 有非零解 $x_0$ ， $(A+B)x<em>0 = 0 \to -x</em>{0} = A^{-1}Bx_0 \to |x<em>0|</em>{v} = |-x<em>0|</em>{v} = |A^{-1}Bx<em>0|</em>{v} \le |A^{-1}B||x<em>0|</em>{v} \lt |x<em>0|</em>{v}$ ，产生了矛盾，故 $\det (A+B) \ne 0$ ，因此 $A+B$ 可逆。</p>
+
+<p>待办</p>
+
+<h4 id="矩阵范数在线性方程组求解中的误差分析">矩阵范数在线性方程组求解中的误差分析</h4>
+
+<p><strong>定理</strong>：设线性方程组 $Ax=b$ 的扰动解 $x+ \delta x$ 满足方程
+<span  class="math">\(
+(A + \delta A)(x + \delta x) = (b + \delta b)
+\)</span>
+那么成立
+<span  class="math">\(
+\frac {\| \delta x \|} {\| x \|} \le cond (A) \left( \frac {\| \delta A \|} {\| A \|} + \frac {\| \delta b \|} {\| b \|}\right)
+\)</span>
+实际情况是运算有误差，输入无误差。但是为了向后误差分析法，将误差转移到了输入数据有误差，运算无误差。</p>
+
+<p><strong>证明</strong>：由题设可得 $Ax + A \cdot \delta x + \delta A \cdot x + \delta A \cdot \delta x = b + \delta b$ ，即 $A \cdot \delta x + \delta A \cdot x \approx \delta b$ ，从而 $\delta x \approx A^{-1} \delta b - A^{-1} \delta A \cdot x$ ，两边取范数并放大后可得
+<span  class="math">\(
+\|\delta x\| \le \|A^{-1}\|\cdot \|\delta b\| + \|A^{-1}\|\cdot \|\delta A\| \cdot \|x\|
+\)</span>
+由 $| A| \cdot |x| \ge |b|$ 可得
+<span  class="math">\(
+\begin {align}
+\frac {\|\delta x\| } {\| x\|} & \le \frac {\|A^{-1}\|\cdot \|\delta b\|} {\| x\|} + \|A^{-1}\|\cdot \|\delta A\| \\
+& \le (\|A\| \|A^{-1}\|) \frac {\|\delta b\|} {\| x\|} + (\|A\| \|A^{-1}\|) \frac {\| \delta A \|} {\| A \|} \\
+& = cond (A) \left( \frac {\| \delta A \|} {\| A \|} + \frac {\| \delta b \|} {\| b \|}\right)
+\end{align}
+\)</span></p>
+
+<h3 id="谱半径及其性质">谱半径及其性质</h3>
+
+<p><strong>定理</strong>：设 $A \in C^{n \times n}$ 的 $n$ 个特征值为 $\lambda_1, \lambda_2, \cdots, \lambda_n$ ，称 $\rho (A) = \max _i |\lambda_i|$ 为矩阵 $A$ 的谱半径（spectral radius）。</p>
+
+<p>谱半径与矩阵收敛相关。谱半径 $\rho(A) \lt 1$ ，则矩阵收敛，谱半径越小，收敛越快。</p>
+
+<ul>
+<li>$\rho(A^k) = [\rho(A)]^k$</li>
+<li>矩阵 $A$ 的2-范数为 $|A|<em>{2} = (\rho(A<sup>{H}A))</sup>{\frac 1 2} =(\rho(AA<sup>{H}))</sup>{\frac 1 2} $ ，若 $A$ 是 Hermite 矩阵，则 $|A|</em>{2} = \rho(A)$</li>
+</ul>
+
+<p><strong>定理</strong>：设 $A \in C^{n \times n}$ ，则对任意一种矩阵范数都有 $\rho(A) \le |A|$ 。</p>
+
+<p><strong>证明</strong>：对矩阵范数构造相应的相容向量范数 $|\cdot|<em>{v}$ 。设 $\lambda$ 为 $A$ 的任意特征值， $x$ 为对应特征向量，则有 $|\lambda| \cdot |x|</em>{v} = |\lambda x|<em>{v} = |A x|</em>{v} \le |A| \cdot |x|_{v}$ ，从而有 $|\lambda| \le |A|$ ，由题设， $\rho(A) \le |A|$ 。</p>
+
+<p>有了该定理，就可以通过找到一个矩阵范数，使得 $|A| \lt 1$ ，从而得到 $\rho(A) \lt 1$ ，避免了谱半径的繁琐计算。</p>
+
+<p>该定理说明谱半径是矩阵范数的下界。</p>
+
+<p><strong>定理</strong>：设 $A \in C^{n \times n}$ ，则对任意正数 $\epsilon$ ，必存在某种矩阵范数，使得 $|A| \le \rho(A) + \epsilon$ 。</p>
+
+<p><strong>证明</strong>：存在可逆矩阵 $P \in C^{n \times n}$ 使得 $P^{-1}AP = \Lambda + \tilde{I}$
+<span  class="math">\(
+\tilde{I} = \begin{pmatrix}
+0 & \delta_1 & & & \\
+& 0 & \delta_2 & & \\
+& & \ddots & \ddots & \\
+& & & 0 & \delta_{n-1} \\
+& & & & 0 \\
+\end{pmatrix}
+\)</span>
+其中 $\delta_i = 0/1$ 。记对角元矩阵为 $\Lambda$ ，即 $\Lambda = diag (\lambda_1, \lambda_2, \cdots, \lambda_n)$ 。</p>
+
+<p>令 $D = diag(1, \epsilon, \cdots, \epsilon^{n-1}), S=PD$ ，那么
+<span  class="math">\(
+S^{-1}AS = D^{-1}P^{-1}APD = D^{-1}(\Lambda + \tilde{I})D = \Lambda + \epsilon \tilde{I}
+\)</span>
+又因为 $|S^{-1}AS|<em>{1} = |\Lambda + \epsilon \tilde{I}|</em>{1} \le |\Lambda|<em>{1} + |\epsilon \tilde{I}|</em>{1} \le \rho(A) + \epsilon $ ，</p>
+
+<p>从而定义矩阵 $X \in C^{n \times n}$ 的范数为
+<span  class="math">\(
+\|X \|_{M} = \|S^{-1}XS\|_{1}
+\)</span>
+因此 $|A|_{M} \le \rho(A) + \epsilon$ 。</p>
+
+<ul>
+<li><p>该定理进一步说明，谱半径是矩阵范数的下确界。</p></li>
+
+<li><p>对于不同的矩阵 $A$ ，这种充分靠近 $A$ 的谱半径 $\rho(A)$ 的范数一般是不同的，是与 $A$ 有关的。不存在一种矩阵范数 $|A|<em>{M}$ 使得 $\forall A, |A|</em>{M} \le \rho(A) + \epsilon$ 。</p></li>
+</ul>
+
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>

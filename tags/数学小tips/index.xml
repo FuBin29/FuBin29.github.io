@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数学小tips on Fu Bin&#39;s Blog</title>
+    <link>https://StupidRabbit29.github.io/tags/%E6%95%B0%E5%AD%A6%E5%B0%8Ftips/</link>
+    <description>Recent content in 数学小tips on Fu Bin&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Oct 2021 00:57:32 +0800</lastBuildDate>
+    
+	<atom:link href="https://StupidRabbit29.github.io/tags/%E6%95%B0%E5%AD%A6%E5%B0%8Ftips/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Norm2</title>
+      <link>https://StupidRabbit29.github.io/math/norm2/</link>
+      <pubDate>Tue, 12 Oct 2021 00:57:32 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/math/norm2/</guid>
+      <description>定理
+谱范数和F-范数都是酉不变范数，即对于任意酉矩阵 $P$ 和 $Q$ ，有 $|PAQ|=|A|$ 。
+如果一个范数是酉不变范数，那么一定是奇异值的函数。
+范数的应用 矩阵的可逆性条件 定理：设 $A \in C^{n \times n}$ ，且对 $C^{n \times n}$ 的矩阵范数 $| \cdot |$ ，满足 $|A| \lt 1$ ，则矩阵 $I-A$ 非奇异，且有 \( \| (I-A)^{-1} \| \le \frac {\|I\|} {1-\|A\|} \)
+\[ \| I-(I-A)^{-1} \| \le \frac {\|A\|} {1-\|A\|} \]
+可逆性证明：选取向量范数 $|x|{v}$ ，使得 $|A|$ 与 $|x|{v}$ 相容。如果 $\det (I-A) = 0$ ，则 $(I-A)x = 0$ 有非零解 $x_0$ ， $x_0 = Ax_0 \to |x0|{v} = |Ax0|{v} \le |A||x0|{v} \lt |x0|{v}$ ，产生了矛盾，故 $\det (I-A) \ne 0$ ，因此 $I-A$ 可逆。</description>
+    </item>
+    
+    <item>
+      <title>Matrix3</title>
+      <link>https://StupidRabbit29.github.io/math/matrix3/</link>
+      <pubDate>Tue, 12 Oct 2021 00:53:13 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/math/matrix3/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

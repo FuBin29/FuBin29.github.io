@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Classes on Fu Bin&#39;s Blog</title>
+    <link>https://StupidRabbit29.github.io/class/</link>
+    <description>Recent content in Classes on Fu Bin&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Oct 2021 12:56:49 +0800</lastBuildDate>
+    
+	<atom:link href="https://StupidRabbit29.github.io/class/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Prml3</title>
+      <link>https://StupidRabbit29.github.io/class/prml3/</link>
+      <pubDate>Mon, 18 Oct 2021 12:56:49 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/class/prml3/</guid>
+      <description>判别函数 线性判别函数 两类问题的判别函数（以二维模式样本为例） 若 $x$ 是二维模式样本 $x = (x_1, x_2)^T$ ，使用直线方程 $d(x) = w_1x_1 + w_2x_2 + w_3 = 0$ 来划分两类模式 的样本。则将一个不知类别的模式代入 $d(x)$ ，若 $d(x) \gt 0$ ，则 $x \in Y_1$ ；若 $d(x) \lt 0$ ，则 $x \in Y_2$ 。
+讨论 用判别函数进行模式分类依赖的两个因素
+ 判别函数的几何性质：线性的和非线性的函数  线性的是一条直线； 非线性的可以是曲线、折线等； 线性判别函数建立起来比较简单（实际应用较多），非线性判别函数建立起来比较复杂。   判别函数的系数：判别函数的形式确定后，主要就是确定判别函数的系数问题  只要被研究的模式是可分的，就能用给定的模式样本集来确定判别函数的系数    $n$ 维线性判别函数 $$ d(x)=w_{1} x_{1}+w_{2} x_{2}+\cdots+w_{n} x_{n}+w_{n+1}=w_{0}^{T} x+w_{n+1} $$
+其中 $w_0 = (w_1, w_2, \cdots, w_n)^T$ 称为权向量（或参数向量）。 $d(x)$ 也可以表示为 $d(x) = w^Tx$ 。其中， $x = (x_1, x_2, \cdots, x_n, 1)^T$ 称为增广模式向量， $w = (w_1, w_2, \cdots, w_{n+1})^T$ 称为增广权向量。</description>
+    </item>
+    
+    <item>
+      <title>Prml2</title>
+      <link>https://StupidRabbit29.github.io/class/prml2/</link>
+      <pubDate>Mon, 18 Oct 2021 12:56:44 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/class/prml2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prml1</title>
+      <link>https://StupidRabbit29.github.io/class/prml1/</link>
+      <pubDate>Mon, 18 Oct 2021 12:56:35 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/class/prml1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prml0</title>
+      <link>https://StupidRabbit29.github.io/class/prml0/</link>
+      <pubDate>Mon, 18 Oct 2021 12:56:31 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/class/prml0/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+
+-->
+<script>
+    MathJax = {
+    tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+    fontCache: 'global'
+    }
+    };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="en-us" lang="en-us" >
+<head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>向量范数及其性质 &middot; Fu Bin&#39;s Blog</title>
+    <meta name="description" content="向量范数的定义以及等价性" />
+
+    
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/print.css" media="print">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/poole.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/syntax.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+
+    
+    
+</head>
+
+  <body class="theme-base-08 ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://StupidRabbit29.github.io/"><h1>Fu Bin&#39;s Blog</h1></a>
+      <p class="lead">
+       这里是Fu Bin的个人博客 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://StupidRabbit29.github.io/">Home</a> </li>
+        <li><a href="/posts/"> Blog </a></li><li><a href="/tags/"> Tags </a></li><li><a href="/about"> About </a></li><li><a href="/index.xml"> RSS </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2021. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+    <h1>向量范数及其性质</h1>
+    <time datetime=2021-10-12T00:57:24&#43;0800 class="post-date">2021-10-12 00:57:24</time>
+    
+    
+    
+    <ul id="tags">
+        
+        <li> <a href="https://StupidRabbit29.github.io/tags%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0">线性代数</a> </li>
+        
+    </ul>
+    
+    
+    <ul id="categories">
+        
+        <li><a href="https://StupidRabbit29.github.io/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0">课程笔记</a> </li>
+        
+    </ul>
+    
+    <h2 id="向量范数的概念">向量范数的概念</h2>
+<h3 id="定义">定义</h3>
+<p>假设 $V$ 是数域 $K$ 上的线性空间，对 $V$ 的任一向量 $x$ ，定义一个实值函数 $|x|$ ，如果这个函数满足：
+（1）非负性： $|x| \ge 0$ ，且 $|x| = 0$ 当且仅当 $x = 0$ ；
+（2）齐次性： $|kx| = |k| |x|, k \in K, x \in V$ ；
+（3）三角不等式： $|x+y| \le |x| + |y|, x,y\in V$ 。
+则称 $|x|$ 为 $V$ 上的向量范数。</p>
+<p>注：（2）中 $|k|$ 表示绝对值（ $K=R$ ）或模（ $K=C$ ）。</p>
+<h3 id="向量范数的性质">向量范数的性质</h3>
+<ul>
+<li>当 $|x| \ne 0$ 时， $\left| \frac{1}{|x|} x \right| = 1$</li>
+<li>$\forall x \in V$ ， $|-x| = |x|$</li>
+<li>$\forall x,y \in V$ ， $ |x| - |y| \le |x - y| $ ，同理  $ |y| - |x| \le |y - x| = |x - y| $</li>
+</ul>
+<p>向量范数是定义在一般的线性空间上的，但是由于前面的讨论，我们知道任何 $n$ 维线性空间在一个基下都代数同构于常用的 $n$ 维复（或实）列向量空间，因此下面我们仅仅讨论 $n$ 维复（或实）列向量空间就足够了。</p>
+<ul>
+<li>
+<p>设 $| \cdot |$ 为线性空间 $V_n$ 的范数，任取它的一个基 $x_1, x_2, \cdots, x_n$ ，则对于任意向量 $x$ ，它可以表示为
+$$
+x = \xi_1x_1 + \xi_2x_2+ \cdots + \xi_n x_n
+$$
+其中， $(\xi_1, \xi_2, \cdots, \xi_n)^T$ 为 $x$ 的坐标。由此定义 $C^n$ （或 $R^n$ ）中的范数如下：
+$$
+| \xi |_C = \varphi(\xi) = | \xi_1x_1 + \xi_2x_2+ \cdots + \xi_n x_n |
+$$
+容易验证 $|\xi|_C$ 确实为 $C^n$ 中的范数</p>
+</li>
+<li>
+<p>反之，若 $|\xi|_C$ 为 $C^n$ 中的范数，定义 $V_n$ 的范数如下：
+$$
+|x| = \phi (x) = |\xi|_C
+$$
+其中 $x = \xi_1x_1 + \xi_2x_2+ \cdots + \xi_n x_n$ 。容易验证 $\phi(x)$ 确实为 $V_n$ 的范数。</p>
+</li>
+<li>
+<p>范数是凸函数，即 $| (1-\lambda) x + \lambda y | \le (1-\lambda)|x| + \lambda |y| $ ，其中 $0 \le \lambda \le 1$ 。</p>
+</li>
+<li>
+<p>若 $| \cdot |$ 为线性空间 $V$ 上的向量范数，则 $k | \cdot |$ 仍然为向量范数，其中$k \gt 0$。</p>
+</li>
+</ul>
+<h3 id="绝对范数的定义">绝对范数的定义</h3>
+<p>设 $x = (\xi_1, \xi_2, \cdots, \xi_n)^T \in C^n$ ，记 $|x| = (|\xi_1|, |\xi_2|, \cdots, |\xi_n|)^T \in R^n$ ，如果 $C^n$ 上的范数 $v$ 满足条件：
+$$
+v(x) = v(|x|) , \ \ \forall x \in C^n
+$$
+则称 $v$ 为绝对范数。</p>
+<h3 id="引理">引理</h3>
+<p>范数 $v$ 为绝对范数的充要条件是：当 $|x| \le |y|$ 时，则有 $v(x) \le v(y)$ 。满足该条件的范数又称为单调范数，绝对范数就是单调范数。</p>
+<h3 id="复合范数">复合范数</h3>
+<p>设 $|\cdot|_{comp}$ 为 $R^m$ 上的范数，且对 $x \in (R^{+})^m$ 为单调增加的（即，若 $x,y \in (R^{+})^m$ ，且 $x_i \le y_i$ ，那么 $|x|_{comp} \le |y|_{comp}$ ），那么对于给定的 $m$ 个 $n$ 维线性空间 $V$ 上的范数 $|\cdot|_{i}, i = 1, 2,\cdots, m$ ，我们可以定义一个复合范数为 $|x| = |U(x)|_{comp}$ ，其中， $U(x) =( |x|_{1}, |x|_{2}, \cdots, |x|_{m})^T$ 。</p>
+<p>对三角不等式的证明：
+$$</p>
+<p>$$</p>
+
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>
