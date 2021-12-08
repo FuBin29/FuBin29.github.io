@@ -6,10 +6,85 @@
     <description>Recent content on Fu Bin&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Oct 2021 12:56:49 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 08 Dec 2021 22:31:02 +0800</lastBuildDate>
     
 	<atom:link href="https://StupidRabbit29.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Prml8</title>
+      <link>https://StupidRabbit29.github.io/class/prml8/</link>
+      <pubDate>Wed, 08 Dec 2021 22:31:02 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/class/prml8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SVM</title>
+      <link>https://StupidRabbit29.github.io/class/prml7/</link>
+      <pubDate>Wed, 08 Dec 2021 22:30:54 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/class/prml7/</guid>
+      <description>SVM 基本思想 假设数据是线性可分的，SVM使用线性判别函数 $f(x) = w^T x + b$ 来对数据进行分类，如果 $w^T x + b &amp;gt; 0$ 则分为正类，如果 $w^T x + b &amp;lt; 0$ 则分为负类。
+对于数据点 $(x_i, y_i), y_i = +1/-1$ ， $y_i$ 为正确分类类别。
+函数距离： $y_i(w^T x_i + b)$ 的正负可以表示分类的正确性和信心，为正代表分类正确。
+几何距离： $|w^T x_i + b| / |w|$ 表示样本点 $x_i$ 到分类平面的距离。
+与分类平面距离最近的样本点称为支持向量，进而构成支持平面。
+分类器的分类间距 $\rho$ 指支持平面之间的距离。
+SVM推导过程 核心思想：最大化分类间距 $\rho$ ，一种启发式思想，这样的噪声容忍性好，鲁棒性好，泛化能力强。
+训练集 ${ (x_{i}, y_{i}) }_{i=1}^N$ ，其中 $x_i \in R^D, y_i \in {+1, -1}$ 分别为输入数据点和类别。易得 $$ \rho = 2 \min_i \frac {|w^T x_i + b|}{|w|} $$ 因此SVM的目标可以形式化为二次规划问题 $$ \begin{align} \max_{w,b}\min_{i} &amp;amp;&amp;amp; \frac {2|w^T x_i + b|}{|w|} &amp;amp; \</description>
+    </item>
+    
+    <item>
+      <title>Prml6</title>
+      <link>https://StupidRabbit29.github.io/class/prml6/</link>
+      <pubDate>Wed, 08 Dec 2021 22:30:51 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/class/prml6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prml5</title>
+      <link>https://StupidRabbit29.github.io/class/prml5/</link>
+      <pubDate>Wed, 08 Dec 2021 22:30:47 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/class/prml5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prml4</title>
+      <link>https://StupidRabbit29.github.io/class/prml4/</link>
+      <pubDate>Wed, 08 Dec 2021 22:30:45 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/class/prml4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Series2</title>
+      <link>https://StupidRabbit29.github.io/math/series2/</link>
+      <pubDate>Mon, 25 Oct 2021 21:28:58 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/math/series2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>矩阵序列</title>
+      <link>https://StupidRabbit29.github.io/math/series1/</link>
+      <pubDate>Mon, 25 Oct 2021 21:27:42 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/math/series1/</guid>
+      <description>引言 一元多项式 $f(t) = c_0 + c_1 t+ \cdots + c_m t^m$
+矩阵多项式 $f(A) = c_0 I + c_1 A+ \cdots + c_m A^m$
+易见， $f(A)$ 是以矩阵为自变量且取值为矩阵的一类函数。
+矩阵函数是一般的以矩阵为自变量且取值为矩阵的函数。
+矩阵序列 定义：设有矩阵序列 ${A{(k)}=(a_{ij}{(k)}) }$ ，若对所有的 $i$ 和 $j$ ，当 $k$ 趋于无穷时， $a_{ij}^{(k)}$ 趋于 $a_{ij}$ ，则称 ${A^{(k)}}$ 收敛，并称矩阵 $A=(a_{ij})$ 是 ${A^{(k)}}$ 的极限，记做 \( \lim_{k \to \infty} A^{(k)} = A \) 若对某一组 $i$ 和 $j$ ， $a_{ij}^{(k)}$ 不收敛，则称 ${A^{(k)}}$ 发散。
+定理：设 $A^{(k)} \in C^{m \times n}$ ，设 $| \cdot |$ 为任意广义矩阵范数，则</description>
+    </item>
     
     <item>
       <title>Prml3</title>

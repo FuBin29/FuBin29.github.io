@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+
+-->
+<script>
+    MathJax = {
+    tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+    fontCache: 'global'
+    }
+    };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="en-us" lang="en-us" >
+<head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>矩阵序列 &middot; Fu Bin&#39;s Blog</title>
+    <meta name="description" content="" />
+
+    
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/print.css" media="print">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/poole.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/syntax.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+
+    
+    
+</head>
+
+  <body class="theme-base-08 ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://StupidRabbit29.github.io/"><h1>Fu Bin&#39;s Blog</h1></a>
+      <p class="lead">
+       这里是Fu Bin的个人博客 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://StupidRabbit29.github.io/">Home</a> </li>
+        <li><a href="/posts/"> Blog </a></li><li><a href="/tags/"> Tags </a></li><li><a href="/about"> About </a></li><li><a href="/index.xml"> RSS </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2021. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+    <h1>矩阵序列</h1>
+    <time datetime=2021-10-25T21:27:42&#43;0800 class="post-date">2021-10-25 21:27:42</time>
+    
+    
+    
+    <ul id="tags">
+        
+        <li> <a href="https://StupidRabbit29.github.io/tags%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0">线性代数</a> </li>
+        
+    </ul>
+    
+    
+    <ul id="categories">
+        
+        <li><a href="https://StupidRabbit29.github.io/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0">课程笔记</a> </li>
+        
+    </ul>
+    
+    <h2 id="引言">引言</h2>
+
+<p>一元多项式 $f(t) = c_0 + c_1 t+ \cdots + c_m t^m$</p>
+
+<p>矩阵多项式 $f(A) = c_0 I + c_1 A+ \cdots + c_m A^m$</p>
+
+<p>易见， $f(A)$ 是以矩阵为自变量且取值为矩阵的一类函数。</p>
+
+<p>矩阵函数是一般的以矩阵为自变量且取值为矩阵的函数。</p>
+
+<h2 id="矩阵序列">矩阵序列</h2>
+
+<p><strong>定义</strong>：设有矩阵序列 ${A<sup>{(k)}=(a_{ij}</sup>{(k)}) }$ ，若对所有的 $i$ 和 $j$ ，当 $k$ 趋于无穷时， $a_{ij}^{(k)}$ 趋于 $a_{ij}$ ，则称 ${A^{(k)}}$ 收敛，并称矩阵 $A=(a_{ij})$ 是 ${A^{(k)}}$ 的极限，记做
+<span  class="math">\(
+\lim_{k \to \infty} A^{(k)} = A
+\)</span>
+若对某一组 $i$ 和 $j$ ， $a_{ij}^{(k)}$ 不收敛，则称 ${A^{(k)}}$ 发散。</p>
+
+<p><strong>定理</strong>：设 $A^{(k)} \in C^{m \times n}$ ，设 $| \cdot |$ 为任意广义矩阵范数，则</p>
+
+<p>(1)  ${A^{(k)}}$ 趋于 $O$ 的充要条件是 $|{A^{(k)}}|$ 趋于 $0$ ；</p>
+
+<p>(2)  ${A^{(k)}}$ 趋于 $A$ 的充要条件是 $|{A^{(k)}} - A|$ 趋于 $0$ 。</p>
+
+<p><strong>证明</strong>：利用广义矩阵范数的等价性定理，即 $c<em>1 |A^{(k)} −A|</em>{\infty} \le |A^{(k)} −A| \le c<em>2 |A^{(k)} −A|</em>{\infty}$</p>
+
+<p>，仅对 $\infty$ 范数可以证明。</p>
+
+<p>以对(2)的证明为例：
+<span  class="math">\(
+\begin{align}
+{A^{(k)}} \to A & \Leftrightarrow  a_{ij}^{(k)}  \to a_{ij} \\
+& \Leftrightarrow \lim_{k \to \infty} |a_{ij}^{(k)} - a_{ij}| = 0 \\
+& \Leftrightarrow \lim_{k \to \infty} \max_{i,j} |a_{ij}^{(k)} - a_{ij}| = 0 \\
+& \Leftrightarrow \lim_{k \to \infty} \|{A^{(k)}} - A\|_{\infty} = 0 \\
+& \Leftrightarrow \|{A^{(k)}} - A\|_{\infty} \to 0
+\end{align}
+\)</span></p>
+
+<p>类似地，我们可以定义矩阵收敛的 Cauchy 定义</p>
+
+<p><strong>定义</strong>：矩阵序列 ${A^{(k)}}$ 收敛的充要条件为对任给 $\epsilon &gt;0$ 存在 $N(\epsilon)$ ，当 $k,l \ge N(\epsilon)$ 时有 $|A<sup>{(k)}−A</sup>{(l)} | &lt; \epsilon$ ，其中 $| \cdot |$ 为任意的广义矩阵范数。</p>
+
+<p>例：当矩阵中存在 $a_{ij}^{(n)} = \sum_^n \frac {\sin k} {k^2}$ ，如果直接按定义，因为求不出该项的极限从而很难应用最初的定义证明收敛。相反，由于 $\left|\sum_^{n} \frac{\sin (k)}{k^{2}}\right| \leq\left|\sum_^{n} \frac{1}{k^{2}}\right| \leq\left|\sum_^{n} \frac{1}{k(k-1)}\right| \lt \frac 1 m$ ，从而只要 $l$ 充分大，则当 $m,n \gt l$ 时就有 $\left|\sum_^{n} \frac{\sin (k)}{k^{2}}\right| \leq \epsilon$ ，这样 ${A^{(l)}}$ 收敛。</p>
+
+<p><strong>性质</strong>：若 ${A^{(k)}} \to A$ ，则 $|{A^{(k)}}| \to |A|$ 成立。</p>
+
+<p><strong>性质</strong>：设 ${A^{(k)}}$ 和 ${B^{(k)}}$ 分别收敛到 $A$ 和 $B$ ，则
+$$</p>
+<pre><code>\lim _{k \to \infty} \alpha A^{(k)} + \beta B^{(k)} = \alpha A + \beta B</code></pre>
+<p>$$</p>
+
+<p><span  class="math">\[
+\lim _{k \to \infty} A^{(k)}B^{(k)} = A B
+\]</span></p>
+
+<p><strong>证明</strong>：由于矩阵范数地等价性，我们可以只讨论相容的矩阵范数。
+<span  class="math">\(
+\begin{align}
+\left\|{A}^{(\{k}) \cdot {B}^{({k})}-{A} \cdot {B}\right\| & \leq \left\|{A}^{({k})} \cdot {B}^{({k})}-{A} \cdot {B}^{({k})}\right\|+\left\|{AB}^{({k})}-{A} \cdot {B}\right\|\\ 
+& \leq\left\|{A}^{({k})}-{A}\right\| \cdot\left\|{B}^{({k})}\right\|+\|{A}\| \cdot\left\|{B}^{({k})}-{B}\right\| \\
+& \to \left\|{A}^{({k})}-{A}\right\| \cdot\left\|{B}\right\|+\|{A}\| \cdot\left\|{B}^{({k})}-{B}\right\|
+\end{align}
+\)</span></p>
+
+<p><strong>性质</strong>： ${A^{(k)}} \to A$ 的充要条件为 ${A^{(k)}}x \to Ax$ ，对任意 $x$ 成立，或者 $y<sup>H{A</sup>{(k)}}x \to y^H Ax$ 对任意 $x,y$ 成立。在无穷维空间中称为弱收敛，但在有限维空间中和一般收敛性定义是等价的。</p>
+
+<p>对于Hermite(对称)矩阵我们有如下的定理：设 ${A^{(k)}}$ ， $k = 1,2,\cdots$ ，和 $A$ 都是Hermite矩阵，那么 ${A^{(k)}} \to A$ 的充要条件为 $x<sup>H{A</sup>{(k)}}x \to x^H Ax$ 对任意 $x$ 成立。</p>
+
+<p><strong>推论</strong>： ${A^{(k)}}$ ， $k = 1,2,\cdots$ 为半正定Hermite矩阵，且单调减少，即 ${A^{(k)}} - A^{(k+1)}$ 为半正定Hermite矩阵，那么 ${A^{(k)}}$ 收敛。</p>
+
+<p><strong>证明</strong>：由单调减少推出 ${A^{(k)}} - A^{(k+1)}$ 为半正定Hermite矩阵。</p>
+
+<p>TODO</p>
+
+<p><strong>性质</strong>：设 ${A^{(k)}}$ 和 $A$ 都是可逆矩阵，且 ${A^{(k)}} \to A$ ，则 $({A<sup>{(k)}})</sup>{-1} \to A^{-1}$ 。</p>
+
+<p><strong>证明</strong>：因为 $A^{-1} \cdot ({A^{(k)}}) \to I$ ，所以存在 $K$ ，当 $k \gt K$ 时有 $| I - A^{-1} \cdot ({A^{(k)}}) | \lt \frac 1 2$ 。</p>
+
+<p>注意到 $({A<sup>{(k)}})</sup>{-1} = A^{-1} + (I - A^{-1} \cdot ({A^{(k)}})) ({A<sup>{(k)}})</sup>{-1}$ ，从而 $|({A<sup>{(k)}})</sup>{-1}| \le |A^{-1}| + |(I - A^{-1} \cdot ({A^{(k)}}))| |({A<sup>{(k)}})</sup>{-1}|$ 。</p>
+
+<p>当 $k \gt K$ 时有 $|({A<sup>{(k)}})</sup>{-1}| \le |A^{-1}| + \frac 1 2 |({A<sup>{(k)}})</sup>{-1}|$ ，即 $|({A<sup>{(k)}})</sup>{-1}| \le 2|A^{-1}|$ 。</p>
+
+<p>因为 ${A}<sup>{-1}-({A}</sup>{({k})})<sup>{-1}={A}</sup>{-1}({A}<sup>{({k})}-{A})({A}</sup>{({k})})^{-1}$ ，从而
+<span  class="math">\(
+\begin{align}
+\|{A}^{-1}-({A}^{({k})})^{-1}\| & \le \|{A}^{-1}\|\cdot\|({A}^{({k})}-{A})\|\cdot\|({A}^{({k})})^{-1}\| \\
+& \le \|{A}^{-1}\|\cdot\|({A}^{({k})}-{A})\|\cdot 2\|{A}^{-1}\| \\
+& \to 0
+\end{align}
+\)</span>
+因此 $({A<sup>{(k)}})</sup>{-1} \to A^{-1}$</p>
+
+<p><strong>定义</strong>：矩阵序列 ${A^{(k)}}$ 称为有界的，如果存在常数 $M \gt 0$ ，使得对一切 $k$ 都有 $|a_{ij}^{(k)}| \lt M$ 或等价的 $|{A^{(k)}}| \lt M'$ 。</p>
+
+<p><strong>定理</strong>：有界的矩阵序列 ${A^{(k)}}$ 一定有收敛的子列。</p>
+
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>

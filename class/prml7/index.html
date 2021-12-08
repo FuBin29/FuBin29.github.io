@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+
+-->
+<script>
+    MathJax = {
+    tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+    fontCache: 'global'
+    }
+    };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="en-us" lang="en-us" >
+<head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SVM &middot; Fu Bin&#39;s Blog</title>
+    <meta name="description" content="" />
+
+    
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/print.css" media="print">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/poole.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/syntax.css">
+    <link type="text/css" rel="stylesheet" href="https://StupidRabbit29.github.io/css/hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+
+    
+    
+</head>
+
+  <body class="theme-base-08 ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://StupidRabbit29.github.io/"><h1>Fu Bin&#39;s Blog</h1></a>
+      <p class="lead">
+       这里是Fu Bin的个人博客 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://StupidRabbit29.github.io/">Home</a> </li>
+        <li><a href="/posts/"> Blog </a></li><li><a href="/tags/"> Tags </a></li><li><a href="/about"> About </a></li><li><a href="/index.xml"> RSS </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2021. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+    <h1>SVM</h1>
+    <time datetime=2021-12-08T22:30:54&#43;0800 class="post-date">2021-12-08 22:30:54</time>
+    
+    
+    
+    <ul id="tags">
+        
+        <li> <a href="https://StupidRabbit29.github.io/tagsprml">PRML</a> </li>
+        
+    </ul>
+    
+    
+    <ul id="categories">
+        
+        <li><a href="https://StupidRabbit29.github.io/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0">课程笔记</a> </li>
+        
+    </ul>
+    
+    <h1 id="svm">SVM</h1>
+<h2 id="基本思想">基本思想</h2>
+<p>假设数据是线性可分的，SVM使用线性判别函数 $f(x) = w^T x  + b$ 来对数据进行分类，如果 $w^T x  + b &gt; 0$ 则分为正类，如果 $w^T x  + b &lt; 0$ 则分为负类。</p>
+<p>对于数据点 $(x_i, y_i), y_i = +1/-1$ ， $y_i$ 为正确分类类别。</p>
+<p>函数距离： $y_i(w^T x_i  + b)$ 的正负可以表示分类的正确性和信心，为正代表分类正确。</p>
+<p>几何距离： $|w^T x_i  + b| / |w|$ 表示样本点 $x_i$ 到分类平面的距离。</p>
+<p>与分类平面距离最近的样本点称为支持向量，进而构成支持平面。</p>
+<p>分类器的分类间距 $\rho$ 指支持平面之间的距离。</p>
+<h2 id="svm推导过程">SVM推导过程</h2>
+<p>核心思想：最大化分类间距 $\rho$ ，一种启发式思想，这样的噪声容忍性好，鲁棒性好，泛化能力强。</p>
+<p>训练集 ${ (x_{i}, y_{i}) }_{i=1}^N$ ，其中 $x_i \in R^D, y_i \in {+1, -1}$ 分别为输入数据点和类别。易得
+$$
+\rho = 2 \min_i \frac {|w^T x_i  + b|}{|w|}
+$$
+因此SVM的目标可以形式化为二次规划问题
+$$
+\begin{align}
+\max_{w,b}\min_{i} &amp;&amp; \frac {2|w^T x_i  + b|}{|w|} &amp; \<br>
+s.t.
+&amp;&amp; y_i(w^T x_i  + b) &amp;&amp; &gt; &amp;&amp; 0 \ \ i = 1, \cdots, N \<br>
+\end{align}
+$$</p>
+<p>其含义为在确保分类正确（函数距离）的情况下，最大化分类间隔（几何距离）。</p>
+<p>注意到，对于超平面 $w^T x  + b=0$ ，方程两侧同时乘常数，得到同一个超平面，因此可以对 $w,b$ 做出限制，使得
+$$
+\min_{i} |w^T x_i  + b|= 1
+$$
+这样虽然不改变分类超平面，但是约束条件也改变了，得到的优化问题实际上是
+$$
+\begin{align}
+\max_{w} &amp;&amp; \frac {2}{|w|} &amp; \<br>
+s.t.
+&amp;&amp; \min_{i} y_i(w^T x_i  + b) &amp;&amp; = &amp;&amp; 1 \ \ i = 1, \cdots, N \<br>
+\end{align}
+$$</p>
+<p>可以将约束条件进一步放松为 $y_i(w^T x_i  + b)\ge 1$ ，这不会影响原问题的求解。这是因为假设 $w&rsquo;, b'$ 满足约束 $\min_{i} y_i(w'^T x_i  + b&rsquo;) = 1$ ，而 $w&rsquo;&rsquo;, b'&lsquo;$ 满足约束 $y_i(w'&lsquo;^T x_i  + b&rsquo;')\ge 1$ ，但是 $\min_{i} y_i(w'&lsquo;^T x_i  + b&rsquo;') = t&gt; 1$ ，取 $w = \frac {w&rsquo;'}{t}, b = \frac {b&rsquo;'}{t}$ ，则满足约束 $\min_{i} y_i(w^T x_i  + b) = 1$ 并且 $\frac {1}{|w|} &gt; \frac {1}{|w&rsquo;'|}$ ，即 $\max_{w} \frac {2}{|w|}$ 不会在那些 $w&rsquo;&rsquo;, b'&lsquo;$ 中取到最大值，放松条件后，不影响求解结果。</p>
+<p>这样修改约束条件后得到
+$$
+\begin{align}
+\max_{w} &amp;&amp; \frac {2}{|w|} &amp; \<br>
+s.t.
+&amp;&amp; y_i(w^T x_i  + b) &amp;&amp; \ge &amp;&amp; 1 \ \ i = 1, \cdots, N \<br>
+\end{align}
+$$</p>
+<p>进一步可得
+$$
+\begin{align}
+\min_{w} &amp;&amp; \frac {1}{2}{w^Tw} &amp; \<br>
+s.t.
+&amp;&amp; y_i(w^T x_i  + b) &amp;&amp; \ge &amp;&amp; 1 \ \ i = 1, \cdots, N \<br>
+\end{align}
+$$</p>
+<p>对于该带约束的优化问题可以构造出对应的拉格朗日函数
+$$
+L(w, b, \alpha) = \frac 1 2 w^Tw - \sum_{i=1}^N \alpha_i (y_i(w^Tx_i+b) - 1)
+$$
+其中 $\alpha_i \ge 0$ 。由拉格朗日函数的min-max等价转换可得，原问题等价于
+$$
+\begin{align}
+\min_{w, b} \max_{\alpha} &amp;&amp; L(w, b, \alpha) &amp; \<br>
+s.t. &amp;&amp; \alpha_i &amp;&amp; \ge &amp;&amp; 0 &amp;&amp; i = 1,\cdots N \<br>
+\end{align}
+$$
+但是由于 $\alpha_i$ 只是附在等式上的乘子，无法在第一步 $\max_{\alpha} L(w, b, \alpha)$ 时得到 $\alpha$ 和 $w, b$ 之间的转换关系，从而无法消去 $\alpha$ ，得到只剩 $w, b$ 的求极小值问题。</p>
+<p>这时考虑对偶问题，先计算 $w, b$ 的偏导就容易得到 $\alpha$ 和 $w, b$ 之间的转换关系了。SVM问题的对偶形式为：
+$$
+\begin{align}
+\max_{\alpha}\min_{w, b}  &amp;&amp;L(w, b, \alpha) &amp; \<br>
+s.t. &amp;&amp; \alpha_i &amp;&amp; \ge &amp;&amp; 0 &amp;&amp; i = 1,\cdots N \<br>
+\end{align}
+$$
+这样先使 $L(w, b, \alpha)$ 对 $w, b$ 的偏导为零，得到 $\alpha$ 和 $w, b$ 之间的转换关系，然后得到 $\alpha$ 的单变量函数，求得最优拉格朗日乘子 $\hat{\alpha}$ 后，再利用转换关系得到线性分类器参数 $\hat{w}, \hat{b}$ 。</p>
+<p>先使 $L(w, b, \alpha)$ 对 $w, b$ 的偏导为零，得
+$$
+\begin{align}
+\sum_{i=1}^{N} \alpha_i y_i = &amp; 0 \<br>
+w = &amp; \sum_{i=1}^{N} \alpha_i y_i x_i
+\end{align}
+$$
+将上述等式带入拉格朗日函数
+$$
+\frac 1 2 w^Tw - \sum_{i=1}^N \alpha_i (y_i(w^Tx_i+b) - 1) = - \frac 1 2 \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^Tx_j + \sum_{i=1}^N \alpha_i
+$$
+等价于优化下面的问题
+$$
+\begin{align}
+\max_{\alpha} &amp; - \frac 1 2 \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^Tx_j + \sum_{i=1}^N \alpha_i  \<br>
+s.t. &amp; \alpha_i  \ge 0, \ \ \  i = 1,\cdots N \<br>
+&amp; \sum_{i=1}^{N} \alpha_i y_i =0
+\end{align}
+$$
+又等价于
+$$
+\begin{align}
+\min_{\alpha} &amp;  \frac 1 2 \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^Tx_j - \sum_{i=1}^N \alpha_i   \<br>
+s.t. &amp; \alpha_i  \ge 0, \ \ \  i = 1,\cdots N \<br>
+&amp; \sum_{i=1}^{N} \alpha_i y_i =0
+\end{align}
+$$
+解得 $\hat{\alpha}$ 后，使用 $w = \sum_{i=1}^{N} \alpha_i y_i x_i$ 计算得到 $\hat{w}$ 。然后利用支持向量，取一个数据点即可计算得到 $\hat{b}$ 。</p>
+<p>SVM的预测使用下面的判别函数：
+$$
+f(x) = sign(\sum_{i=1}^{N} \hat\alpha_i y_i x_i^T x + \hat b  ) = sign(\sum_{i=1}^{N} \hat\alpha_i y_i (x_i , x) + \hat b  )
+$$</p>
+<p>SVM问题是一个凸优化问题，一定存在 $w&rsquo;&rsquo;, b'&lsquo;$ 使得对于任意数据点，约束条件 $y_i(w'&lsquo;^T x_i  + b&rsquo;')\gt 1$ 。由Slater条件，SVM问题是满足强对偶，因此对偶问题的最优解就是原问题的最优解。
+$$
+\max_{\alpha}\min_{w, b} L(w, \alpha, b) = \max_{\alpha}\min_{w, b} L(w, \alpha, b)
+$$
+还可以使用KKT条件来检验我们用对偶问题求得的解（注意KKT条件是必要条件）。</p>
+<p>KKT条件中的互补松弛性 $\alpha_i (y_i(w^Tx_i+b) - 1) = 0$ 的含义是，满足 $y_i(w^Tx_i+b) = 1$ 的样本点对应的 $\alpha_i &gt; 0$ ，而 $y_i(w^Tx_i+b) &gt; 1$ 的样本点对应的 $\alpha_i = 0$ 。即SVM的预测只与支持向量有关，非支持向量不起作用。</p>
+<h2 id="松弛变量">松弛变量</h2>
+<p>用于解决线性不可分的情况。引入松弛变量，容忍部分离群点线性不可分。</p>
+<p><img src="https://raw.githubusercontent.com/StupidRabbit29/Img-Area/master/img/20211207233009.png" alt="image-20211207233008300">
+$$
+\begin{align}
+\min_{w} &amp;&amp; \frac {1}{2}{w^Tw} + C \sum_{i=1}^N \xi_i &amp; \<br>
+s.t.
+&amp;&amp; y_i(w^T x_i  + b) &amp;&amp; \ge &amp;&amp; 1 - \xi_i \ \ i = 1, \cdots, N \<br>
+&amp;&amp; \xi_i &amp;&amp; \ge &amp;&amp; 0 \ \ i = 1, \cdots, N \<br>
+\end{align}
+$$</p>
+<p>每一个离群点对应的 $\xi_i &gt; 0$ ，而非离群点对应的 $\xi_i = 0$ 。 $C$ 是一个超参数，取值越大，表示越重视离群点，不希望舍弃这些样本点（离群点对分类超平面的影响更大）。</p>
+<p>优化目标为最大化分类间隔，同时最小化离群距离。</p>
+<p>对应的拉格朗日函数为
+$$
+L(w, b, \xi, \alpha, \beta) = \frac 1 2 w^Tw + C \sum_{i=1}^N \xi_i - \sum_{i=1}^N \alpha_i (y_i(w^Tx_i+b) - 1 + \xi_i) - \sum_{i=1}^N \beta_i\xi_i
+$$
+对偶问题为
+$$
+\begin{align}
+\max_{\alpha, \beta}\min_{w, b, \xi}  &amp;&amp; L(w, b, \xi, \alpha, \beta) &amp; \<br>
+s.t. &amp;&amp; \alpha_i &amp;&amp; \ge &amp;&amp; 0 &amp;&amp; i = 1,\cdots N \<br>
+&amp;&amp; \beta_i &amp;&amp; \ge &amp;&amp; 0 &amp;&amp; i = 1,\cdots N \<br>
+\end{align}
+$$
+$L(w, b, \xi, \alpha, \beta)$ 对 $w, b, \xi$ 的偏导数为零得到
+$$
+\begin{align}
+\sum_{i=1}^{N} \alpha_i y_i = &amp; 0 \<br>
+\alpha_i + \beta_i =&amp; C \<br>
+w = &amp; \sum_{i=1}^{N} \alpha_i y_i x_i
+\end{align}
+$$
+将上述等式带入拉格朗日函数，等价于
+$$
+\begin{align}
+\min_{\alpha} &amp;  \frac 1 2 \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^Tx_j - \sum_{i=1}^N \alpha_i   \<br>
+s.t. &amp; 0 \le \alpha_i  \le C, \ \ \  i = 1,\cdots N \<br>
+&amp; \sum_{i=1}^{N} \alpha_i y_i =0
+\end{align}
+$$
+KKT条件中的互补松弛性为
+$$
+\begin{align}
+\alpha_i (y_i(w^Tx_i+b) - 1 + \xi_i) = &amp; 0 \<br>
+\beta_i\xi_i = &amp; 0
+\end{align}
+$$
+分析可得，在引入松弛变量的SVM中，取得最优解时，对于所有的样本有
+$$
+\begin{cases}
+y_i(w^Tx_i+b) \ge 1 &amp; \alpha_i = 0 \<br>
+y_i(w^Tx_i+b) = 1 &amp; 0 &lt; \alpha_i &lt; C \<br>
+y_i(w^Tx_i+b) \le 1 &amp; \alpha_i = C \<br>
+\end{cases}
+$$
+第一种情况是非支持向量，第二种是支持向量，可以利用支持向量求出 $\hat{b}$ ，第三种情况是违反不等式约束的样本。</p>
+<h2 id="核函数">核函数</h2>
+<p>当线性不可分情况非常严重时，需要进一步进行空间映射，将低维空间的线性不可分问题转换为高维空间的线性可分问题。</p>
+<p><img src="https://raw.githubusercontent.com/StupidRabbit29/Img-Area/master/img/20211208160155.png" alt="image-20211208160153928"></p>
+<p>映射函数为 $\Phi: x \to \Phi(x)$ 。核函数的定义为 $K(x_1, x_2) = (\Phi(x_1), \Phi(x_2))$ ，其中 $(\cdot, \cdot)$ 为内积。</p>
+<p>由于SVM的预测其实是由支持向量的内积来决定的，而核函数与在映射后的特征空间计算内积是等价的，因此使用核函数可以直接在低维空间计算内积，不需要显式地进行空间映射，计算效率更高。</p>
+<p>常见的核函数有线性核函数、多项式核函数和高斯核函数
+$$
+\begin{align}
+K(x_1, x_2) =&amp; (x_1, x_2) \<br>
+K(x_1, x_2) =&amp; ((x_1, x_2) + R)^d \<br>
+K(x_1, x_2) =&amp; \exp (- \frac {|x_1 - x_2|^2}{2 \sigma^2})
+\end{align}
+$$</p>
+
+</div>
+
+
+    </main>
+
+    
+      
+    
+  </body>
+</html>

@@ -6,10 +6,33 @@
     <description>Recent content in 线性代数 on Fu Bin&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Oct 2021 00:57:32 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 25 Oct 2021 21:28:58 +0800</lastBuildDate>
     
 	<atom:link href="https://StupidRabbit29.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Series2</title>
+      <link>https://StupidRabbit29.github.io/math/series2/</link>
+      <pubDate>Mon, 25 Oct 2021 21:28:58 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/math/series2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>矩阵序列</title>
+      <link>https://StupidRabbit29.github.io/math/series1/</link>
+      <pubDate>Mon, 25 Oct 2021 21:27:42 +0800</pubDate>
+      
+      <guid>https://StupidRabbit29.github.io/math/series1/</guid>
+      <description>引言 一元多项式 $f(t) = c_0 + c_1 t+ \cdots + c_m t^m$
+矩阵多项式 $f(A) = c_0 I + c_1 A+ \cdots + c_m A^m$
+易见， $f(A)$ 是以矩阵为自变量且取值为矩阵的一类函数。
+矩阵函数是一般的以矩阵为自变量且取值为矩阵的函数。
+矩阵序列 定义：设有矩阵序列 ${A{(k)}=(a_{ij}{(k)}) }$ ，若对所有的 $i$ 和 $j$ ，当 $k$ 趋于无穷时， $a_{ij}^{(k)}$ 趋于 $a_{ij}$ ，则称 ${A^{(k)}}$ 收敛，并称矩阵 $A=(a_{ij})$ 是 ${A^{(k)}}$ 的极限，记做 \( \lim_{k \to \infty} A^{(k)} = A \) 若对某一组 $i$ 和 $j$ ， $a_{ij}^{(k)}$ 不收敛，则称 ${A^{(k)}}$ 发散。
+定理：设 $A^{(k)} \in C^{m \times n}$ ，设 $| \cdot |$ 为任意广义矩阵范数，则</description>
+    </item>
     
     <item>
       <title>Norm2</title>
