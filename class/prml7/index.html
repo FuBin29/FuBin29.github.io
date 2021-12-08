@@ -108,13 +108,15 @@
 
 <p>核心思想：最大化分类间距 $\rho$ ，一种启发式思想，这样的噪声容忍性好，鲁棒性好，泛化能力强。</p>
 
-<p>训练集 ${ (x_{i}, y_{i}) }_^N$ ，其中 $x_i \in R^D, y_i \in {+1, -1}$ 分别为输入数据点和类别。易得
-<span  class="math">\(
-\rho = 2 \min_i \frac {|w^T x_i  + b|}{\|w\|}
-\)</span>
-因此SVM的目标可以形式化为二次规划问题</p>
+<p>训练集 ${ (x_{i}, y_{i}) }_^{N}$ ，其中 $x_i \in R^D, y_i \in {+1, -1}$ 分别为输入数据点和类别。易得</p>
 
 <p><span  i="1" class="math">\[
+\rho = 2 \min_i \frac {|w^T x_i  + b|}{\|w\|}
+\]</span></p>
+
+<p>因此SVM的目标可以形式化为二次规划问题</p>
+
+<p><span  class="math">\[
 \begin{align}
 \max_{w,b}\min_{i} && \frac {2|w^T x_i  + b|}{\|w\|} & \\
 s.t. 
@@ -125,7 +127,7 @@ s.t.
 <p>其含义为在确保分类正确（函数距离）的情况下，最大化分类间隔（几何距离）。</p>
 
 <p>注意到，对于超平面 $w^T x  + b=0$ ，方程两侧同时乘常数，得到同一个超平面，因此可以对 $w,b$ 做出限制，使得
-<span  i="1" class="math">\(
+<span  class="math">\(
 \min_{i} |w^T x_i  + b|= 1
 \)</span>
 这样虽然不改变分类超平面，但是约束条件也改变了，得到的优化问题实际上是</p>
@@ -138,7 +140,7 @@ s.t.
 \end{align}
 \]</span></p>
 
-<p>可以将约束条件进一步放松为 $y_i(w^T x<em>i  + b)\ge 1$ ，这不会影响原问题的求解。这是因为假设 $w', b'$ 满足约束 $\min</em>{i} y_i(w'^T x_i  + b') = 1$ ，而 <span  class="math">\(w'', b''\)</span> 满足约束 <span  class="math">\(y_i(w''^T x_i  + b'')\ge 1\)</span> ，但是 <span  class="math">\(\min_{i} y_i(w''^T x_i  + b'') = t> 1\)</span> ，取 <span  class="math">\(w = \frac {w''}{t}, b = \frac {b''}{t}\)</span> ，则满足约束 $\min_{i} y_i(w^T x<em>i  + b) = 1$ 并且 $\frac {1}{|w|} &gt; \frac {1}{|w''|}$ ，即 $\max</em>{w} \frac {2}{|w|}$ 不会在那些 <span  class="math">\(w'', b''\)</span> 中取到最大值，放松条件后，不影响求解结果。</p>
+<p>可以将约束条件进一步放松为 <span  class="math">\(y_i(w^T x_i  + b)\ge 1\)</span> ，这不会影响原问题的求解。这是因为假设 <span  class="math">\(w', b'\)</span> 满足约束 <span  class="math">\(\min_{i} y_i(w'^T x_i  + b') = 1\)</span> ，而 <span  class="math">\(w'', b''\)</span> 满足约束 <span  class="math">\(y_i(w''^T x_i  + b'')\ge 1\)</span> ，但是 <span  class="math">\(\min_{i} y_i(w''^T x_i  + b'') = t> 1\)</span> ，取 <span  class="math">\(w = \frac {w''}{t}, b = \frac {b''}{t}\)</span> ，则满足约束 <span  class="math">\(\min_{i} y_i(w^T x_i  + b) = 1\)</span> 并且 <span  class="math">\(\frac {1}{\|w\|} > \frac {1}{\|w''\|}\)</span> ，即 <span  class="math">\(\max_{w} \frac {2}{\|w\|}\)</span> 不会在那些 <span  class="math">\(w'', b''\)</span> 中取到最大值，放松条件后，不影响求解结果。</p>
 
 <p>这样修改约束条件后得到</p>
 
@@ -175,7 +177,7 @@ s.t. && \alpha_i && \ge && 0 && i = 1,\cdots N \\
 \end{align}
 \]</span></p>
 
-<p>但是由于 $\alpha<em>i$ 只是附在等式上的乘子，无法在第一步 $\max</em>{\alpha} L(w, b, \alpha)$ 时得到 $\alpha$ 和 $w, b$ 之间的转换关系，从而无法消去 $\alpha$ ，得到只剩 $w, b$ 的求极小值问题。</p>
+<p>但是由于 <span  class="math">\(\alpha_i\)</span> 只是附在等式上的乘子，无法在第一步 <span  class="math">\(\max_{\alpha} L(w, b, \alpha)\)</span> 时得到 <span  class="math">\(\alpha\)</span> 和 <span  class="math">\(w, b\)</span> 之间的转换关系，从而无法消去 <span  class="math">\(\alpha\)</span> ，得到只剩 <span  class="math">\(w, b\)</span> 的求极小值问题。</p>
 
 <p>这时考虑对偶问题，先计算 $w, b$ 的偏导就容易得到 $\alpha$ 和 $w, b$ 之间的转换关系了。SVM问题的对偶形式为：</p>
 
@@ -197,11 +199,13 @@ w = & \sum_{i=1}^{N} \alpha_i y_i x_i
 \end{align}
 \]</span></p>
 
-<p>将上述等式带入拉格朗日函数
-<span  class="math">\(
+<p>将上述等式带入拉格朗日函数</p>
+
+<p><span  class="math">\[
 \frac 1 2 w^Tw - \sum_{i=1}^N \alpha_i (y_i(w^Tx_i+b) - 1) = - \frac 1 2 \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^Tx_j + \sum_{i=1}^N \alpha_i
-\)</span>
-等价于优化下面的问题</p>
+\]</span></p>
+
+<p>等价于优化下面的问题</p>
 
 <p><span  class="math">\[
 \begin{align}
@@ -221,19 +225,21 @@ s.t. & \alpha_i  \ge 0, \ \ \  i = 1,\cdots N \\
 \end{align}
 \]</span></p>
 
-<p>解得 $\hat{\alpha}$ 后，使用 $w = \sum_^{N} \alpha_i y_i x_i$ 计算得到 $\hat{w}$ 。然后利用支持向量，取一个数据点即可计算得到 $\hat{b}$ 。</p>
+<p>解得 <span  class="math">\(\hat{\alpha}\)</span> 后，使用 <span  class="math">\(w = \sum_{i=1}^{N} \alpha_{i} y_{i} x_{i}\)</span> 计算得到 <span  class="math">\(\hat{w}\)</span> 。然后利用支持向量，取一个数据点即可计算得到 <span  class="math">\(\hat{b}\)</span> 。</p>
 
 <p>SVM的预测使用下面的判别函数：</p>
 
-<p><span  i="1" class="math">\[
+<p><span  class="math">\[
 f(x) = sign(\sum_{i=1}^{N} \hat\alpha_i y_i x_i^T x + \hat b  ) = sign(\sum_{i=1}^{N} \hat\alpha_i y_i (x_i , x) + \hat b  )
 \]</span></p>
 
-<p>SVM问题是一个凸优化问题，一定存在 <span  i="1" class="math">\(w'', b''\)</span> 使得对于任意数据点，约束条件 <span  i="1" class="math">\(y_i(w''^T x_i  + b'')\gt 1\)</span> 。由Slater条件，SVM问题是满足强对偶，因此对偶问题的最优解就是原问题的最优解。
-<span  i="1" class="math">\(
+<p>SVM问题是一个凸优化问题，一定存在 <span  class="math">\(w'', b''\)</span> 使得对于任意数据点，约束条件 <span  class="math">\(y_i(w''^T x_i  + b'')\gt 1\)</span> 。由Slater条件，SVM问题是满足强对偶，因此对偶问题的最优解就是原问题的最优解。</p>
+
+<p><span  class="math">\[
 \max_{\alpha}\min_{w, b} L(w, \alpha, b) = \max_{\alpha}\min_{w, b} L(w, \alpha, b)
-\)</span>
-还可以使用KKT条件来检验我们用对偶问题求得的解（注意KKT条件是必要条件）。</p>
+\]</span></p>
+
+<p>还可以使用KKT条件来检验我们用对偶问题求得的解（注意KKT条件是必要条件）。</p>
 
 <p>KKT条件中的互补松弛性 $\alpha_i (y_i(w^Tx_i+b) - 1) = 0$ 的含义是，满足 $y_i(w^Tx_i+b) = 1$ 的样本点对应的 $\alpha_i &gt; 0$ ，而 $y_i(w^Tx_i+b) &gt; 1$ 的样本点对应的 $\alpha_i = 0$ 。即SVM的预测只与支持向量有关，非支持向量不起作用。</p>
 
@@ -256,11 +262,13 @@ s.t.
 
 <p>优化目标为最大化分类间隔，同时最小化离群距离。</p>
 
-<p>对应的拉格朗日函数为
-<span  class="math">\(
+<p>对应的拉格朗日函数为</p>
+
+<p><span  class="math">\[
 L(w, b, \xi, \alpha, \beta) = \frac 1 2 w^Tw + C \sum_{i=1}^N \xi_i - \sum_{i=1}^N \alpha_i (y_i(w^Tx_i+b) - 1 + \xi_i) - \sum_{i=1}^N \beta_i\xi_i
-\)</span>
-对偶问题为</p>
+\]</span></p>
+
+<p>对偶问题为</p>
 
 <p><span  class="math">\[
 \begin{align}
