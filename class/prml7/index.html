@@ -106,9 +106,9 @@
 
 <p>核心思想：最大化分类间距 $\rho$ ，一种启发式思想，这样的噪声容忍性好，鲁棒性好，泛化能力强。</p>
 
-<p>训练集 ${ (x_{i}, y_{i}) }_^{N}$ ，其中 $x_i \in R^D, y_i \in {+1, -1}$ 分别为输入数据点和类别。易得</p>
+<p>训练集 <span  class="math">\(\{ (x_{i}, y_{i}) \}_{i=1}^{N}\)</span> ，其中 <span  class="math">\(x_i \in R^D, y_i \in \{+1, -1\}\)</span> 分别为输入数据点和类别。易得</p>
 
-<p><span  i="1" class="math">\[
+<p><span  class="math">\[
 \rho = 2 \min_i \frac {|w^T x_i  + b|}{\|w\|}
 \]</span></p>
 
