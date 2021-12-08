@@ -24,7 +24,7 @@
 与分类平面距离最近的样本点称为支持向量，进而构成支持平面。
 分类器的分类间距 $\rho$ 指支持平面之间的距离。
 SVM推导过程 核心思想：最大化分类间距 $\rho$ ，一种启发式思想，这样的噪声容忍性好，鲁棒性好，泛化能力强。
-训练集 ${ (x_{i}, y_{i}) }_{i=1}^N$ ，其中 $x_i \in R^D, y_i \in {+1, -1}$ 分别为输入数据点和类别。易得 $$ \rho = 2 \min_i \frac {|w^T x_i + b|}{|w|} $$ 因此SVM的目标可以形式化为二次规划问题 $$ \begin{align} \max_{w,b}\min_{i} &amp;amp;&amp;amp; \frac {2|w^T x_i + b|}{|w|} &amp;amp; \</description>
+训练集 ${ (x_{i}, y_{i}) }_{i=1}^N$ ，其中 $x_i \in R^D, y_i \in {+1, -1}$ 分别为输入数据点和类别。易得 $$ \rho = 2 \min_i \frac {|w^T x_i + b|}{|w|} $$ 因此SVM的目标可以形式化为二次规划问题</description>
     </item>
     
     <item>

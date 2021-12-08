@@ -102,8 +102,8 @@
 $$
 \rho = 2 \min_i \frac {|w^T x_i  + b|}{|w|}
 $$
-因此SVM的目标可以形式化为二次规划问题
-$$
+因此SVM的目标可以形式化为二次规划问题</p>
+<p>$$
 \begin{align}
 \max_{w,b}\min_{i} &amp;&amp; \frac {2|w^T x_i  + b|}{|w|} &amp; \<br>
 s.t.
@@ -115,84 +115,84 @@ $$</p>
 $$
 \min_{i} |w^T x_i  + b|= 1
 $$
-这样虽然不改变分类超平面，但是约束条件也改变了，得到的优化问题实际上是
-$$
+这样虽然不改变分类超平面，但是约束条件也改变了，得到的优化问题实际上是</p>
+<p>$$
 \begin{align}
 \max_{w} &amp;&amp; \frac {2}{|w|} &amp; \<br>
 s.t.
 &amp;&amp; \min_{i} y_i(w^T x_i  + b) &amp;&amp; = &amp;&amp; 1 \ \ i = 1, \cdots, N \<br>
 \end{align}
 $$</p>
-<p>可以将约束条件进一步放松为 $y_i(w^T x_i  + b)\ge 1$ ，这不会影响原问题的求解。这是因为假设 $w&rsquo;, b'$ 满足约束 $\min_{i} y_i(w'^T x_i  + b&rsquo;) = 1$ ，而 $w&rsquo;&rsquo;, b'&lsquo;$ 满足约束 $y_i(w'&lsquo;^T x_i  + b&rsquo;')\ge 1$ ，但是 $\min_{i} y_i(w'&lsquo;^T x_i  + b&rsquo;') = t&gt; 1$ ，取 $w = \frac {w&rsquo;'}{t}, b = \frac {b&rsquo;'}{t}$ ，则满足约束 $\min_{i} y_i(w^T x_i  + b) = 1$ 并且 $\frac {1}{|w|} &gt; \frac {1}{|w&rsquo;'|}$ ，即 $\max_{w} \frac {2}{|w|}$ 不会在那些 $w&rsquo;&rsquo;, b'&lsquo;$ 中取到最大值，放松条件后，不影响求解结果。</p>
-<p>这样修改约束条件后得到
-$$
+<p>可以将约束条件进一步放松为 $y_i(w^T x_i  + b)\ge 1$ ，这不会影响原问题的求解。这是因为假设 $w&rsquo;, b'$ 满足约束 $\min_{i} y_i(w'^T x_i  + b&rsquo;) = 1$ ，而 $$w&rsquo;&rsquo;, b'&lsquo;$$ 满足约束 $$y_i(w'&lsquo;^T x_i  + b&rsquo;')\ge 1$$ ，但是 $$\min_{i} y_i(w'&lsquo;^T x_i  + b&rsquo;') = t&gt; 1$$ ，取 $$w = \frac {w&rsquo;'}{t}, b = \frac {b&rsquo;'}{t}$$ ，则满足约束 $\min_{i} y_i(w^T x_i  + b) = 1$ 并且 $\frac {1}{|w|} &gt; \frac {1}{|w&rsquo;'|}$ ，即 $\max_{w} \frac {2}{|w|}$ 不会在那些 $$w&rsquo;&rsquo;, b'&lsquo;$$ 中取到最大值，放松条件后，不影响求解结果。</p>
+<p>这样修改约束条件后得到</p>
+<p>$$
 \begin{align}
 \max_{w} &amp;&amp; \frac {2}{|w|} &amp; \<br>
 s.t.
 &amp;&amp; y_i(w^T x_i  + b) &amp;&amp; \ge &amp;&amp; 1 \ \ i = 1, \cdots, N \<br>
 \end{align}
 $$</p>
-<p>进一步可得
-$$
+<p>进一步可得</p>
+<p>$$
 \begin{align}
 \min_{w} &amp;&amp; \frac {1}{2}{w^Tw} &amp; \<br>
 s.t.
 &amp;&amp; y_i(w^T x_i  + b) &amp;&amp; \ge &amp;&amp; 1 \ \ i = 1, \cdots, N \<br>
 \end{align}
 $$</p>
-<p>对于该带约束的优化问题可以构造出对应的拉格朗日函数
-$$
+<p>对于该带约束的优化问题可以构造出对应的拉格朗日函数</p>
+<p>$$
 L(w, b, \alpha) = \frac 1 2 w^Tw - \sum_{i=1}^N \alpha_i (y_i(w^Tx_i+b) - 1)
-$$
-其中 $\alpha_i \ge 0$ 。由拉格朗日函数的min-max等价转换可得，原问题等价于
-$$
+$$</p>
+<p>其中 $\alpha_i \ge 0$ 。由拉格朗日函数的min-max等价转换可得，原问题等价于</p>
+<p>$$
 \begin{align}
 \min_{w, b} \max_{\alpha} &amp;&amp; L(w, b, \alpha) &amp; \<br>
 s.t. &amp;&amp; \alpha_i &amp;&amp; \ge &amp;&amp; 0 &amp;&amp; i = 1,\cdots N \<br>
 \end{align}
-$$
-但是由于 $\alpha_i$ 只是附在等式上的乘子，无法在第一步 $\max_{\alpha} L(w, b, \alpha)$ 时得到 $\alpha$ 和 $w, b$ 之间的转换关系，从而无法消去 $\alpha$ ，得到只剩 $w, b$ 的求极小值问题。</p>
-<p>这时考虑对偶问题，先计算 $w, b$ 的偏导就容易得到 $\alpha$ 和 $w, b$ 之间的转换关系了。SVM问题的对偶形式为：
-$$
+$$</p>
+<p>但是由于 $\alpha_i$ 只是附在等式上的乘子，无法在第一步 $\max_{\alpha} L(w, b, \alpha)$ 时得到 $\alpha$ 和 $w, b$ 之间的转换关系，从而无法消去 $\alpha$ ，得到只剩 $w, b$ 的求极小值问题。</p>
+<p>这时考虑对偶问题，先计算 $w, b$ 的偏导就容易得到 $\alpha$ 和 $w, b$ 之间的转换关系了。SVM问题的对偶形式为：</p>
+<p>$$
 \begin{align}
 \max_{\alpha}\min_{w, b}  &amp;&amp;L(w, b, \alpha) &amp; \<br>
 s.t. &amp;&amp; \alpha_i &amp;&amp; \ge &amp;&amp; 0 &amp;&amp; i = 1,\cdots N \<br>
 \end{align}
-$$
-这样先使 $L(w, b, \alpha)$ 对 $w, b$ 的偏导为零，得到 $\alpha$ 和 $w, b$ 之间的转换关系，然后得到 $\alpha$ 的单变量函数，求得最优拉格朗日乘子 $\hat{\alpha}$ 后，再利用转换关系得到线性分类器参数 $\hat{w}, \hat{b}$ 。</p>
-<p>先使 $L(w, b, \alpha)$ 对 $w, b$ 的偏导为零，得
-$$
+$$</p>
+<p>这样先使 $L(w, b, \alpha)$ 对 $w, b$ 的偏导为零，得到 $\alpha$ 和 $w, b$ 之间的转换关系，然后得到 $\alpha$ 的单变量函数，求得最优拉格朗日乘子 $\hat{\alpha}$ 后，再利用转换关系得到线性分类器参数 $\hat{w}, \hat{b}$ 。</p>
+<p>先使 $L(w, b, \alpha)$ 对 $w, b$ 的偏导为零，得</p>
+<p>$$
 \begin{align}
 \sum_{i=1}^{N} \alpha_i y_i = &amp; 0 \<br>
 w = &amp; \sum_{i=1}^{N} \alpha_i y_i x_i
 \end{align}
-$$
-将上述等式带入拉格朗日函数
+$$</p>
+<p>将上述等式带入拉格朗日函数
 $$
 \frac 1 2 w^Tw - \sum_{i=1}^N \alpha_i (y_i(w^Tx_i+b) - 1) = - \frac 1 2 \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^Tx_j + \sum_{i=1}^N \alpha_i
 $$
-等价于优化下面的问题
-$$
+等价于优化下面的问题</p>
+<p>$$
 \begin{align}
 \max_{\alpha} &amp; - \frac 1 2 \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^Tx_j + \sum_{i=1}^N \alpha_i  \<br>
 s.t. &amp; \alpha_i  \ge 0, \ \ \  i = 1,\cdots N \<br>
 &amp; \sum_{i=1}^{N} \alpha_i y_i =0
 \end{align}
-$$
-又等价于
-$$
+$$</p>
+<p>又等价于</p>
+<p>$$
 \begin{align}
 \min_{\alpha} &amp;  \frac 1 2 \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^Tx_j - \sum_{i=1}^N \alpha_i   \<br>
 s.t. &amp; \alpha_i  \ge 0, \ \ \  i = 1,\cdots N \<br>
 &amp; \sum_{i=1}^{N} \alpha_i y_i =0
 \end{align}
-$$
-解得 $\hat{\alpha}$ 后，使用 $w = \sum_{i=1}^{N} \alpha_i y_i x_i$ 计算得到 $\hat{w}$ 。然后利用支持向量，取一个数据点即可计算得到 $\hat{b}$ 。</p>
-<p>SVM的预测使用下面的判别函数：
-$$
+$$</p>
+<p>解得 $\hat{\alpha}$ 后，使用 $w = \sum_{i=1}^{N} \alpha_i y_i x_i$ 计算得到 $\hat{w}$ 。然后利用支持向量，取一个数据点即可计算得到 $\hat{b}$ 。</p>
+<p>SVM的预测使用下面的判别函数：</p>
+<p>$$
 f(x) = sign(\sum_{i=1}^{N} \hat\alpha_i y_i x_i^T x + \hat b  ) = sign(\sum_{i=1}^{N} \hat\alpha_i y_i (x_i , x) + \hat b  )
 $$</p>
-<p>SVM问题是一个凸优化问题，一定存在 $w&rsquo;&rsquo;, b'&lsquo;$ 使得对于任意数据点，约束条件 $y_i(w'&lsquo;^T x_i  + b&rsquo;')\gt 1$ 。由Slater条件，SVM问题是满足强对偶，因此对偶问题的最优解就是原问题的最优解。
+<p>SVM问题是一个凸优化问题，一定存在 $$w&rsquo;&rsquo;, b'&lsquo;$$ 使得对于任意数据点，约束条件 $$y_i(w'&lsquo;^T x_i  + b&rsquo;')\gt 1$$ 。由Slater条件，SVM问题是满足强对偶，因此对偶问题的最优解就是原问题的最优解。
 $$
 \max_{\alpha}\min_{w, b} L(w, \alpha, b) = \max_{\alpha}\min_{w, b} L(w, \alpha, b)
 $$
@@ -200,8 +200,8 @@ $$
 <p>KKT条件中的互补松弛性 $\alpha_i (y_i(w^Tx_i+b) - 1) = 0$ 的含义是，满足 $y_i(w^Tx_i+b) = 1$ 的样本点对应的 $\alpha_i &gt; 0$ ，而 $y_i(w^Tx_i+b) &gt; 1$ 的样本点对应的 $\alpha_i = 0$ 。即SVM的预测只与支持向量有关，非支持向量不起作用。</p>
 <h2 id="松弛变量">松弛变量</h2>
 <p>用于解决线性不可分的情况。引入松弛变量，容忍部分离群点线性不可分。</p>
-<p><img src="https://raw.githubusercontent.com/StupidRabbit29/Img-Area/master/img/20211207233009.png" alt="image-20211207233008300">
-$$
+<p><img src="https://raw.githubusercontent.com/StupidRabbit29/Img-Area/master/img/20211207233009.png" alt="image-20211207233008300"></p>
+<p>$$
 \begin{align}
 \min_{w} &amp;&amp; \frac {1}{2}{w^Tw} + C \sum_{i=1}^N \xi_i &amp; \<br>
 s.t.
@@ -215,53 +215,53 @@ $$</p>
 $$
 L(w, b, \xi, \alpha, \beta) = \frac 1 2 w^Tw + C \sum_{i=1}^N \xi_i - \sum_{i=1}^N \alpha_i (y_i(w^Tx_i+b) - 1 + \xi_i) - \sum_{i=1}^N \beta_i\xi_i
 $$
-对偶问题为
-$$
+对偶问题为</p>
+<p>$$
 \begin{align}
 \max_{\alpha, \beta}\min_{w, b, \xi}  &amp;&amp; L(w, b, \xi, \alpha, \beta) &amp; \<br>
 s.t. &amp;&amp; \alpha_i &amp;&amp; \ge &amp;&amp; 0 &amp;&amp; i = 1,\cdots N \<br>
 &amp;&amp; \beta_i &amp;&amp; \ge &amp;&amp; 0 &amp;&amp; i = 1,\cdots N \<br>
 \end{align}
-$$
-$L(w, b, \xi, \alpha, \beta)$ 对 $w, b, \xi$ 的偏导数为零得到
-$$
+$$</p>
+<p>$L(w, b, \xi, \alpha, \beta)$ 对 $w, b, \xi$ 的偏导数为零得到</p>
+<p>$$
 \begin{align}
 \sum_{i=1}^{N} \alpha_i y_i = &amp; 0 \<br>
 \alpha_i + \beta_i =&amp; C \<br>
 w = &amp; \sum_{i=1}^{N} \alpha_i y_i x_i
 \end{align}
-$$
-将上述等式带入拉格朗日函数，等价于
-$$
+$$</p>
+<p>将上述等式带入拉格朗日函数，等价于</p>
+<p>$$
 \begin{align}
 \min_{\alpha} &amp;  \frac 1 2 \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^Tx_j - \sum_{i=1}^N \alpha_i   \<br>
 s.t. &amp; 0 \le \alpha_i  \le C, \ \ \  i = 1,\cdots N \<br>
 &amp; \sum_{i=1}^{N} \alpha_i y_i =0
 \end{align}
-$$
-KKT条件中的互补松弛性为
-$$
+$$</p>
+<p>KKT条件中的互补松弛性为</p>
+<p>$$
 \begin{align}
 \alpha_i (y_i(w^Tx_i+b) - 1 + \xi_i) = &amp; 0 \<br>
 \beta_i\xi_i = &amp; 0
 \end{align}
-$$
-分析可得，在引入松弛变量的SVM中，取得最优解时，对于所有的样本有
-$$
+$$</p>
+<p>分析可得，在引入松弛变量的SVM中，取得最优解时，对于所有的样本有</p>
+<p>$$
 \begin{cases}
 y_i(w^Tx_i+b) \ge 1 &amp; \alpha_i = 0 \<br>
 y_i(w^Tx_i+b) = 1 &amp; 0 &lt; \alpha_i &lt; C \<br>
 y_i(w^Tx_i+b) \le 1 &amp; \alpha_i = C \<br>
 \end{cases}
-$$
-第一种情况是非支持向量，第二种是支持向量，可以利用支持向量求出 $\hat{b}$ ，第三种情况是违反不等式约束的样本。</p>
+$$</p>
+<p>第一种情况是非支持向量，第二种是支持向量，可以利用支持向量求出 $\hat{b}$ ，第三种情况是违反不等式约束的样本。</p>
 <h2 id="核函数">核函数</h2>
 <p>当线性不可分情况非常严重时，需要进一步进行空间映射，将低维空间的线性不可分问题转换为高维空间的线性可分问题。</p>
 <p><img src="https://raw.githubusercontent.com/StupidRabbit29/Img-Area/master/img/20211208160155.png" alt="image-20211208160153928"></p>
 <p>映射函数为 $\Phi: x \to \Phi(x)$ 。核函数的定义为 $K(x_1, x_2) = (\Phi(x_1), \Phi(x_2))$ ，其中 $(\cdot, \cdot)$ 为内积。</p>
 <p>由于SVM的预测其实是由支持向量的内积来决定的，而核函数与在映射后的特征空间计算内积是等价的，因此使用核函数可以直接在低维空间计算内积，不需要显式地进行空间映射，计算效率更高。</p>
-<p>常见的核函数有线性核函数、多项式核函数和高斯核函数
-$$
+<p>常见的核函数有线性核函数、多项式核函数和高斯核函数</p>
+<p>$$
 \begin{align}
 K(x_1, x_2) =&amp; (x_1, x_2) \<br>
 K(x_1, x_2) =&amp; ((x_1, x_2) + R)^d \<br>
